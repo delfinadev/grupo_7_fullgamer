@@ -6,3 +6,4 @@ https://www.mercadolibre.com.ar/
 https://www.computodo.com.ar/
 https://wiztech.com.ar/
 https://www.fullh4rd.com.ar/
+https://store.steampowered.com/
