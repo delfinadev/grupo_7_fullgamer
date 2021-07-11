@@ -6,13 +6,13 @@ Ofrecemos perifericos de entrada y salida de una gran calidad y de marca. Contam
 Estamos centrados en un publico joven de entre 13 y 40 años, que les interese la tecnologia ya sea para uso personal o por trabajo.
 Los integrantes son:
 
-Anna Luz Serena:
+Anna Luz Serena: Programadora full stack, co-founder, le gustan los videojuegos y el back-end.
 
-Ignacio Artazcoz: Le gusta jugar Minecraft, quiere ser youtuber.
+Ignacio Artazcoz: Estudia programación, co-founder, le gusta jugar minecraft y los videojuegos
 
 Delfina Lasserre:
 
-Ian Fontanellaz: El mas piola del grupo. Quiere estudiar Ingenieria en Sistemas.
+Ian Fontanellaz: Fundador de la empresa, estudia programacion, en su tiempo libre desarrolla y juega videojuegos.
 
 Nos basamos en estos sitios de compra de productos o servicios:
 
