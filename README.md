@@ -8,9 +8,9 @@ Los integrantes son:
 
 **Anna Luz Serena**: Programadora full stack, co-founder, le gustan los videojuegos y el back-end.
 
-**Ignacio Artazcoz**: Estudia programación, co-founder, le gusta jugar minecraft y los videojuegos
+**Ignacio Artazcoz**: Estudia programación, co-founder, le gusta jugar minecraft y los videojuegos.
 
-**Delfina Lasserre**:
+**Delfina Lasserre**: Programadora frontend/fullstack, co-founder, le gusta el marketing y UX.
 
 **Ian Fontanellaz**: Fundador de la empresa, estudia programacion, en su tiempo libre desarrolla y juega videojuegos.
 
