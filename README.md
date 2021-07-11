@@ -7,8 +7,11 @@ Estamos centrados en un publico joven de entre 13 y 40 años, que les interese l
 Los integrantes son:
 
 Anna Luz Serena:
+
 Ignacio Artazcoz:
+
 Delfina Lasserre:
+
 Ian Fontanellaz:
 
 Nos basamos en estos sitios de compra de productos o servicios:
