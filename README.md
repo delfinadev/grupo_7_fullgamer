@@ -8,17 +8,22 @@ Los integrantes son:
 
 Anna Luz Serena:
 
-Ignacio Artazcoz:
+Ignacio Artazcoz: Le gusta jugar Minecraft, quiere ser youtuber.
 
 Delfina Lasserre:
 
-Ian Fontanellaz:
+Ian Fontanellaz: El mas piola del grupo. Quiere estudiar Ingenieria en Sistemas.
 
 Nos basamos en estos sitios de compra de productos o servicios:
 
 Maximus: https://www.maximus.com.ar/
+
 Mercado Libre: https://www.mercadolibre.com.ar/
+
 CompuTodo: https://www.computodo.com.ar/
+
 WizTech: https://wiztech.com.ar/
+
 FullH4rd: https://www.fullh4rd.com.ar/
+
 Steam: https://store.steampowered.com/
