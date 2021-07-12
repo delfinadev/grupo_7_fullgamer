@@ -2,8 +2,8 @@
 **Full Gamer**.
 *Somos un E-commerce de accesorios tech con toda la onda*
 
-Ofrecemos perifericos de entrada y salida de una gran calidad y de marca. Contamos con mouses, teclados, auriculares, microfonos y camaras. El precio del producto esta elegido segun las caracteristicas de este y su funcion, si el usuario solo necesita un producto basico o algo mas complejo para una tarea en especial (como el gaming) puede encontrarlo a un precio unico.
-Estamos centrados en un publico joven de entre 13 y 40 años, que les interese la tecnologia ya sea para uso personal o por trabajo.
+Ofrecemos perifericos de entrada y salida de una gran calidad y de marca. Contamos con mouses, teclados, auriculares, micrófonos y cámaras. El precio del producto está elegido segun las características de este y su función, si el usuario solo necesita un producto básico o algo más complejo para una tarea en especial (como el gaming) puede encontrarlo a un precio único.
+Estamos centrados en un público joven de entre 13 y 40 años, que les interese la tecnología ya sea para uso personal o por trabajo.
 Los integrantes son:
 
 **Anna Luz Serena**: Programadora full stack, co-founder, le gustan los videojuegos y el back-end.
@@ -32,4 +32,4 @@ Los integrantes son:
 
 *Wireframe1:* https://shortest.link/u6p
 
-*wireframe2:* https://shortest.link/u6r
+*Wireframe2:* https://shortest.link/u6r
