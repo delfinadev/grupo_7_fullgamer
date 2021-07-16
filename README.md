@@ -33,3 +33,6 @@ Los integrantes son:
 1. [*Wireframe1*](https://shortest.link/u6p)
 
 2. [*Wireframe2*](https://shortest.link/u6r)
+
+
+[**Tablero de tareas**](https://trello.com/b/9wRp600Y/kanban-grupo-7)
