@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <a href="https://icons8.com/icon/43942/user"></a>
+    <title>Full Gamer - Registro</title>
+</head>
+
+<body>
+    <main>
+        <div id="formulario">
+            <h2 id="registrarse">Registrarse</h2>
+            <form>
+                <label for="usuario"></label>
+                <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                <span class="feedback"></span>
+
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+                <span class="feedback"></span>
+
+                <label for="password"></label>
+                <input type="password" name="password" class="password" placeholder="Contraseña" required>
+                <span class="feedback"></span>
+
+                <input type="password" name="password" class="password" placeholder="Confirmar contraseña" required>
+                <span class="feedback"></span>
+
+                <div id="preferencias">
+                    <div>
+                        <input type="radio" name="recordarme"> Recordarme
+                    </div>
+                    <div>
+                        <input type="radio" name="notificaciones"> Recibir notificaciones
+                    </div>
+                </div>
+
+                <button type="submit">CREAR CUENTA</button>
+
+                <p>¿Ya tienes una cuenta? <a href="/views/login.html">Inicia sesión</a></p>
+            </form>
+        </div>
+
+        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Sign in with Google</button>
+    </main>
+</body>
+
+</html>
