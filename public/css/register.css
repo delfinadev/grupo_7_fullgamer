@@ -192,5 +192,19 @@ a {
     color: white;
 }
 
+@media (min-width: 768px) {
+    #caja-formulario {
+        width: 50%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
 
+    #caja-preferencias {
+        justify-content: space-around;
+    }
+
+    #google {
+        width: 20%;
+    }
+}
 
