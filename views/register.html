@@ -15,9 +15,9 @@
 
 <body>
     <main>
-        <div id="formulario">
+        <div id="caja-formulario">
             <h2 id="registrarse">Registrarse</h2>
-            <form>
+            <form id="formulario">
                 <label for="usuario"></label>
                 <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
                 <span class="feedback"></span>
@@ -33,18 +33,18 @@
                 <input type="password" name="password" class="password" placeholder="Confirmar contraseña" required>
                 <span class="feedback"></span>
 
-                <div id="preferencias">
+                <div id="caja-preferencias">
                     <div>
-                        <input type="radio" name="recordarme"> Recordarme
+                        <input type="radio" name="recordarme" class="checkmark"> Recordarme
                     </div>
                     <div>
-                        <input type="radio" name="notificaciones"> Recibir notificaciones
+                        <input type="radio" name="notificaciones" class="checkmark"> Recibir notificaciones
                     </div>
                 </div>
 
-                <button type="submit">CREAR CUENTA</button>
+                <button type="submit"><a href="/">CREAR CUENTA</a></button>
 
-                <p>¿Ya tienes una cuenta? <a href="/views/login.html">Inicia sesión</a></p>
+                <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
             </form>
         </div>
 
