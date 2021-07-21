@@ -5,7 +5,9 @@
 }
 
 main {
-    background-color: black;
+    background-image:url(/img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -15,7 +17,8 @@ main {
 
 /* Div del formulario */
 #caja-formulario {
-    background-color: #9a0000;
+    background: rgb(154,0,0);
+    background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
     width: 90%;
     height: auto;
     display: flex;
@@ -146,6 +149,33 @@ main {
     margin: 5px 0 5px 10px;
 }
 
+/* Inputs de preferencias */
+#caja-preferencias .checkmark {
+    opacity: 0;
+}
+
+#label-notificacion {
+    background-image: url(/img/disabled.svg);
+    background-size: auto 100%;
+    width: 5%;
+    height: 5%;
+    background-repeat: no-repeat;
+    color: transparent;
+    transition: background-image 2s;
+}
+
+#label-notificacion + #notificacion:checked {
+    background-image: url(/img/notification.svg);
+}
+
+
+#label-recordarme {
+    background-size: auto 100%;
+    width: 5%;
+    height: 5%;
+    background-repeat: no-repeat;
+    color: transparent;
+}
 
 /* Cuando marcan las preferencias */
 .checkmark:checked {
