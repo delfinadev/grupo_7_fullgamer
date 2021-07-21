@@ -17,28 +17,40 @@
     <main>
         <div id="caja-formulario">
             <h2 id="registrarse">Registrarse</h2>
-            <form id="formulario">
+            <form method="POST" id="formulario">
                 <label for="usuario"></label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                <input type="text" name="usuario" id="usuario" class="input-text" placeholder="Usuario" required>
                 <span class="feedback"></span>
 
                 <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" required>
+                <input type="email" name="email" id="email" class="input-text" placeholder="Correo electrónico"
+                    required>
                 <span class="feedback"></span>
 
-                <label for="password"></label>
-                <input type="password" name="password" class="password" placeholder="Contraseña" required>
-                <span class="feedback"></span>
+                <div class="caja-contraseña">
+                    <label for="password"></label>
+                    <input type="password" name="password" class="password input-text" placeholder="Contraseña"
+                        required>
+                    <button type="button" class="toggle-password"></button>
+                    <span class="feedback"></span>
+                </div>
 
-                <input type="password" name="password" class="password" placeholder="Confirmar contraseña" required>
-                <span class="feedback"></span>
+                <div class="caja-contraseña">
+                    <input type="password" name="password" class="password input-text"
+                        placeholder="Confirmar contraseña" required>
+                        <button type="button" class="toggle-password"></button>
+                    <span class="feedback"></span>
+                </div>
 
                 <div id="caja-preferencias">
-                    <div>
-                        <input type="radio" name="recordarme" class="checkmark"> Recordarme
+                    <div class="div-preferencia">
+                        <label for="recordarme" id="label-recordarme">...</label>
+                        <input type="radio" name="recordarme" id="recordarme" class="checkmark"> Recordarme
                     </div>
-                    <div>
-                        <input type="radio" name="notificaciones" class="checkmark"> Recibir notificaciones
+                    <div class="div-preferencia">
+                        <label for="notificacion" id="label-notificacion">...</label>
+                        <input type="radio" name="notificaciones" id="notificacion" class="checkmark notificaciones">
+                        Recibir notificaciones
                     </div>
                 </div>
 
@@ -48,7 +60,8 @@
             </form>
         </div>
 
-        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Sign in with Google</button>
+        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Sign in with
+            Google</button>
     </main>
 </body>
 
