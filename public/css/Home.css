@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+main {
+    width: 100vw;
+}
+
+/* Sección del banner y el slogan */
+#banner {
+    width: 100%;
+    position: relative;
+}
+
+/* Banner con img de teclado y texto slogan */
+#home-banner {
+    width: 100%;
+    padding: 80px 20px;
+    color: white;
+    background-image: url(/img/keyboard.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Todo lo que necesitás para tu setup */
+#text-1 {
+    background-color: #9a0000;
+    border-radius: 10px;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Encontralo en FULL GAMER */
+#text-2 {
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/* FULL GAMER */
+#title-banner {
+    letter-spacing: 2px;
+}
+
+/* Opacidad por encima del teclado */
+#opacity {
+    width: 100%;
+    padding: 115px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+}
