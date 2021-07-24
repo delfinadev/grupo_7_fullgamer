@@ -50,6 +50,7 @@ main {
 /* FULL GAMER */
 #title-banner {
     letter-spacing: 2px;
+    background-color: #9a0000;
 }
 
 /* Opacidad por encima del teclado */
@@ -60,4 +61,18 @@ main {
     position: absolute;
     z-index: 1;
     bottom: 0px;
+}
+
+footer {
+    width: 50%;
+}
+
+#footer-texto {
+    color: white;
+    background-color: #9a0000;
+    padding: 10% 0;
+}
+ 
+ul {
+    float: left;
 }
