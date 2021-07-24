@@ -63,16 +63,34 @@ main {
     bottom: 0px;
 }
 
+/* Footer */
 footer {
-    width: 50%;
+    width: 100%;
+    height: 50px;
+    display: table; text-align: left; 
+    background-color: #9a0000;
 }
 
-#footer-texto {
+/* Texto del footer */
+#footer-text {
+    margin: 15px;
     color: white;
     background-color: #9a0000;
-    padding: 10% 0;
+    text-align: left
 }
- 
-ul {
-    float: left;
+
+nav {
+    background-color: black;
 }
+
+
+nav ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
