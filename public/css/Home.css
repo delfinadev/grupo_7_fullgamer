@@ -179,7 +179,12 @@ nav ul{
     padding: 0px;
 }
 
-nav ul li{
-    display: inline-block;
+
+#Fullgamerlogo{
+    width: 50px;
+
 }
 
+ul li{
+    float: left;
+}
