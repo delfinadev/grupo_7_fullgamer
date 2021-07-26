@@ -1,0 +1,285 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+main {
+    background-image:url(/img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Div del formulario */
+#caja-formulario {
+    background: rgb(154,0,0);
+    background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+/* Título "Registrarse" */
+#registrarse {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+/* Formulario de registro */
+#formulario {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Todos los input del formulario */
+#formulario .input-text {
+    border-radius: 5px;
+    border-style: hidden;
+    background-color: #323232;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5%;
+    width: 90%;
+    margin: 10px;
+    margin-bottom: 20px;
+    transition: border 0.5s;
+}
+
+/* Cuando el usuario está dentro de un input */
+#formulario .input-text:focus {
+    outline: none;
+    border: solid 1px black;
+}
+
+/* Todos los placeholder de inputs */
+::placeholder {
+    color: white;
+    opacity: 1;
+    font-size: 0.8rem;
+    padding-left: 5%;
+}
+
+/* Input usuario */
+#usuario {
+    background-image: url(/img/user.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 5%;
+    background-position-y: center;
+}
+
+/* Input email */
+#email {
+    background-image: url(/img/email.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 5%;
+    background-position-y: center;
+}
+
+.caja-contraseña {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    position: relative;
+}
+
+/* Inputs contraseña y confirmar contraseña */
+.password {
+    background-image: url(/img/padlock.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 5%;
+    background-position-y: center;
+}
+
+.toggle-password {
+    background-color: transparent;
+    background-image: url(/img/no-visibility.svg);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    width: 3%;
+    height: 3%;
+    position: absolute;
+    right: 30px;
+    top: 17px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Cuando clickean el botón de visibilidad */
+.toggle-password:active {
+    background-image: url(/img/visibility.svg);
+}
+
+/* Div de recordarme y notificaciones */
+#caja-preferencias {
+    width: 100%;
+    font-size: 0.8rem;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.div-preferencia {
+    margin: 5px 0 5px 10px;
+}
+
+/* Inputs de preferencias */
+#caja-preferencias .checkmark {
+    opacity: 0.01;
+    position: relative;
+}
+
+/* Cuando marcan las preferencias */
+.checkmark:checked {
+    background-color: black;
+}
+
+/* Botón de crear cuenta */
+#formulario #crear-cuenta {
+    background-color: #323232;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Texto ya tienes una cuenta */
+#formulario p {
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 200;
+    color: white;
+}
+
+/* Link al login */
+#formulario p a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+/* Botón sign in with Google */
+#google {
+    border-radius: 10px;
+    border-style: none;
+    background-color: white;
+    width: 50%;
+    margin-bottom: 20px;
+    align-self: center;
+    color: #4285f4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+/* Logo de Google */
+#google img {
+    width: 15px;
+    justify-self: flex-start;
+    margin: 2px;
+}
+
+/* Todos los botones */
+button {
+    cursor: pointer;
+}
+
+/* Todos los link a */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    #caja-formulario {
+        width: 50%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+
+    #caja-preferencias {
+        justify-content: space-around;
+    }
+
+    #google {
+        width: 20%;
+    }
+}
+
+@media (min-width: 1024px) {
+    #caja-formulario {
+        width: 40%;
+        border-radius: 30px;
+    }
+
+    #registrarse {
+        font-size: 2rem;
+    }
+
+    ::placeholder {
+        font-size: 0.8rem;
+    }
+
+    #formulario .input-text {
+        width: 90%;
+        padding-left: 8%;
+    }
+
+    #caja-preferencias {
+        font-size: 1rem;
+        justify-content: space-around;
+    }
+
+    .checkmark {
+        width: auto;
+        margin-right: 5px;
+    }
+
+    #google {
+        font-size: 1rem;
+        width: 20%;
+        justify-content: space-around;
+    }
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@200&display=swap" rel="stylesheet">
+    <a href="https://icons8.com/icon/43942/user"></a>
+    <title>Full Gamer - Login</title>
+</head>
+
+<body>
+    <main>
+        <div id="formulario">
+            <h2 id="Ingresar">Ingresar</h2>
+            <form>
+                <label for="usuario"></label>
+                <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                <span class="feedback"></span>
+
+                <label for="password"></label>
+                <input type="password" name="password" class="password" placeholder="Contraseña" required>
+                <span class="feedback"></span>
+
+                <div id="preferencias">
+                    <div>
+                        <input type="radio" name="recordarme"> Recordarme
+                    </div>
+                </div>
+
+                <button type="submit">INGRESAR</button>
+
+                <p>¿Todavia no tienes una cuenta? <a href="/views/register.html">Registrate!</a></p>
+            </form>
+        </div>
+
+        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Sign in with Google</button>
+    </main>
+</body>
