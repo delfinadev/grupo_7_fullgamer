@@ -38,19 +38,23 @@
                 <div class="caja-contraseña">
                     <input type="password" name="password" class="password input-text"
                         placeholder="Confirmar contraseña" required>
-                        <button type="button" class="toggle-password"></button>
+                    <button type="button" class="toggle-password"></button>
                     <span class="feedback"></span>
                 </div>
 
                 <div id="caja-preferencias">
                     <div class="div-preferencia">
-                        <button type="button" id="label-recordarme"><label for="recordarme"></label></button>
-                        <input type="radio" name="recordarme" id="recordarme" class="checkmark"> Recordarme
+                        <label for="recordarme" class="container-preferencia">
+                            <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                            <span class="checkmark">...</span>
+                        </label>
                     </div>
                     <div class="div-preferencia">
-                        <button type="button" id="label-notificacion"><label for="notificacion">...</label></button>
-                        <input type="radio" name="notificaciones" id="notificacion" class="checkmark notificaciones">
-                        Recibir notificaciones
+                        <label for="notificacion" class="container-preferencia">
+                            <input type="radio" name="notificaciones" id="notificacion" class="notificaciones">
+                            Recibir notificaciones
+                            <span class="checkmark">...</span>
+                        </label>
                     </div>
                 </div>
 
