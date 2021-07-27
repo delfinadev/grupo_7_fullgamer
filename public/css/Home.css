@@ -191,4 +191,9 @@ nav ul{
 
 ul li{
     float: left;
+    color: white;
+}
+
+#Login{
+    color:white;
 }
