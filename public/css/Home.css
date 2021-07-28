@@ -172,8 +172,13 @@ footer {
     text-align: left
 }
 
+header{
+    width: 100%;
+    background-color: red;
+}
+
 nav {
-    background-color: black;
+    background-color: red;
 }
 
 
@@ -196,4 +201,13 @@ ul li{
 
 #Login{
     color:white;
+}
+
+#EasterEgg{
+    text-align: right;
+}
+
+.navegador{
+    background-color: red !important;
+    border-bottom: 1px;
 }
