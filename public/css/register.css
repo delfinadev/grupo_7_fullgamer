@@ -127,7 +127,7 @@ main {
     width: 3%;
     height: 3%;
     position: absolute;
-    right: 30px;
+    right: 12px;
     top: 17px;
     border-radius: 5px;
     border-style: none;
@@ -182,6 +182,8 @@ main {
 /* Inputs de preferencias */
 .checkmark {
     position: absolute;
+    width: 0.5em;
+    height: 1em;
     top: 0;
     left: 0;
     border-radius: 50%;
@@ -227,6 +229,11 @@ main {
     border-style: none;
     color: white;
     padding: 10px 20px;
+    transition: background-color 1s;
+}
+
+#formulario #crear-cuenta:hover {
+    background-color: rgba(32, 32, 32, 1);
 }
 
 /* Texto ya tienes una cuenta */
@@ -283,11 +290,15 @@ a {
     color: white;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
     #caja-formulario {
-        width: 50%;
+        width: 70%;
         border-radius: 20px;
         margin-bottom: 20px;
+    }
+
+    .toggle-password {
+        right: 18px;
     }
 
     #caja-preferencias {
@@ -299,9 +310,9 @@ a {
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     #caja-formulario {
-        width: 40%;
+        width: 50%;
         border-radius: 30px;
     }
 
@@ -316,6 +327,10 @@ a {
     #formulario .input-text {
         width: 90%;
         padding-left: 8%;
+    }
+
+    .toggle-password {
+        right: 26px;
     }
 
     #caja-preferencias {
