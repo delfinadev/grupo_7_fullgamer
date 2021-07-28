@@ -10,6 +10,11 @@ a {
     color: black;
 }
 
+/* Todos los botones de la página */
+button {
+    cursor: pointer;
+}
+
 body {
     background-color: black;
     width: 100vw;
@@ -20,7 +25,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* Sección del banner y el slogan */
@@ -30,9 +36,9 @@ main {
 }
 
 /* Banner con img de teclado y texto slogan */
-#home-banner {
+.home-banner {
     width: 100%;
-    padding: 80px 20px;
+    padding: 5rem 20px;
     color: white;
     background-image: url(/img/keyboard.png);
     background-repeat: no-repeat;
@@ -47,112 +53,102 @@ main {
 }
 
 /* Todo lo que necesitás para tu setup */
-#text-1 {
+.text-1 {
     background-color: #9a0000;
     border-radius: 10px;
     padding: 5px;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 /* Encontralo en FULL GAMER */
-#text-2 {
+.text-2 {
     padding: 5px;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 /* FULL GAMER */
-#title-banner {
+.title-banner {
     letter-spacing: 2px;
 }
 
 /* Opacidad por encima del teclado */
-#opacity {
+.opacity {
     width: 100%;
-    padding: 115px 20px;
+    padding: 8rem 20px;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     z-index: 1;
     bottom: 0px;
 }
 
-
-/* Sección carousel de productos */
+/* Sección del carrousel */
 #carousel {
-    width: 80%;
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    position: relative;
-    align-self: center;
-}
-
-/* Artículo de producto */
-#carousel .producto {
-    width: 20%;
-    margin: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-/* Imagen de producto en artículo */
-#carousel .producto img {
     width: 100%;
-    height: 150px;
-    background-color: white;
-    border-radius: 20px;
-    object-fit: fill;
-}
-
-/* Div descripción del producto oculta */
-#carousel .producto .descripcion-producto {
-    opacity: 0%;
-    width: 90%;
-    background-color: white;
-    padding: 5px;
-    border-top: solid 1px #323232;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: all 1s;
-    white-space: normal;
 }
 
-#carousel .producto:hover .descripcion-producto {
-    opacity: 100%;
+/* Div de artículos */
+#carousel .products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Texto nombre de producto */
-#carousel .producto .descripcion-producto .nombre-producto {
-    font-weight: bold;
+/* Artículo de producto */
+#carousel .products .producto {
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Imágen de producto */
+#carousel .products .producto img {
+    width: 100%;
+    height: 150px;
+    border-radius: 20px;
+}
+
+/* Descripción de producto */
+#carousel .products .producto .descripcion-producto {
+    width: 100%;
+    padding: 5px;
     text-align: center;
-    margin: 2px;
+    font-weight: bold;
+    border-top: solid 1px black;
+
 }
 
-/*
+/* Nombre de producto */
+#carousel .products .producto .descripcion-producto .nombre-producto {
+    margin-bottom: 5px;
+}
+
+/* Link Ver más */
+#carousel .products .producto .descripcion-producto a {
+    color: rgba(154, 0, 0, 0.8);
+}
+
+/* Botones anterior y siguiente */
 .prev,
 .next {
-    cursor: pointer;
-    color: #9A0000;
-    width: auto;
-    position: absolute;
-    top: 50%;
-    padding: 5px;
-    font-size: 1rem;
+    display: none;
 }
-
-.prev {
-    left: -50px;
-    z-index: 2;
-}
-
 
 
 /* Footer */
@@ -196,4 +192,146 @@ ul li{
 
 #Login{
     color:white;
+}
+
+@media (min-width: 500px) {
+
+    /* Div de opacidad */
+    .opacity {
+        padding: 7rem 20px;
+    }
+
+    /* Div de artículos de producto */
+    #carousel .products {
+        flex-direction: row;
+    }
+
+    /* Artículo de producto */
+    #carousel .products .producto {
+        width: 30%;
+        margin: 20px;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+/* Sección carousel de productos */
+#carousel {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    align-self: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+/* Div de artículos de producto */
+#carousel .products {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    align-self: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+/* Artículo de producto */
+#carousel .products .producto {
+    width: 20%;
+    height: auto;
+    margin: 10px 20px;
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Mouse sobre artículo */
+#carousel .products .producto:hover {
+    border-radius: 0;
+}
+
+/* Imagen de producto en artículo */
+#carousel .producto img {
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border-radius: 20px;
+    object-fit: fill;
+    transition: border-radius 1s;
+}
+
+/* Div descripción del producto oculta */
+#carousel .producto .descripcion-producto {
+    opacity: 0%;
+    height: 100px;
+    flex-basis: 100%;
+    background-color: white;
+    padding: 5px;
+    border-top: solid 1px #323232;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    white-space: normal;
+}
+
+/* Mouse sobre artículo que afecta a la imagen */
+#carousel .producto:hover img {
+    border-radius: 0;
+}
+
+/* Mouse sobre artículo que afecta a la descripción */
+#carousel .producto:hover .descripcion-producto {
+    opacity: 100%;
+}
+
+/* Texto nombre de producto */
+#carousel .producto .descripcion-producto .nombre-producto {
+    font-weight: bold;
+    text-align: center;
+    margin: 2px;
+}
+
+/* Botones de anterior y siguiente */
+.prev,
+.next {
+    width: 50px;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botón de anterior */
+.prev {
+    order: -1;
+}
+
+/* Botón de siguiente */
+.next {
+    order: 1;
+}
+
+/* Flechitas de los botones de carrousel */
+.a-carousel {
+    width: 100%;
+    color: #9a0000;
+}
 }
