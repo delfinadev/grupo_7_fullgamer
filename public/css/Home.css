@@ -10,6 +10,12 @@ a {
     color: white;
 }
 
+#Buscador{
+    background-color:black;
+    border-radius: 10px;
+    text-align: center;
+}
+
 /* Todos los botones de la página */
 button {
     cursor: pointer;
