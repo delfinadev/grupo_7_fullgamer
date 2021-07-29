@@ -174,8 +174,13 @@ footer {
     text-align: left
 }
 
+header{
+    width: 100%;
+    background-color: red;
+}
+
 nav {
-    background-color: black;
+    background-color: red;
 }
 
 
@@ -194,6 +199,19 @@ nav ul{
 ul li{
     float: left;
     color: white;
+}
+
+#Login{
+    color:white;
+}
+
+#EasterEgg{
+    text-align: right;
+}
+
+.navegador{
+    background-color: red !important;
+    border-bottom: 1px;
 }
 
 @media (min-width: 500px) {
@@ -335,5 +353,4 @@ ul li{
 .a-carousel {
     width: 100%;
     color: #9a0000;
-}
 }
