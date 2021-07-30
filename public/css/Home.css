@@ -10,11 +10,7 @@ a {
     color: white;
 }
 
-#Buscador{
-    background-color:black;
-    border-radius: 10px;
-    text-align: center;
-}
+
 
 /* Todos los botones de la página */
 button {
@@ -24,6 +20,57 @@ button {
 body {
     background-color: black;
     width: 100vw;
+}
+
+.d-header {
+    height: 70px;
+    background-color: black;
+}
+
+
+.d-headercontent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.d-header-brand {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.d-header-logo {
+    max-width: 300px;
+    height: 80px;
+}
+
+.logo-letra{
+    text-align: right;
+    display: flex;
+}
+
+.d-header-searchbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.botonlupa{
+    background-color: black;
+    border-style: none;
+}
+
+#buscar{
+    background-color: black;
+    border-radius: 15px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
 }
 
 main {
@@ -174,13 +221,6 @@ footer {
     text-align: left
 }
 
-nav{
-    text-decoration: none;
-    float: left;
-    border:red 1px;
-}
-
-
 #Fullgamerlogo{
     width: 50px;
 }
@@ -192,10 +232,6 @@ nav{
     text-align: right;
 }
 
-.navegador{
-    background-color: red !important;
-    border-bottom: 1px;
-}
 
 @media (min-width: 500px) {
 
