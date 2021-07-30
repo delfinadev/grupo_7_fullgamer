@@ -25,6 +25,7 @@ body {
 .d-header {
     height: 70px;
     background-color: black;
+    border-bottom: 5px solid #9A0000;
 }
 
 
@@ -44,7 +45,7 @@ body {
 
 .d-header-logo {
     max-width: 300px;
-    height: 80px;
+    height: 70px;
 }
 
 .logo-letra{
@@ -65,12 +66,32 @@ body {
     border-style: none;
 }
 
+#lupa{
+    color: white;
+    
+}
+
+.d-header-shoppingcart{
+    width: 30px;
+}
+
+#carrito{
+    color: white;
+    margin-right: 40px;
+}
+
 #buscar{
     background-color: black;
     border-radius: 15px;
     width: 250px;
     height: 30px;
     text-align: center;
+    border-color: white;
+}
+
+#login{
+    color: white;
+    margin-right: 50px;
 }
 
 main {
