@@ -88,19 +88,4 @@ form p a {
     background-color: black;
     color: white;
     border-radius: 15px;
-
-/* Footer */
-footer {
-    width: 100%;
-    height: 50px;
-    display: table; text-align: left; 
-    background-color: #9a0000;
-}
-
-/* Texto del footer */
-#footer-text {
-    margin: 15px;
-    color: white;
-    background-color: #9a0000;
-    text-align: left
 }
