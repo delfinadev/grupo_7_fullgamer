@@ -20,7 +20,7 @@ body {
     width: 100vw;
 }
 
-.d-header {
+header {
     width: 100vw;
     background-color: black;
     border-bottom: 5px solid #9A0000;
