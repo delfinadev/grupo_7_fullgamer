@@ -16,10 +16,19 @@ button {
     width: 120px;
 }
 
-#container {
+#containers {
     background-color: rgba(50, 50, 50, 1);
     border-radius: 10px;
     margin: 20px;
+    flex-direction: row;
+}
+
+section {
+    width:50%;
+}
+
+article {
+    width:50%;
 }
 
 #foto-chiquita {
