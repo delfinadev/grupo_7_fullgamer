@@ -49,35 +49,8 @@ h3 {
     width: 200px;
 }
 
-footer {
-    width: 100%;
-    height: 50px;
-    display: table; 
-    text-align: left; 
-    background-color: #9a0000;
-}
-
-/* Texto del footer */
-#footer-text {
-    margin: 15px;
-    color: white;
-    background-color: #9a0000;
-    text-align: left
-}
-
-#Fullgamerlogo{
-    width: 50px;
-}
-#Login{
-    color:white;
-}
-
-#EasterEgg{
-    text-align: right;
-}
-
-.d-header {
-    height: 70px;
+header {
+    width: 100vw;
     background-color: black;
     border-bottom: 5px solid #9A0000;
 }
@@ -87,18 +60,22 @@ footer {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .d-header-brand {
+    width: 50%;
     background: none;
     border: none;
     outline: none;
+    order: -1;
+    align-self: flex-start;
 }
 
 .d-header-logo {
-    max-width: 300px;
+    width: 100%;
     height: 70px;
 }
 
@@ -110,9 +87,22 @@ footer {
 .d-header-searchbar{
     width: 100%;
     height: 100%;
+    margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    order: 2;
+}
+
+#buscar{
+    background-color: black;
+    border-radius: 15px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    border-color: white;
+    color: white;
 }
 
 .botonlupa{
@@ -127,24 +117,19 @@ footer {
 
 .d-header-shoppingcart{
     width: 30px;
+    order: 1;
+    justify-self: flex-end;
 }
 
 #carrito{
     color: white;
-    margin-right: 40px;
 }
 
-#buscar{
-    background-color: black;
-    border-radius: 15px;
-    width: 250px;
-    height: 30px;
-    text-align: center;
-    border-color: white;
-    color: white;
+.d-header-login {
+    order: 1;
+    justify-self: flex-end;
 }
 
 #login{
     color: white;
-    margin-right: 50px;
 }
