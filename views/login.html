@@ -24,7 +24,8 @@
             </div>
 
             <div class="d-header-searchbar">
-                <input id="buscar" placeholder="Buscar productos..." type="text"><button class="botonlupa"><i id="lupa" class="fas fa-search"></i></button></li>
+                <input id="buscar" placeholder="Buscar productos..." type="text"><button class="botonlupa"><i id="lupa"
+                        class="fas fa-search"></i></button></li>
             </div>
 
             <div class="d-header-shoppingcart">
@@ -42,7 +43,7 @@
             <h2 id="Ingresar">Ingresar</h2>
             <form>
                 <label for="usuario"></label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+                <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
                 <span class="feedback"></span>
 
                 <label for="password"></label>
@@ -51,7 +52,10 @@
                 <span class="feedback"></span>
 
                 <div id="preferencias">
-                        <input type="radio" name="recordarme"> Recordarme
+                    <label for="recordarme" class="container-preferencia">
+                        <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                        <span class="checkmark"></span>
+                    </label>
                 </div>
 
                 <button type="submit">INGRESAR</button>
@@ -68,5 +72,5 @@
             &#169 2021 FULL GAMER
         </p>
     </footer>
-    
+
 </body>

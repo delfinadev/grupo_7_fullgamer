@@ -5,7 +5,9 @@
 }
 
 main {
-    background-color: black;
+    background-image: url(/img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -14,21 +16,24 @@ main {
 }
 
 #formulario {
-    background-color: #9a0000;
-    width: 40%;
+    background: rgb(154,0,0);
+    background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
+    color: white;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 80%;
-    border-radius: 30px;
+    border-radius: 10px;
     margin: 30px auto;
     padding: 20px;
     padding-top: 30px;
 }
 
 #Ingresar {
+    margin-bottom: 10px;
     color: white;
     font-size: 1.5rem;
     font-weight: 100;
@@ -41,58 +46,144 @@ form {
     justify-content: center;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
 form input {
     border-radius: 5px;
-    border-style: none;
+    border-style: hidden;
     background-color: #323232;
     background-position: 5px center;
     background-repeat: no-repeat;
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 8%;
     width: 90%;
     margin: 10px;
+    margin-bottom: 20px;
+    transition: border 0.5s;
 }
+
+form input:focus {
+    outline: none;
+    border: solid 1px black;
+}
+
+
 
 ::placeholder {
     color: white;
     opacity: 1;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
-#usuario {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAC/ElEQVRoge2Zu09UQRTGv8FgwwLGGGyERG18JIqYaGxolMYXbKJ/gZXxP/DRQrTQRCottQG0gNj56DQmPhJNjBFQCjAqPiNLBXF/FncWh5sL98ldgvslm0z2zvnOd2bPPWdmVqqhhv8bJksyoF5Sj6SipA5JW+yjj5JeShqWNGyMmc/SbyYAisA44RgHeqqtdwFAHXA5gnA/+oC6autXgPgvwHlgL9BgP+3ABftsURDVFl/0CRoACsvMbwQGfTbdeWp2xaxncc4PAKFFATDAkGM3hvfy5wvgtC9tllz5ANtGYNqxP5VUR5qXqOiMrxtjZqMaGmNKkvqdr/KvSsCos4J7Eti3O/bvVkJjmICSIyBy+jj2Bce+lFRHNeuw67ucBUlcfHLG2xLYuzafk4pIE8ALZ3wigb1r8zyFjmQIKKONMWybgK9ZlNHEAOp9jWwwRiO7U/VGZsX0sBhDy/0SduVd8WXgZJ6ag0T1+YKYBi4C+2ypLNjxJV/aAPRWVbwNoC4giDCUgV5Ww3a6AqDb5nMYxrJMm5U4UnbL29vs178j5ZS8I+WIpJFVeaSsoYa1DKAVuAvMxCyXSTCD1+xao2iL0vpbJb2StDHtQsTET0ntxpip5SZFaSTXlL94WZ9XU7P40uZAel2h/g46/n6HzY+SQixMNibTxpeFzygptHDcI4dtb1wfUQL44Yy3xpOTCLGOp1ECeO2Mj8TTkghdzvhGajbgrPNSTQLNqUmX9tUMTDn+usKtwkkbfKSPSXAPFMFPAXji+HkGrMuK/CjwxyF/D3RmQu7xd1rOCuaAjqz4K07O4Z2kKigD94FjSaoT3qXAceCBj3eeGLcUseo63l3+TUktvkczkh5KeirpraQPkr5LKlkfBUmbJG2XtEvSIXkFocnH803SGWPMvTi6YgFoAW7bnzkrzAG3gM0rJjwgkDbgCjCRQvgE3l9UkXaeQchkawDslHRY0m5JOyS1SdogL3UkaVbSL0mTkkYlvZH0yBiT/7V6DTWsMfwFXcm57Gpt5FcAAAAASUVORK5CYII=);
+.usuario {
+    background-image: url(/img/user.svg);
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 5px left;
     background-size: 5%;
     background-position-y: center;
 }
 
 .password {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAzUlEQVRIie2SMQ6CMBiF/xgHNaEncNDj6IC3YFeOaBzQVeNuPYE6+7n8JAQLlGLUGF/Soe1772sLIp8WMAJSYAvcdGTAChh2LZ8CR6p1ACZdTp6X74EYiHTEWp7vDUIAaaHAOPZNAbIMAew0HNd4FurJQgBXDUc1HqOeSwgAgK6+niMwB2y5oEoFnwVmPie3TaU1OvkAvJ7GN/f0RK/WjwOADbD2nbcGiMhdRGgxb9b/L3o7oO9YO4vIOOQ7iIgtL7hukLiMnuVJQO7L9QBZc3dMeRkR0AAAAABJRU5ErkJggg==);
+    background-image: url(/img/padlock.svg);
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: 5px left;
     background-size: 5%;
     background-position-y: center;
 }
 
+.toggle-password {
+    background-color: transparent;
+    background-image: url(/img/no-visibility.svg);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    width: 3%;
+    height: 3%;
+    position: absolute;
+    right: 20px;
+    top: 82px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+/* Cuando clickean el botón de visibilidad */
+.toggle-password:active {
+    background-image: url(/img/visibility.svg);
+}
+
 #preferencias {
-    width: 100%;
+    width: 90%;
+    margin: 10px auto;
     font-size: 0.8rem;
     color: white;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     margin-bottom: 10px;
 }
 
-#preferencias input {
-    width: auto;
+.container-preferencia input {
+    opacity: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+.container-preferencia {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkmark {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: white;
+    justify-self: flex-start;
+    cursor: pointer;
+    color: transparent;
+}
+
+.container-preferencia input:checked ~ .checkmark {
+    background-color: black;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container-preferencia input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container-preferencia .checkmark:after {
+    bottom: 25%;
+    left: 25%;
+    width: 0.2em;
+    height: 0.5em;
+    border: solid #323232;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 form button {
@@ -101,6 +192,11 @@ form button {
     border-style: none;
     color: white;
     padding: 10px 20px;
+    transition: background-color 1s;
+}
+
+form button:hover {
+    background-color: rgba(32, 32, 32, 1);
 }
 
 form p {
@@ -108,11 +204,12 @@ form p {
     margin-bottom: 0;
     font-size: 0.8rem;
     font-weight: 200;
+    text-align: center;
 }
 
 form p a {
     font-weight: bold;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -120,7 +217,7 @@ form p a {
     border-radius: 10px;
     border-style: none;
     background-color: white;
-    width: 15%;
+    width: 40%;
     margin-bottom: 20px;
     align-self: center;
     color: #4285f4;
@@ -155,4 +252,41 @@ footer {
     color: white;
     background-color: #9a0000;
     text-align: left
+}
+
+@media (min-width: 500px) {
+    #formulario {
+        width: 70%;
+        border-radius: 20px;
+    }
+
+    #google {
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) {
+
+    #formulario {
+        width: 50%;
+        border-radius: 30px;
+    }
+
+    ::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .toggle-password {
+        right: 25px;
+    }
+
+    #preferencias {
+        font-size: 1rem;
+    }
+
+    #google {
+        font-size: 1rem;
+        width: 20%;
+        justify-content: space-around;
+    }
 }
