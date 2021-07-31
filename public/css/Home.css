@@ -10,8 +10,6 @@ a {
     color: white;
 }
 
-
-
 /* Todos los botones de la página */
 button {
     cursor: pointer;
@@ -23,7 +21,7 @@ body {
 }
 
 .d-header {
-    height: 70px;
+    width: 100vw;
     background-color: black;
     border-bottom: 5px solid #9A0000;
 }
@@ -33,18 +31,22 @@ body {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .d-header-brand {
+    width: 50%;
     background: none;
     border: none;
     outline: none;
+    order: -1;
+    align-self: flex-start;
 }
 
 .d-header-logo {
-    max-width: 300px;
+    width: 100%;
     height: 70px;
 }
 
@@ -56,9 +58,22 @@ body {
 .d-header-searchbar{
     width: 100%;
     height: 100%;
+    margin-bottom: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 30px;
+    align-items: center;
+    order: 2;
+}
+
+#buscar{
+    background-color: black;
+    border-radius: 15px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    border-color: white;
+    color: white;
 }
 
 .botonlupa{
@@ -73,26 +88,21 @@ body {
 
 .d-header-shoppingcart{
     width: 30px;
+    order: 1;
+    justify-self: flex-end;
 }
 
 #carrito{
     color: white;
-    margin-right: 40px;
 }
 
-#buscar{
-    background-color: black;
-    border-radius: 15px;
-    width: 250px;
-    height: 30px;
-    text-align: center;
-    border-color: white;
-    color: white;
+.d-header-login {
+    order: 1;
+    justify-self: flex-end;
 }
 
 #login{
     color: white;
-    margin-right: 50px;
 }
 
 main {
@@ -113,7 +123,7 @@ main {
 /* Banner con img de teclado y texto slogan */
 .home-banner {
     width: 100%;
-    padding: 5rem 20px;
+    padding: 8rem 20px;
     color: white;
     background-image: url(/img/keyboard.png);
     background-repeat: no-repeat;
@@ -153,7 +163,7 @@ main {
 /* Opacidad por encima del teclado */
 .opacity {
     width: 100%;
-    padding: 8rem 20px;
+    padding: 10rem 20px;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     z-index: 1;
@@ -259,7 +269,7 @@ footer {
 
     /* Div de opacidad */
     .opacity {
-        padding: 7rem 20px;
+        padding: 10rem 20px;
     }
 
     /* Div de artículos de producto */
@@ -276,6 +286,35 @@ footer {
 
 
 @media (min-width: 768px) {
+
+    .d-headercontent {
+        justify-content: space-around;
+    }
+
+    .d-header-brand {
+        width: 10rem;
+        justify-self: flex-start;
+        align-self: center;
+    }
+
+    .d-header-searchbar {
+        margin: 2rem auto;
+        width: 40%;
+        order: 1;
+        justify-self: center;
+
+    }
+
+    .d-header-shoppingcart {
+        order: 2;
+        justify-self: flex-end;
+    }
+
+    .d-header-login {
+        margin-right: 2rem;
+        order: 2;
+        justify-self: flex-end;
+    }
 
 /* Sección carousel de productos */
 #carousel {
