@@ -2,16 +2,34 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Spartan', sans-serif;
+    color: white;
 }
 
-.foto-chiquita {
-    display: block;
+body {
+    background-color: black;
+}
+
+button {
+    background-color: black;
     border-radius: 10px;
+    padding: 1%;
+    width: 120px;
+}
+
+#container {
+    background-color: rgba(50, 50, 50, 1);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+#foto-chiquita {
+    border-radius: 10px;
+    width: 110px;
 }
 
 #foto-principal {
-    width: 30%;
     border-radius: 10px;
+    width: 515px;
 
 }
 
@@ -21,4 +39,112 @@ h3 {
     display: block;
 }
 
+#pago {
+    width: 125px;
+    background-color: white;
+    border-radius: 10px;
+}
 
+#puntaje {
+    width: 200px;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    display: table; 
+    text-align: left; 
+    background-color: #9a0000;
+}
+
+/* Texto del footer */
+#footer-text {
+    margin: 15px;
+    color: white;
+    background-color: #9a0000;
+    text-align: left
+}
+
+#Fullgamerlogo{
+    width: 50px;
+}
+#Login{
+    color:white;
+}
+
+#EasterEgg{
+    text-align: right;
+}
+
+.d-header {
+    height: 70px;
+    background-color: black;
+    border-bottom: 5px solid #9A0000;
+}
+
+
+.d-headercontent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.d-header-brand {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.d-header-logo {
+    max-width: 300px;
+    height: 70px;
+}
+
+.logo-letra{
+    text-align: right;
+    display: flex;
+}
+
+.d-header-searchbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.botonlupa{
+    background-color: black;
+    border-style: none;
+}
+
+#lupa{
+    color: white;
+    
+}
+
+.d-header-shoppingcart{
+    width: 30px;
+}
+
+#carrito{
+    color: white;
+    margin-right: 40px;
+}
+
+#buscar{
+    background-color: black;
+    border-radius: 15px;
+    width: 250px;
+    height: 30px;
+    text-align: center;
+    border-color: white;
+    color: white;
+}
+
+#login{
+    color: white;
+    margin-right: 50px;
+}
