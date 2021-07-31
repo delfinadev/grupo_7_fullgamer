@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/delfinadev/grupo_7_fullgamer#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "jsdom": "^16.6.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
