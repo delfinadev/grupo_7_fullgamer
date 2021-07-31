@@ -7,6 +7,7 @@
 
 body {
     background-color: black;
+    width: 100vw;
 }
 
 button {
@@ -14,6 +15,10 @@ button {
     border-radius: 10px;
     padding: 1%;
     width: 120px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #containers {
@@ -21,6 +26,8 @@ button {
     border-radius: 10px;
     margin: 20px;
     flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 section {
@@ -44,17 +51,111 @@ article {
 
 h3 {
     background-color:black;
-    border-radius: 5px;
-    display: block;
+    border-radius: 10px;
+    display: inline-block;
+    padding:3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #pago {
     width: 125px;
     background-color: white;
     border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
 #puntaje {
     width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 
+header {
+    background-color: black;
+    border-bottom: 5px solid #9A0000;
+}
+
+
+.d-headercontent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.d-header-brand {
+    width: 50%;
+    background: none;
+    border: none;
+    outline: none;
+    order: -1;
+    align-self: flex-start;
+}
+
+.d-header-logo {
+    width: 100%;
+    height: 70px;
+}
+
+.logo-letra{
+    text-align: right;
+    display: flex;
+}
+
+.d-header-searchbar{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+#buscar{
+    background-color: black;
+    border-radius: 15px;
+    width: 80%;
+    height: 30px;
+    text-align: center;
+    border-color: white;
+    color: white;
+}
+
+.botonlupa{
+    background-color: black;
+    border-style: none;
+}
+
+#lupa{
+    color: white;
+    
+}
+
+.d-header-shoppingcart{
+    width: 30px;
+    order: 1;
+    justify-self: flex-end;
+}
+
+#carrito{
+    color: white;
+}
+
+.d-header-login {
+    order: 1;
+    justify-self: flex-end;
+}
+
+#login{
+    color: white;
+}
