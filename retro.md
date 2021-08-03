@@ -6,3 +6,11 @@
 3. ***Continuar haciendo:*** desglosar las tareas en Trello.
 4. ***Hacer menos:*** no encontramos ninguna debilidad en el equipo hasta este momento.
 5. ***Dejar de hacer:*** procurar que ninguno de los integrantes deje las tareas para el día de la entrega.
+
+
+**SPRINT 2**
+1. ***Comenzar a hacer:*** dailys para estar al tanto de cómo van los compañeros y tener una idea de qué falta y qué hay que reforzar, así como también ayudar a compañeros con inconvenientes o dudas. Hacer una mini demo de las tareas asignadas.
+2. ***Hacer más:*** hablar con los compañeros de lo que hicimos y lo que nos falta.
+3. ***Continuar haciendo:*** dividirnos las tareas y mantenerlo organizado en Trello.
+4. ***Hacer menos:*** atrasarnos con el contenido del campus si se puede evitar.
+5. ***Dejar de hacer:*** trabarnos en algo y no googlear o pedir ayuda a los compañeros.
