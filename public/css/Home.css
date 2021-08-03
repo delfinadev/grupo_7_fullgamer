@@ -15,18 +15,20 @@ button {
     cursor: pointer;
 }
 
+/* Cuerpo de la pagina */
 body {
     background-color: black;
     width: 100vw;
 }
 
+/* Header */
 header {
     width: 100vw;
     background-color: black;
     border-bottom: 5px solid #9A0000;
 }
 
-
+/* Contenido del header */
 .d-headercontent {
     width: 100%;
     height: 100%;
@@ -36,6 +38,7 @@ header {
     justify-content: space-evenly;
 }
 
+/* Div para la imagen del header */
 .d-header-brand {
     width: 50%;
     background: none;
@@ -45,16 +48,19 @@ header {
     align-self: flex-start;
 }
 
+/* Imagen del header */
 .d-header-logo {
     width: 100%;
     height: 70px;
 }
 
+/* Alineacion */
 .logo-letra{
     text-align: right;
     display: flex;
 }
 
+/* Searchbar del header */
 .d-header-searchbar{
     width: 100%;
     height: 100%;
@@ -66,6 +72,7 @@ header {
     order: 2;
 }
 
+/* Input para buscar */
 #buscar{
     background-color: black;
     border-radius: 15px;
@@ -76,35 +83,42 @@ header {
     color: white;
 }
 
+/* Boton del Icono lupa */
 .botonlupa{
     background-color: black;
     border-style: none;
 }
 
+/* Color de la lupa */
 #lupa{
     color: white;
     
 }
 
+/* Div del shopping cart */
 .d-header-shoppingcart{
     width: 30px;
     order: 1;
     justify-self: flex-end;
 }
 
+/* Color del icono carrito */
 #carrito{
     color: white;
 }
 
+/* Div del Login */
 .d-header-login {
     order: 1;
     justify-self: flex-end;
 }
 
+/*Color del login */
 #login{
     color: white;
 }
 
+/* Propiedades del Main */
 main {
     width: 100%;
     display: flex;
@@ -253,13 +267,7 @@ footer {
     text-align: left
 }
 
-#Fullgamerlogo{
-    width: 50px;
-}
-#Login{
-    color:white;
-}
-
+/* Icono de Star Wars del footer */
 #EasterEgg{
     text-align: right;
 }
