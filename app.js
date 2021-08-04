@@ -2,31 +2,29 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+const mainRoutes = require("./routes/main");
+const loginRoutes = require("./routes/login");
+const registerRoutes = require("./routes/register");
+const productRoutes = require("./routes/product");
+const carritoRoutes = require("./routes/carrito");
+
 app.use(express.static(path.resolve(__dirname, "./public")));
+
+app.set("view engine", "ejs");
 
 app.listen(3000, () => {
     console.log("Servidor corriendo en el puerto 3000");
 });
 
-app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/home.html"));
-})
+app.use("/", mainRoutes);
 
-app.get("/register", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/register.html"));
-})
+app.use("/register", registerRoutes);
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./views/login.html"));
-});
+app.use("/login", loginRoutes);
 
-app.get("/carrito", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/carrito.html"));
-});
+app.use("/carrito", carritoRoutes);
 
-app.get("/producto", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/producto.html"));
-});
+app.use("/product", productRoutes);
 
 app.get("/HowDidYouFoundThis", (req, res) => {
     res.sendFile(path.resolve(__dirname, "views/EasterEgg.html"));
