@@ -26,10 +26,13 @@ header {
     border-bottom: 5px solid #9A0000;
 }
 
+::placeholder {
+    color: white;
+}
+
 
 .d-headercontent {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -42,7 +45,7 @@ header {
     border: none;
     outline: none;
     order: -1;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .d-header-logo {
@@ -57,7 +60,6 @@ header {
 
 .d-header-searchbar{
     width: 100%;
-    height: 100%;
     margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +109,7 @@ header {
 
 main {
     width: 100%;
+    max-width: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -117,6 +120,7 @@ main {
 /* Sección del banner y el slogan */
 #banner {
     width: 100%;
+    max-width: 100%;
     position: relative;
 }
 
@@ -163,7 +167,8 @@ main {
 /* Opacidad por encima del teclado */
 .opacity {
     width: 100%;
-    padding: 10rem 20px;
+    padding: 11rem 20px;
+    max-height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     z-index: 1;
@@ -183,6 +188,7 @@ main {
 /* Div de artículos */
 #carousel .products {
     width: 100%;
+    flex: 1 1 auto;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -269,7 +275,7 @@ footer {
 
     /* Div de opacidad */
     .opacity {
-        padding: 10rem 20px;
+        padding: 9.75rem 20px;
     }
 
     /* Div de artículos de producto */
@@ -413,7 +419,7 @@ footer {
     background-color: transparent;
     border: none;
     padding: 5px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
