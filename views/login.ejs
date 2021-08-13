@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <div id="formulario">
+            <h2 id="Ingresar">Ingresar</h2>
+            <form>
+                <label for="usuario"></label>
+                <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
+                <span class="feedback"></span>
+
+                <label for="password"></label>
+                <input type="password" name="password" class="password" placeholder="Contraseña" required>
+                <button type="button" class="toggle-password"></button>
+                <span class="feedback"></span>
+
+                <div id="preferencias">
+                    <label for="recordarme" class="container-preferencia">
+                        <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+
+                <button type="submit">INGRESAR</button>
+
+                <p>¿Todavía no tienes una cuenta? <a href="register">¡Registrate!</a></p>
+            </form>
+        </div>
+
+        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Log in with Google</button>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>

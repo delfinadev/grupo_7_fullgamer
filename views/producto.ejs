@@ -1,0 +1,41 @@
+<!DOCTYPE html5>
+<html lang="en">
+    
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/producto.css">
+</head>
+
+<body>
+
+    <%- include('./partials/header.ejs') %>
+
+<div id="containers">
+
+<section>
+    <img id="foto-chiquita" src="/img/mouse-segunda-foto.jpg" alt="foto de producto 2">
+    <img id="foto-principal" src="/img/MSI-Clutch-GM08.jpg" alt="foto de producto 1">
+<!-- agregar fotos a la carpeta img -->
+</section>
+
+        <article id="detalles">
+            <h1>
+                Mouse MSI Clutch GM08 black
+            </h1>
+
+            <h3>$1.504</h3>
+
+            <img id="pago" src="/img/metodos-de-pago.png" alt="medios de pago">
+            <img id="puntaje" src="/img/5-stars-white.png" alt="puntaje del producto">
+
+            <button>Comprar</button>
+<!-- agregar toggle lists e imágenes -->
+        </article>
+
+</div>
+
+<%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>
