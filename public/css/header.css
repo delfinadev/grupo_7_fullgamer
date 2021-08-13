@@ -61,6 +61,12 @@ header {
     text-align: center;
     border-color: white;
     color: white;
+    transition: border 0.5s;
+}
+
+#buscar:focus {
+    outline: none;
+    border: solid 1.2px #9a0000;
 }
 
 /* Boton del Icono lupa */

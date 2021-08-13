@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Spartan', sans-serif;
+    max-width: 100%;
 }
 
 /* Todos los link a de la página */
@@ -137,7 +138,6 @@ main {
     text-align: center;
     font-weight: bold;
     border-top: solid 1px black;
-
 }
 
 /* Nombre de producto */
@@ -215,7 +215,6 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 /* Mouse sobre artículo */
@@ -246,6 +245,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
     transition: all 1s;
     white-space: normal;
 }
@@ -258,6 +258,7 @@ main {
 /* Mouse sobre artículo que afecta a la descripción */
 #carousel .producto:hover .descripcion-producto {
     opacity: 100%;
+    border-radius: 0;
 }
 
 /* Texto nombre de producto */
