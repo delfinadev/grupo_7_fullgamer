@@ -1,0 +1,50 @@
+<!DOCTYPE html5>
+<html lang="en">
+    
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/agregarProducto.css">
+    <title>Subir producto</title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+
+<h1>Subir productos a la web</h1>
+
+<form action="#" method="POST">
+
+<!-- acá van el nombre, descripción e imagen (se tiene que poder subir desde la pc) -->
+
+<div>
+    <label for="categoria">Categoría:</label>
+        <select name="categoria">
+            <option value=""></option>
+            <option value=""></option>
+            <option value=""></option>
+</div>
+
+<!-- terminar el select con los productos de la home-->
+
+<div>
+    <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio">
+</div>
+
+<div>
+    <label for="fechaDeSubida">Fecha de subida:</label>
+        <input type="datetime-local" name="precio" id="fechaDeSubida">
+</div>
+
+<div>
+    <button type="submit">Crear producto</button>
+    <button type="submit">Modificar producto</button>
+</div>
+
+</form>
+
+<%- include('./partials/footer.ejs') %>
+
+</body>
+
+</html>
