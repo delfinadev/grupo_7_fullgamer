@@ -7,3 +7,5 @@
 3. ****Lo que voy a hacer:**** Terminar de arreglar las medidas del home para que no scrollee horizontalmente mientras espero a Igna para hacer los partials.
 
 
+
+
