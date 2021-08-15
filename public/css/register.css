@@ -4,6 +4,10 @@
     font-family: 'Spartan', sans-serif;
 }
 
+body{
+    background-color: #111010;
+}
+
 main {
     background-image:url(/img/banner.jpg);
     background-repeat: no-repeat;
@@ -66,13 +70,14 @@ main {
     width: 90%;
     margin: 10px;
     margin-bottom: 20px;
+    border: solid 1.2px transparent;
     transition: border 0.5s;
 }
 
 /* Cuando el usuario está dentro de un input */
 #formulario .input-text:focus {
     outline: none;
-    border: solid 1px black;
+    border: solid 1.2px black;
 }
 
 /* Todos los placeholder de inputs */
@@ -224,7 +229,7 @@ main {
     border-style: none;
     color: white;
     padding: 10px 20px;
-    transition: background-color 1s;
+    transition: background-color 0.5s;
 }
 
 #formulario #crear-cuenta:hover {
@@ -335,7 +340,7 @@ a {
     .checkmark {
         width: auto;
         margin-right: 5px;
-        transition: background-color 0.5s;
+        transition: background-color 0.3s;
     }
 
     .container-preferencia:hover input ~ .checkmark {

@@ -2,7 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Spartan', sans-serif;
-    max-width: 100%;
+}
+
+body{
+    background-color: #111010;
+    height: 100vh;
 }
 
 main {
@@ -13,6 +17,7 @@ main {
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
+    height: 60%;
 }
 
 #carro {
@@ -22,8 +27,6 @@ main {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    height: 80%;
     border-radius: 30px;
     margin: 30px auto;
     padding: 20px;
@@ -34,6 +37,7 @@ main {
     color: white;
     font-size: 1.5rem;
     font-weight: 100;
+    text-align: center;
 }
 
 form {
@@ -86,21 +90,114 @@ form p a {
     text-decoration: none;
 }
 
-#Comprar{
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-}
-
 .contenedor{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 .producto{
-    width: 80%;
+    width: 95%;
     background-color: #323232;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 20px;
+}
+
+.imagen{
+    width: 30%;
+    margin: 10px 20px;
+    border-radius: 20px;
+}
+
+.detalles{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100%;
+    margin: auto 0; 
+}
+
+.nombre-producto{
+    text-align: left;
+    width: 50%;
+    align-self: flex-start;
+}
+
+.precio-cantidad{
+    width: 50%;
+    text-align: right;
+}
+
+.verentienda{
+    align-self: flex-end;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.cruz{
+    color: white;
+}
+
+.buscarmasproductos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+#buscar-carro{
+    width: 90%;
+    background-color: transparent;
+    border-radius: 20px;
+    border: solid 1px white;
+}
+
+#lupacarro{
+    color: white;
+}
+
+.bottom{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.total{
+    width: 40%;
+    color: white;
+    margin-block-end: 0%;
+    margin-block-start: 0%;
+    background-color: #323232;
+    padding: 0.5rem;
+    border-radius: 20px;
+    justify-self: start;
+}
+
+.textoenvio{
+    color: white;
+    width: 20%;
+    text-align: left;
+    margin-block-end: 0%;
+    margin-block-start: 0%;
+    font-size: 0.7rem;
+    justify-self: start;
+}
+
+#Comprar{
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-left: 10rem;
 }
