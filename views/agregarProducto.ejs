@@ -10,40 +10,57 @@
 <body>
 <%- include('./partials/header.ejs') %>
 
-<h1>Subir productos a la web</h1>
+<main>
+    <div class="agregar-producto">
+        <h1 class="titulo1">Subir productos a la web</h1>
 
-<form action="#" method="POST">
+        <form class="formulario-producto" action="#" method="POST">
 
-<!-- acá van el nombre, descripción e imagen (se tiene que poder subir desde la pc) -->
-
-<div>
-    <label for="categoria">Categoría:</label>
-        <select name="categoria" required>
-            <option value="mouse">Mouse</option>
-            <option value="teclado">Teclado</option>
-            <option value="microfono">Micrófono</option>
-            <option value="auriculares">Auriculares</option>
-            <option value="mousepad">Mouse pad</option>
-            <option value="gabinete">Gabinete</option>
-            <option value="capturadora">Capturadora de pantalla</option>
-</div>
-
-<div>
-    <label for="precio">Precio:</label>
-        <input type="number" name="precio" id="precio" required>
-</div>
-
-<div>
-    <label for="fechaDeSubida">Fecha de subida:</label>
-        <input type="datetime-local" name="precio" id="fechaDeSubida" required>
-</div>
-
-<div>
-    <button type="submit">Crear producto</button>
-    <button type="submit">Modificar producto</button>
-</div>
-
-</form>
+            <div class="Nombre-producto">
+                <label for="nombre">Nombre del producto:</label>
+                    <input type="text" placeholder="Nombre del producto" name="nombre" id="nombre" required>
+            </div>
+            
+            <div class="descripcion-producto">
+                <label for="descripción">Descripción:</label>
+                    <input type="text" placeholder="Descripción" name="descripcion" id="descripcion" required>
+            </div>
+            
+            <div class="imagen-producto">
+                <label for="imagen">Imagen del producto:</label>
+                    <input type="file" placeholder="Imagen" name="imagen" id="imagen" required>
+            </div>
+            
+            <div class="categoria-producto">
+                <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="mouse">Mouse</option>
+                        <option value="teclado">Teclado</option>
+                        <option value="microfono">Micrófono</option>
+                        <option value="auriculares">Auriculares</option>
+                        <option value="mousepad">Mouse pad</option>
+                        <option value="gabinete">Gabinete</option>
+                        <option value="capturadora">Capturadora de pantalla</option>
+            </div>
+            
+            <div class="precio-produto">
+                <label for="precio">Precio:</label>
+                    <input type="number" placeholder="Precio" name="precio" id="precio" required>
+            </div>
+            
+            <div class="fecha-producto">
+                <label for="fechaDeSubida">Fecha de subida:</label>
+                    <input type="datetime-local" placeholder="Fecha" name="precio" id="fechaDeSubida" required>
+            </div>
+            
+            <div class="modificar-producto">
+                <button  id="crear" type="submit">Crear producto</button>
+                <button id="modificar" type="submit">Modificar producto</button>
+            </div>
+            
+            </form>
+    </div>
+</main>
 
 <%- include('./partials/footer.ejs') %>
 
