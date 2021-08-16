@@ -63,7 +63,7 @@ form input {
     margin: 10px;
 }
 
-::placeholder {
+main ::placeholder {
     color: white;
     opacity: 1;
     font-size: 0.6rem;

@@ -81,7 +81,7 @@ main {
 }
 
 /* Todos los placeholder de inputs */
-::placeholder {
+main ::placeholder {
     color: white;
     opacity: 1;
     font-size: 0.5rem;
@@ -320,7 +320,7 @@ a {
         font-size: 1.5rem;
     }
 
-    ::placeholder {
+    main ::placeholder {
         font-size: 0.7rem;
     }
 
