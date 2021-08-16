@@ -111,7 +111,7 @@ header {
     }
 
     .d-header-brand {
-        width: 10rem;
+        width: 20%;
         justify-self: flex-start;
         align-self: center;
     }
