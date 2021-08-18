@@ -14,3 +14,11 @@
 3. ***Continuar haciendo:*** dividirnos las tareas y mantenerlo organizado en Trello.
 4. ***Hacer menos:*** atrasarnos con el contenido del campus si se puede evitar.
 5. ***Dejar de hacer:*** trabarnos en algo y no googlear o pedir ayuda a los compañeros.
+
+
+**SPRINT 3**
+1. ***Comenzar a hacer:*** retomar los coding sessions y pair programming para terminar la parte visual de nuestro sitio en conjunto.
+2. ***Hacer más:*** comunicarnos más lo que vamos haciendo, pedir ayuda si es necesario y decir qué inconvenientes vamos teniendo.
+3. ***Continuar haciendo:*** mantener las tareas organizadas y asignadas a cada uno.
+4. ***Hacer menos:*** atrasarnos con temas o clases que se necesiten para los sprints.
+5. ***Dejar de hacer:*** dejar tareas para último momento o no dedicarles mucho tiempo.
