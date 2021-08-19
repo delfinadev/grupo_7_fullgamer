@@ -12,16 +12,16 @@
 <div id="containers">
 
 <section>
-    <img id="foto-chiquita" src="/img/mouse-segunda-foto.jpg" alt="foto de producto 2">
-    <img id="foto-principal" src="/img/MSI-Clutch-GM08.jpg" alt="foto de producto 1">
+    <img id="foto-chiquita" src="/img/<%= product.image2 %>" alt="foto de producto 2">
+    <img id="foto-principal" src="/img/<%= product.image %>" alt="foto de producto 1">
 </section>
 
         <article id="detalles">
             <h1>
-                Mouse MSI Clutch GM08 black
+                <%= product.name %>
             </h1>
 
-            <h3>$1.504</h3>
+            <h3>$<%= product.price %></h3>
 
             <img id="pago" src="/img/metodos-de-pago.png" alt="medios de pago">
             <img id="puntaje" src="/img/5-stars-white.png" alt="puntaje del producto">
@@ -30,14 +30,8 @@
 
             <section>
                 <h3>Descripción</h3>
-                    <p>Adaptado a tus movimientos
-                        El mouse de juego te ofrecerá la posibilidad de marcar la diferencia y sacar ventajas en tus partidas. Su conectividad y sensor suave ayudará a que te desplaces rápido por la pantalla.
-                        
-                        La funcionalidad al alcance de tu mano
-                        El sistema de detección de movimiento óptico te permitirá mover el cursor de una manera más precisa y sensible que en los sistemas tradicionales.
-                        
-                        Rapidez y confiabilidad de los botones
-                        Con sus 6 botones podrás tener mayor control e independencia para ejecutar.
+                    <p>
+                        <%= product.description %>
                         </p>
             </section>
 

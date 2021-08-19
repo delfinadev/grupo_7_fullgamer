@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Micrófono Spirit of Gamer EKO",
+        "price": 6948.7,
+        "description": "congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus",
+        "image": "Microphone-spirit-gamer-EKO.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Micrófono",
+        "date": "6/28/2021"
+    },
+    {
+        "name": "Mouse MSI Clutch GM08 Black",
+        "price": 6251.44,
+        "description": "erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices",
+        "image": "MSI-Clutch-GM08.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Mouse",
+        "date": "7/24/2021"
+    },
+    {
+        "name": "Capture card Live Gamer 4K AVerMedia",
+        "price": 1061.77,
+        "description": "tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa",
+        "image": "Capture-card-live-gamer-4K.png",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Capturadora de pantalla",
+        "date": "6/28/2021"
+    },
+    {
+        "name": "Mouse pad RGB gamer large",
+        "price": 2775.23,
+        "description": "odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non",
+        "image": "RGB-Mouse-pad-large-gaming.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Mouse pad",
+        "date": "6/23/2021"
+    },
+    {
+        "name": "Teclado Delux gamer mini T9 pro",
+        "price": 5444.24,
+        "description": "libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien",
+        "image": "Keyboard-comb-wired-mini-T9-pro.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Teclado",
+        "date": "8/15/2021"
+    },
+    {
+        "name": "Gabinete Gaming RGB",
+        "price": 3927.35,
+        "description": "platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut",
+        "image": "Screecher-RTX-3090-24GB.png",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Gabinete",
+        "date": "7/26/2021"
+    },
+    {
+        "name": "Gamer headset Kotion Each G2000 azul",
+        "price": 7453.32,
+        "description": "dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas",
+        "image": "Kotion-each-G2000-3.5mm.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Auriculares",
+        "date": "7/28/2021"
+    },
+    {
+        "name": "Teclado Redragon Diti Outemu",
+        "price": 9615.23,
+        "description": "praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat",
+        "image": "Redragon-DITI-Outemu.jpg",
+        "image2": "mouse-segunda-foto.jpg",
+        "category": "Teclado",
+        "date": "5/4/2021"
+    }
+]

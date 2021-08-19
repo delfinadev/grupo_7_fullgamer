@@ -6,6 +6,6 @@ router.get("/", productController.index);
 
 router.get("/create", productController.create);
 
-router.get("/detail", productController.list);
+router.get("/detail/:id", productController.detail);
 
 module.exports = router
