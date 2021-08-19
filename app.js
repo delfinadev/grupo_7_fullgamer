@@ -19,7 +19,7 @@ app.use("/", mainRoutes);
 app.use("/register", registerRoutes);
 app.use("/login", loginRoutes);
 app.use("/carrito", carritoRoutes);
-app.use("/product", productRoutes);
+app.use("/products", productRoutes);
 
 app.get("/HowDidYouFoundThis", (req, res) => {
     res.sendFile(path.resolve(__dirname, "views/EasterEgg.html"));
