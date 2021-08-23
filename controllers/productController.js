@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
+
 let leerProductos = fs.readFileSync(path.resolve(__dirname, "../data/products.json"), { encoded: "utf-8"});
 let products = JSON.parse(leerProductos);
 
@@ -24,7 +25,7 @@ const controller = {
 router.post('/product/create', (req,res) => {
     console.log(req.body.name)
     console.log(req.body.description)
-    // image?
+    console.log(req.body.image)
     console.log(req.body.category)
     console.log(req.body.price)
 })
