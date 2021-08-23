@@ -19,6 +19,9 @@ app.use("/users", usersRoutes);
 app.use("/carrito", carritoRoutes);
 app.use("/products", productRoutes);
 
+app.use(express.urlencoded({extended : false}));
+app.use(express.json());
+
 app.get("/HowDidYouFoundThis", (req, res) => {
     res.sendFile(path.resolve(__dirname, "views/EasterEgg.html"));
 });
