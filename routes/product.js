@@ -11,8 +11,6 @@ router.get("/detail/:id", productController.detail);
 
 router.get("/:id/edit", productController.edit);
 
-router.post('/create', (req,res) => {res.render('create')});
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/img')
@@ -24,11 +22,5 @@ const storage = multer.diskStorage({
 })
 
 const upload = multer ({ storage });
-
-router.post('create', upload.array('product-img'), productController.create); {
-    console.log(req.file)
-    res.send('Archivo subido correctamente')
-}
-
 
 module.exports = router
