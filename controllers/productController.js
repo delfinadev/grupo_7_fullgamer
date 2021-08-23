@@ -22,12 +22,4 @@ const controller = {
     }
 };
 
-router.post('/product/create', (req,res) => {
-    console.log(req.body.name)
-    console.log(req.body.description)
-    console.log(req.body.image)
-    console.log(req.body.category)
-    console.log(req.body.price)
-})
-
 module.exports = controller
