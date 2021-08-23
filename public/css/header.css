@@ -1,7 +1,14 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+    max-width: 100%;
+}
+
 /* Header */
 header {
     width: 100vw;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.95);
     border-bottom: 5px solid #9A0000;
 }
 
