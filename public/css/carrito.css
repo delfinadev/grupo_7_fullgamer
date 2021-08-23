@@ -17,10 +17,9 @@ main {
     flex-direction: column;
     justify-content: center;
     justify-content: space-around;
-    height: 60%;
 }
 
-#carro {
+.carro {
     background-color: #9a0000;
     width: 40%;
     display: flex;
@@ -96,7 +95,9 @@ form p a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    margin: 5px;
 }
+
 
 .producto{
     width: 95%;
@@ -193,7 +194,7 @@ form p a {
     justify-self: start;
 }
 
-#Comprar{
+.comprar-botton{
     background-color: black;
     color: white;
     border-radius: 15px;
@@ -201,3 +202,21 @@ form p a {
     border-radius: 20px;
     margin-left: 10rem;
 }
+
+.comprar{
+            background-color: black;
+        color: white;
+        border-radius: 15px;
+        padding: 0.5rem;
+        border-radius: 20px;
+        margin-left: 7rem;
+}
+
+.comprar-bottom{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
