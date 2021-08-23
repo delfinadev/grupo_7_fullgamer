@@ -4,7 +4,12 @@
 <head>
     <%- include('./partials/head.ejs') %>
         <link rel="stylesheet" href="/css/agregarProducto.css">
-        <title>Full Gamer | Subir producto</title>
+        <% if(product !==null) { %>
+            <title>Full Gamer | Editar <%= product.name %>
+            </title>
+            <% } else { %>
+                <title>Full Gamer | Subir producto</title>
+                <% } %>
 </head>
 
 <body>
@@ -16,7 +21,7 @@
 
                 <form class="formulario-producto" method="POST" action="/products/create">
 
-                    <% if (product !== null) { %>
+                    <% if (product !==null) { %>
 
                         <div class="Nombre-producto">
                             <label for="nombre">Nombre del producto:</label>
@@ -65,9 +70,7 @@
                         <div class="modificar-producto">
                             <button id="crear" type="submit">Crear producto</button>
                             <button id="modificar" type="submit">Modificar producto</button>
-                            <form action="/products/<%= products.indexOf(product) %>?_method=DELETE" method="POST">
-                                <button id="borrar" type="submit">Borrar producto</button>
-                            </form>
+
                         </div>
 
                         <% } else { %>
