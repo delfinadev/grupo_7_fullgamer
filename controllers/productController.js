@@ -21,6 +21,4 @@ const controller = {
     }
 };
 
-router.post('/create', (req,res) => {res.render('create')});
-
 module.exports = controller
