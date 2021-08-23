@@ -3,8 +3,7 @@ const path = require("path");
 const app = express();
 
 const mainRoutes = require("./routes/main");
-const loginRoutes = require("./routes/login");
-const registerRoutes = require("./routes/register");
+const usersRoutes = require("./routes/users");
 const productRoutes = require("./routes/product");
 const carritoRoutes = require("./routes/carrito");
 
@@ -16,8 +15,7 @@ app.listen(3000, () => {
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use("/", mainRoutes);
-app.use("/register", registerRoutes);
-app.use("/login", loginRoutes);
+app.use("/users", usersRoutes);
 app.use("/carrito", carritoRoutes);
 app.use("/products", productRoutes);
 
