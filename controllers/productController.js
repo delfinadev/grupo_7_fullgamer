@@ -9,12 +9,18 @@ const controller = {
         res.render("listadoProductos", {products: products});
     },
     create: (req, res) => {
-        res.render("agregarProducto");
+        res.render("agregarProducto", {product: null});
     },
     detail: (req, res) => {
         let id = req.params.id;
         res.render("producto", {product: products[id]});
+    },
+    edit: (req, res) => {
+        let id = req.params.id;
+        res.render("agregarProducto", {product: products[id]});
     }
 };
+
+router.post('/create', (req,res) => {res.render('create')});
 
 module.exports = controller
