@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-
 let leerProductos = fs.readFileSync(path.resolve(__dirname, "../data/products.json"), { encoded: "utf-8"});
 let products = JSON.parse(leerProductos);
 
@@ -19,15 +18,23 @@ const controller = {
     edit: (req, res) => {
         let id = req.params.id;
         res.render("agregarProducto", {product: products[id]});
+    },
+    store: (req, res) => {
+        let newProduct = {
+        "name": req.body.name,
+        "description": req.body.description,
+        "image": req.file,
+        "category": req.body.category,
+        "price": req.body.price,
+        "date": req.body.date}
+
+        let newProducts = products.push(newProduct);
+        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
     }
 };
 
-router.post('/product/create', (req,res) => {
-    console.log(req.body.name)
-    console.log(req.body.description)
-    console.log(req.body.image)
-    console.log(req.body.category)
-    console.log(req.body.price)
-})
+//acá está la funcionalidad que luego se exporta a routes
+
+//res.render renderiza las vistas, manda la información 
 
 module.exports = controller

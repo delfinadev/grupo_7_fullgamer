@@ -11,7 +11,9 @@ router.get("/detail/:id", productController.detail);
 
 router.get("/:id/edit", productController.edit);
 
-router.post('/create', (req,res) => {res.render('create')});
+router.post("/", upload.array('product-img'), productController.store);
+
+//linkea la funcionalidad del controller 
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -25,10 +27,6 @@ const storage = multer.diskStorage({
 
 const upload = multer ({ storage });
 
-router.post('create', upload.array('product-img'), productController.create); {
-    console.log(req.file)
-    res.send('Archivo subido correctamente')
-}
-
-
 module.exports = router
+
+//acá van todas las rutas que se ven en el browser, esto se exporta a app.js 
