@@ -1,5 +1,6 @@
 [
     {
+        "id": 0,
         "name": "Micrófono Spirit of Gamer EKO",
         "price": 6948.7,
         "description": "congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus",
@@ -9,6 +10,7 @@
         "date": "2021-06-28"
     },
     {
+        "id": 1,
         "name": "Mouse MSI Clutch GM08 Black",
         "price": 6251.44,
         "description": "erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices",
@@ -18,6 +20,7 @@
         "date": "2021-07-24"
     },
     {
+        "id": 2,
         "name": "Capture card Live Gamer 4K AVerMedia",
         "price": 1061.77,
         "description": "tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa",
@@ -27,6 +30,7 @@
         "date": "2021-08-11"
     },
     {
+        "id": 3,
         "name": "Mouse pad RGB gamer large",
         "price": 2775.23,
         "description": "odio cras mi pede malesuada in imperdiet et commodo vulputate justo in blandit ultrices enim lorem ipsum dolor sit amet consectetuer adipiscing elit proin interdum mauris non",
@@ -36,6 +40,7 @@
         "date": "2021-06-23"
     },
     {
+        "id": 4,
         "name": "Teclado Delux gamer mini T9 pro",
         "price": 5444.24,
         "description": "libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in leo maecenas pulvinar lobortis est phasellus sit amet erat nulla tempus vivamus in felis eu sapien",
@@ -45,6 +50,7 @@
         "date": "2021-08-15"
     },
     {
+        "id": 5,
         "name": "Gabinete Gaming RGB",
         "price": 3927.35,
         "description": "platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut",
@@ -54,6 +60,7 @@
         "date": "2021-07-26"
     },
     {
+        "id": 6,
         "name": "Gamer headset Kotion Each G2000 azul",
         "price": 7453.32,
         "description": "dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas",
@@ -63,6 +70,7 @@
         "date": "2021-07-28"
     },
     {
+        "id": 7,
         "name": "Teclado Redragon Diti Outemu",
         "price": 9615.23,
         "description": "praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat",

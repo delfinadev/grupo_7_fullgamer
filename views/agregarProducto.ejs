@@ -13,88 +13,38 @@
 </head>
 
 <body>
-<%- include('./partials/header.ejs') %>
-
-<main>
-    <div class="agregar-producto">
-        <h1 class="titulo1">Subir productos a la web</h1>
-
-        <form class="formulario-producto" method="POST" action="/product/create">
-
-            <% if (product !== null) { %>
-
-            <div class="Nombre-producto">
-                <label for="nombre">Nombre del producto:</label>
-                    <input type="text" placeholder="Nombre del producto" name="nombre" id="nombre" value="<%= product.name %>" required>
-            </div>
-            
-            <div class="descripcion-producto">
-                <label for="descripción">Descripción:</label>
-                    <input type="text" placeholder="Descripción" name="description" id="descripcion" value="<%= product.description %>" required>
-            </div>
-            
-            <div class="imagen-producto">
-                <label for="imagen">Imagen del producto:</label>
-                    <input type="file" placeholder="Imagen" name="image" id="imagen" multiple required>
-            </div>
-            
-            <div class="categoria-producto">
-                <label for="categoria">Categoría:</label>
-                    <select id="categoria" name="category" required>
-                        <option value=""><%= product.category %></option>
-                        <option value="mouse">Mouse</option>
-                        <option value="teclado">Teclado</option>
-                        <option value="microfono">Micrófono</option>
-                        <option value="auriculares">Auriculares</option>
-                        <option value="mousepad">Mouse pad</option>
-                        <option value="gabinete">Gabinete</option>
-                        <option value="capturadora">Capturadora de pantalla</option>
-            </div>
-            
-            <div class="precio-produto">
-                <label for="precio">Precio:</label>
-                    <input type="number" placeholder="Precio" name="price" id="precio" value="<%= product.price %>" required>
-            </div>
-            
-            <div class="fecha-producto">
-                <label for="fechaDeSubida">Fecha de subida:</label>
-                    <input type="date" placeholder="Fecha" name="date" id="fechaDeSubida" value="<%= product.date %>" required>
-            </div>
-            
-            <div class="modificar-producto">
-                <button  id="crear" type="submit">Crear producto</button>
-                <button id="modificar" type="submit">Modificar producto</button>
-            </div>
     <%- include('./partials/header.ejs') %>
 
         <main>
             <div class="agregar-producto">
                 <h1 class="titulo1">Subir productos a la web</h1>
 
-                <form class="formulario-producto" method="POST" action="/products/create">
+                <% if (product !==null) { %>
 
-                    <% if (product !==null) { %>
+                    <form class="formulario-producto" action="/products/<%= product.id %>/edit?_method=PUT"
+                        method="POST">
+
 
                         <div class="Nombre-producto">
                             <label for="nombre">Nombre del producto:</label>
-                            <input type="text" placeholder="Nombre del producto" name="nombre" id="nombre"
-                                value="<%= product.name %>" required>
+                            <input type="text" placeholder="Nombre del producto" name="name" id="nombre"
+                                value="<%= product.name %>">
                         </div>
 
                         <div class="descripcion-producto">
                             <label for="descripción">Descripción:</label>
-                            <input type="text" placeholder="Descripción" name="descripcion" id="descripcion"
-                                value="<%= product.description %>" required>
+                            <input type="text" placeholder="Descripción" name="description" id="descripcion"
+                                value="<%= product.description %>">
                         </div>
 
                         <div class="imagen-producto">
                             <label for="imagen">Imagen del producto:</label>
-                            <input type="file" placeholder="Imagen" name="imagen" id="imagen" multiple required>
+                            <input type="file" placeholder="Imagen" name="image" id="imagen" multiple>
                         </div>
 
                         <div class="categoria-producto">
                             <label for="categoria">Categoría:</label>
-                            <select id="categoria" name="categoria" required>
+                            <select id="categoria" name="category">
                                 <option value="">
                                     <%= product.category %>
                                 </option>
@@ -107,45 +57,56 @@
                                 <option value="capturadora">Capturadora de pantalla</option>
                         </div>
 
-                        <div class="precio-producto">
+                        <div class="precio-produto">
                             <label for="precio">Precio:</label>
                             <input type="number" placeholder="Precio" name="price" id="precio"
-                                value="<%= product.price %>" required>
+                                value="<%= product.price %>">
                         </div>
 
                         <div class="fecha-producto">
                             <label for="fechaDeSubida">Fecha de subida:</label>
-                            <input type="date" placeholder="Fecha" name="precio" id="fechaDeSubida"
-                                value="<%= product.date %>" required>
+                            <input type="date" placeholder="Fecha" name="date" id="fechaDeSubida"
+                                value="<%= product.date %>">
                         </div>
 
                         <div class="modificar-producto">
                             <button id="crear" type="submit">Crear producto</button>
                             <button id="modificar" type="submit">Modificar producto</button>
-
                         </div>
 
-                        <% } else { %>
+                    </form>
+
+                    <form action="/products/<%= product.id %>?_method=DELETE" method="POST"
+                        class="modificar-producto">
+                        <button type="submit">Borrar producto</button>
+                    </form>
+
+
+
+                    <% } else { %>
+
+                        <form class="formulario-producto" action="/products/create" method="POST"
+                            enctype="multipart/form-data">
 
                             <div class="Nombre-producto">
                                 <label for="nombre">Nombre del producto:</label>
-                                <input type="text" placeholder="Nombre del producto" name="nombre" id="nombre" required>
+                                <input type="text" placeholder="Nombre del producto" name="name" id="nombre" required>
                             </div>
 
                             <div class="descripcion-producto">
-                                <label for="descripción">Descripción:</label>
-                                <input type="text" placeholder="Descripción" name="descripcion" id="descripcion"
+                                <label for="descripcion">Descripción:</label>
+                                <input type="text" placeholder="Descripción" name="description" id="descripcion"
                                     required>
                             </div>
 
                             <div class="imagen-producto">
-                                <label for="imagen">Imagen del producto:</label>
-                                <input type="file" placeholder="Imagen" name="imagen" id="imagen" multiple required>
+                                <label for="Imagen">Imagen del producto:</label>
+                                <input type="file" placeholder="Imagen" name="image" id="imagen" required>
                             </div>
 
                             <div class="categoria-producto">
                                 <label for="categoria">Categoría:</label>
-                                <select id="categoria" name="categoria" required>
+                                <select id="categoria" name="category" required>
                                     <option value="mouse">Mouse</option>
                                     <option value="teclado">Teclado</option>
                                     <option value="microfono">Micrófono</option>
@@ -157,12 +118,12 @@
 
                             <div class="precio-produto">
                                 <label for="precio">Precio:</label>
-                                <input type="number" placeholder="Precio" name="precio" id="precio" required>
+                                <input type="number" placeholder="Precio" name="price" id="precio" required>
                             </div>
 
                             <div class="fecha-producto">
                                 <label for="fechaDeSubida">Fecha de subida:</label>
-                                <input type="datetime-local" placeholder="Fecha" name="precio" id="fechaDeSubida"
+                                <input type="datetime-local" placeholder="Fecha" name="date" id="fechaDeSubida"
                                     required>
                             </div>
 
@@ -171,9 +132,11 @@
                                 <button id="modificar" type="submit">Modificar producto</button>
                             </div>
 
-                            <% } %>
+                        </form>
 
-                </form>
+                        <% } %>
+
+
         </main>
 
         <%- include('./partials/footer.ejs') %>
