@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Full Gamer</title>
+</head>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+<main>
+    <section id="carousel">
+        <div class="products">
+            <% for (let i = 0; i < products.length; i++) { %>
+            <article class="producto">
+                <img src="/img/<%= products[i].image %>" alt="<%= products[i].name %>">
+                <div class="descripcion-producto">
+                    <p class="nombre-producto"><%= products[i].name %></p>
+                    <a href="/products/detail/<%= i %>">Ver más</a>
+                </div>
+            </article>
+            <% } %>
+        </div>
+
+            <button class="prev"><a href="" class="a-carousel">&#10094;</a></button>
+            <button class="next"><a href="" class="a-carousel">&#10095;</a></button>
+
+        </section>
+
+    
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+</body>
+</html>
