@@ -22,3 +22,10 @@
 3. ***Continuar haciendo:*** mantener las tareas organizadas y asignadas a cada uno.
 4. ***Hacer menos:*** atrasarnos con temas o clases que se necesiten para los sprints.
 5. ***Dejar de hacer:*** dejar tareas para último momento o no dedicarles mucho tiempo.
+
+**SPRINT 4**
+1. ***Comenzar a hacer:*** perfeccionar el HTML y CSS para prepararnos para la entrega final.
+2. ***Hacer más:*** pair programming en los que resolvemos las dudas, inconvenientes o errores.
+3. ***Continuar haciendo:*** organizar y dividir las tareas, consultar a nuestros compañeros ante dudas o errores.
+4. ***Hacer menos:*** no ver las clases del Playground si es que lo podemos evitar.
+5. ***Dejar de hacer:*** colgar con el proyecto cuando no tenemos más tareas para hacer del sprint, así podemos seguir modificando y mejorando otras cuestiones.
