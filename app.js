@@ -3,12 +3,13 @@ const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
 
-const mainRoutes = require("./routes/main");
-const usersRoutes = require("./routes/users");
-const productRoutes = require("./routes/product");
-const carritoRoutes = require("./routes/carrito");
+const mainRoutes = require("./src/routes/main");
+const usersRoutes = require("./src/routes/users");
+const productRoutes = require("./src/routes/product");
+const carritoRoutes = require("./src/routes/carrito");
 
 app.set("view engine", "ejs");
+app.set('views', './src/views');
 
 app.listen(3000, () => {
     console.log("Servidor corriendo en el puerto 3000");
