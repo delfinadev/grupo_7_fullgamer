@@ -19,6 +19,7 @@ app.use(express.json());
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(methodOverride("_method"));
+
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/carrito", carritoRoutes);

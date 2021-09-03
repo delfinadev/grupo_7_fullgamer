@@ -74,6 +74,11 @@ main {
     transition: border 0.5s;
 }
 
+input[type="file"] {
+    position: absolute; 
+    left: -99999rem
+}
+
 /* Cuando el usuario está dentro de un input */
 #formulario .input-text:focus {
     outline: none;
@@ -104,6 +109,17 @@ main ::placeholder {
     background-position: left;
     background-size: 5%;
     background-position-y: center;
+}
+
+#image-label {
+    background-image: url(/img/folder.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 5%;
+    background-position-y: center;
+    opacity: 1;
+    font-size: 0.5rem;
+    padding-left: 10%;
 }
 
 .caja-contraseña {
@@ -326,6 +342,10 @@ a {
 
     #formulario .input-text {
         padding-left: 8%;
+    }
+
+    #image-label {
+        font-size: 0.7rem;
     }
 
     .toggle-password {

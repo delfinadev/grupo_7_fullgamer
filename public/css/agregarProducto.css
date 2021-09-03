@@ -118,14 +118,7 @@ h1{
     text-align: center;
 }
 
-#crear{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
-#modificar{
+.form-button{
     background-color: black;
     color: white;
     border-radius: 5px;

@@ -1,7 +1,21 @@
 const express = require("express");
 const router = express.Router();
+const path = require("path");
 const productController = require("../controllers/productController");
 const multer = require('multer');
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/img');
+    },
+    filename: function (req, file, cb) {
+        cb(null,
+    `${Date.now()}_img_${path.extname(file.originalname)}`);
+    }
+});
+
+const upload = multer({ storage: storage });
 
 router.get("/", productController.index);
 
@@ -11,21 +25,13 @@ router.get("/detail/:id", productController.detail);
 
 router.get("/:id/edit", productController.edit);
 
-router.post("/", upload.array('product-img'), productController.store);
+router.put("/:id/edit", productController.update);
+
+router.post("/create", upload.single('image'), productController.store);
+
+router.delete("/:id", productController.destroy);
 
 //linkea la funcionalidad del controller 
-
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './public/img')
-    },
-    filename: function (req, file, cb) {
-        cb(null,
-    `${Date.now()}_img_${path.extname(file.originalname)}`)
-    }
-})
-
-const upload = multer ({ storage });
 
 module.exports = router
 
