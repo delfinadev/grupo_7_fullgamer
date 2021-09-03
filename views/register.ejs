@@ -14,29 +14,31 @@
     <main>
         <div id="caja-formulario">
             <h2 id="registrarse">Registrarse</h2>
-            <form method="POST" id="formulario">
+            <% if(errorMessages !== null) { %>
+            <form action="/users/register" method="POST" id="formulario">
                 <label for="usuario"></label>
-                <input type="text" name="usuario" id="usuario" class="input-text" placeholder="Usuario" required>
-                <span class="feedback"></span>
+                <input type="text" name="usuario" id="usuario" class="input-text" placeholder="Usuario" value="<%= old.name %>">
+                <span class="feedback"><%= errorMessages[0].msg %></span>
 
                 <label for="email"></label>
-                <input type="email" name="email" id="email" class="input-text" placeholder="Correo electrónico"
-                    required>
-                <span class="feedback"></span>
+                <input type="text" name="email" id="email" class="input-text" placeholder="Correo electrónico" value="<%= old.email %>">
+                <span class="feedback"><%= errorMessages[1].msg %></span>
+
+                <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
+                <input type="file" name="image" id="image"  placeholder="Imagen de perfil">
 
                 <div class="caja-contraseña">
                     <label for="password"></label>
-                    <input type="password" name="password" class="password input-text" placeholder="Contraseña"
-                        required>
+                    <input type="password" name="password1" class="password input-text" placeholder="Contraseña" value="value="<%= old.password1 %>"">
                     <button type="button" class="toggle-password"></button>
-                    <span class="feedback"></span>
+                    <span class="feedback"><%= errorMessages[2].msg %></span>
                 </div>
 
                 <div class="caja-contraseña">
-                    <input type="password" name="password" class="password input-text"
-                        placeholder="Confirmar contraseña" required>
+                    <input type="password" name="password2" class="password input-text"
+                        placeholder="Confirmar contraseña" value="<%= old.password2 %>">
                     <button type="button" class="toggle-password"></button>
-                    <span class="feedback"></span>
+                    <span class="feedback"><%= errorMessages[3].msg %></span>
                 </div>
 
                 <div id="caja-preferencias">
@@ -55,10 +57,61 @@
                     </div>
                 </div>
 
-                <button type="submit" id="crear-cuenta"><a href="/">CREAR CUENTA</a></button>
+                <button type="submit" id="crear-cuenta">CREAR CUENTA</button>
 
                 <p>¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión</a></p>
             </form>
+            <% } else { %>
+
+                <form action="/users/register" method="POST" id="formulario">
+                    <label for="usuario"></label>
+                    <input type="text" name="usuario" id="usuario" class="input-text" placeholder="Usuario">
+                    <span class="feedback"></span>
+    
+                    <label for="email"></label>
+                    <input type="text" name="email" id="email" class="input-text" placeholder="Correo electrónico">
+                    <span class="feedback"></span>
+    
+                    <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
+                    <input type="file" name="image" id="image"  placeholder="Imagen de perfil">
+    
+                    <div class="caja-contraseña">
+                        <label for="password"></label>
+                        <input type="password" name="password1" class="password input-text" placeholder="Contraseña">
+                        <button type="button" class="toggle-password"></button>
+                        <span class="feedback"></span>
+                    </div>
+    
+                    <div class="caja-contraseña">
+                        <input type="password" name="password2" class="password input-text"
+                            placeholder="Confirmar contraseña">
+                        <button type="button" class="toggle-password"></button>
+                        <span class="feedback"></span>
+                    </div>
+    
+                    <div id="caja-preferencias">
+                        <div class="div-preferencia">
+                            <label for="recordarme" class="container-preferencia">
+                                <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                                <span class="checkmark">...</span>
+                            </label>
+                        </div>
+                        <div class="div-preferencia">
+                            <label for="notificacion" class="container-preferencia">
+                                <input type="radio" name="notificaciones" id="notificacion" class="notificaciones">
+                                Recibir notificaciones
+                                <span class="checkmark">...</span>
+                            </label>
+                        </div>
+                    </div>
+    
+                    <button type="submit" id="crear-cuenta">CREAR CUENTA</button>
+    
+                    <p>¿Ya tienes una cuenta? <a href="/users/login">Inicia sesión</a></p>
+                </form>
+
+                <% } %>
+
         </div>
 
         <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Sign in with
