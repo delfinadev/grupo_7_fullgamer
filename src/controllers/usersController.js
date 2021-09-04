@@ -25,8 +25,10 @@ const controller = {
         if(!errores.isEmpty()) {
             console.log(errores.mapped());
             //Borrar la imagen si es que hay errores:
-            let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
-            fs.unlinkSync(imagePath);
+            if (req.file) {
+                let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
+                fs.unlinkSync(imagePath);
+            };
             res.render("register", {errorMessages: errores.mapped(), old: req.body});
         } else {
             let newUser = {
