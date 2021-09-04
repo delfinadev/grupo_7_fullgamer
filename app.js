@@ -28,5 +28,5 @@ app.use("/products", productRoutes);
 
 
 app.get("/HowDidYouFoundThis", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/EasterEgg.html"));
+    res.sendFile(path.resolve(__dirname, "src/views/EasterEgg.html"));
 });
