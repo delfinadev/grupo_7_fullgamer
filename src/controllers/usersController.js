@@ -5,6 +5,11 @@ const bcrypt = require("bcryptjs");
 let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), {encoded: "utf-8"});
 let users = JSON.parse(readUsers, null, 4);
 
+//Usé el for para encriptar las contraseñas que ya teníamos en el json
+//for (let i = 0; i < users.length; i++) {
+    //console.log(bcrypt.hashSync(users[i].password, 10));
+//}
+
 const { validationResult } = require("express-validator");
 
 const controller = {
@@ -19,6 +24,9 @@ const controller = {
 
         if(!errores.isEmpty()) {
             console.log(errores.mapped());
+            //Borrar la imagen si es que hay errores:
+            let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
+            fs.unlinkSync(imagePath);
             res.render("register", {errorMessages: errores.mapped(), old: req.body});
         } else {
             let newUser = {

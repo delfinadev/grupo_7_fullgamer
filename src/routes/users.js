@@ -11,16 +11,16 @@ const storage = multer.diskStorage({
         cb(null, "./public/img/users");
     },
     filename: function (req, file, cb) {
-        cb(null, req.file + "-" + Date.now() + path.extname(file.originalname));
+        cb(null, req.body.name + "-" + Date.now() + path.extname(file.originalname));
     }
 });
 
 const upload = multer({ storage });
 
 router.get("/register", usersController.register);
-router.post("/register", registerValidations, upload.single("image"), usersController.store);
+router.post("/register", upload.single("image"), registerValidations, usersController.store);
 
 router.get("/login", usersController.login);
 
 
-module.exports = router
+module.exports = router;
