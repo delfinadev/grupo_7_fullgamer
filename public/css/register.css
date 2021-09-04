@@ -66,10 +66,10 @@ main {
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 5%;
+    padding-left: 10%;
     width: 90%;
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: solid 1.5px transparent;
     transition: border 0.5s;
 }
@@ -138,6 +138,16 @@ main ::placeholder {
     background-position: left;
     background-size: 5%;
     background-position-y: center;
+}
+
+.feedback {
+    width: 90%;
+    color: rgba(252, 199, 199, 1);
+    font-weight: bold;
+    font-size: 0.6rem;
+    text-align: left;
+    margin-bottom: 10px;
+    line-height: 1.5em;
 }
 
 .toggle-password {
