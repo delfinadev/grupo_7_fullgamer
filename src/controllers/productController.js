@@ -32,7 +32,7 @@ const controller = {
         };
 
         products.push(newProduct);
-        let newProducts = JSON.stringify(products);
+        let newProducts = JSON.stringify(products, null, 4);
         fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
 
         res.redirect("/products");
@@ -66,8 +66,6 @@ const controller = {
         res.redirect("/products");
     }
 };
-
-console.log(products);
 
 //acá está la funcionalidad que luego se exporta a routes
 

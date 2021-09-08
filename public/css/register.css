@@ -66,12 +66,17 @@ main {
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 5%;
+    padding-left: 10%;
     width: 90%;
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border: solid 1.5px transparent;
     transition: border 0.5s;
+}
+
+input[type="file"] {
+    position: absolute; 
+    left: -99999rem
 }
 
 /* Cuando el usuario está dentro de un input */
@@ -106,6 +111,17 @@ main ::placeholder {
     background-position-y: center;
 }
 
+#image-label {
+    background-image: url(/img/folder.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 5%;
+    background-position-y: center;
+    opacity: 1;
+    font-size: 0.5rem;
+    padding-left: 10%;
+}
+
 .caja-contraseña {
     width: 100%;
     display: flex;
@@ -122,6 +138,16 @@ main ::placeholder {
     background-position: left;
     background-size: 5%;
     background-position-y: center;
+}
+
+.feedback {
+    width: 90%;
+    color: rgba(252, 199, 199, 1);
+    font-weight: bold;
+    font-size: 0.6rem;
+    text-align: left;
+    margin-bottom: 10px;
+    line-height: 1.5em;
 }
 
 .toggle-password {
@@ -326,6 +352,10 @@ a {
 
     #formulario .input-text {
         padding-left: 8%;
+    }
+
+    #image-label {
+        font-size: 0.7rem;
     }
 
     .toggle-password {
