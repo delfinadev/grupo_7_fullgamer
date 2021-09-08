@@ -6,6 +6,8 @@
 2. ****Impedimentos:**** Ninguno por el momento.
 3. ****Lo que voy a hacer:**** Terminar de arreglar las medidas del home para que no scrollee horizontalmente mientras espero a Igna para hacer los partials.
 
+# DAILYS SPRINT 4
 
+# DAILYS SPRINT 5
 
 
