@@ -37,6 +37,7 @@ const validations = [
 
     body("password2")
     .trim()
+    .notEmpty().withMessage("Debes volver a ingresar la contraseña").bail()
     .custom(async (confirmPassword, {req}) => {
       const password = req.body.password1;
       if(password !== confirmPassword) {
