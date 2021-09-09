@@ -15,7 +15,7 @@
             <div id="caja-formulario">
                 <h2 id="registrarse">Registrarse</h2>
                 <% if(locals && locals.errorMessages && locals.errorMessages !== null) { %>
-                    <form action="/users/register" method="POST" id="formulario">
+                    <form action="/users/register" method="POST" id="formulario" enctype="multipart/form-data">
                         <label for="usuario"></label>
                         <input type="text" name="name" id="usuario" class="input-text" placeholder="Usuario"
                             value="<%= old.name %>">
@@ -35,9 +35,6 @@
                                 <%= errorMessages.email.msg %>
                                     <% } %>
                         </span>
-
-                        <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
-                        <input type="file" name="image" id="image" placeholder="Imagen de perfil" accept="jpg, png, svg">
 
                         <div class="caja-contraseña">
                             <label for="password"></label>
@@ -64,16 +61,19 @@
                                     <% } %>
                         </span>
 
+                        <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
+                        <input type="file" name="image" id="image" placeholder="Imagen de perfil" accept="jpg, png, svg">
+
                         <div id="caja-preferencias">
                             <div class="div-preferencia">
                                 <label for="recordarme" class="container-preferencia">
-                                    <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                                    <input type="radio" name="recordarme" id="recordarme" <%= old.recordarme !== undefined ? "checked" : "" %>> Recordarme
                                     <span class="checkmark">...</span>
                                 </label>
                             </div>
                             <div class="div-preferencia">
                                 <label for="notificacion" class="container-preferencia">
-                                    <input type="radio" name="notificaciones" id="notificacion" class="notificaciones">
+                                    <input type="radio" name="notificaciones" id="notificacion" class="notificaciones" <%= old.notificaciones !== undefined ? "checked" : "" %>>
                                     Recibir notificaciones
                                     <span class="checkmark">...</span>
                                 </label>
@@ -86,7 +86,7 @@
                     </form>
                     <% } else { %>
 
-                        <form action="/users/register" method="POST" id="formulario">
+                        <form action="/users/register" method="POST" id="formulario" enctype="multipart/form-data">
                             <label for="usuario"></label>
                             <input type="text" name="name" id="usuario" class="input-text" placeholder="Usuario">
                             <span class="feedback"></span>
@@ -95,9 +95,6 @@
                             <input type="text" name="email" id="email" class="input-text"
                                 placeholder="Correo electrónico">
                             <span class="feedback"></span>
-
-                            <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
-                            <input type="file" name="image" id="image" placeholder="Imagen de perfil">
 
                             <div class="caja-contraseña">
                                 <label for="password"></label>
@@ -113,6 +110,9 @@
                                 <button type="button" class="toggle-password"></button>
                                 <span class="feedback"></span>
                             </div>
+
+                            <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
+                            <input type="file" name="image" id="image" placeholder="Imagen de perfil">
 
                             <div id="caja-preferencias">
                                 <div class="div-preferencia">
