@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const methodOverride = require("method-override");
+const cookieParser = require("cookie-parser");
 
 const mainRoutes = require("./src/routes/main");
 const usersRoutes = require("./src/routes/users");
@@ -20,6 +21,7 @@ app.use(express.json());
 
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(methodOverride("_method"));
+app.use(cookieParser());
 
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
