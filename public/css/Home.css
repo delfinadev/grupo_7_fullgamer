@@ -20,6 +20,9 @@ button {
 body {
     background-color: rgba(0, 0, 0, 0.95);
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Propiedades del Main */

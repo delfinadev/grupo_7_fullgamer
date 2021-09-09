@@ -2,10 +2,14 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Spartan', sans-serif;
+    max-width: 100%;
 }
 
 body{
     background-color: #111010;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -119,8 +123,18 @@ main ::placeholder {
     background-position-y: center;
     opacity: 1;
     font-size: 0.5rem;
-    padding-left: 10%;
 }
+
+/* #image-label:invalid ~ .file-selected {
+    opacity: 0;
+} */
+
+/* #image-label:valid ~ .file-selected {
+    opacity: 1;
+    color: rgba(252, 199, 199, 1);
+    font-size: 0.6rem;
+    text-align: left;
+} */
 
 .caja-contraseña {
     width: 100%;
@@ -145,7 +159,7 @@ main ::placeholder {
     color: rgba(252, 199, 199, 1);
     font-weight: bold;
     font-size: 0.6rem;
-    text-align: left;
+    text-align: justify;
     margin-bottom: 10px;
     line-height: 1.5em;
 }
@@ -154,7 +168,7 @@ main ::placeholder {
     background-color: transparent;
     background-image: url(/img/no-visibility.svg);
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 40%;
     background-position: center;
     position: absolute;
     width: 3%;
@@ -197,7 +211,7 @@ main ::placeholder {
 .container-preferencia {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 20px;
     margin-bottom: 12px;
     cursor: pointer;
     -webkit-user-select: none;
@@ -326,6 +340,7 @@ a {
 
     .toggle-password {
         right: 18px;
+        background-size: 60%;
     }
 
     #caja-preferencias {
@@ -340,6 +355,7 @@ a {
 @media (min-width: 768px) {
     #caja-formulario {
         border-radius: 30px;
+        max-width: 35%;
     }
 
     #registrarse {
@@ -356,6 +372,7 @@ a {
 
     #image-label {
         font-size: 0.7rem;
+        padding-left: 15%;
     }
 
     .toggle-password {
