@@ -12,18 +12,21 @@ body{
 }
 
 main {
-    background-color: black;
+    background-image: url("/img/joystick.jpg");
+    background-position: center;
+    background-size: cover;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    justify-content: space-around;
 }
 
 .carro {
-    background-color: #9a0000;
-    width: 40%;
+    background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
+    flex: 1 1 auto;
+    min-width: 30%;
+    max-width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -34,61 +37,18 @@ main {
     padding-top: 30px;
 }
 
-#Carrito {
+#carrito-titulo {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 100;
     text-align: center;
-}
-
-form {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-form input {
-    border-radius: 5px;
-    border-style: none;
-    background-color: #323232;
-    background-position: 5px center;
-    background-repeat: no-repeat;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    width: 90%;
-    margin: 10px;
 }
 
 main ::placeholder {
     color: white;
     opacity: 1;
-    font-size: 0.6rem;
-}
-
-form button {
-    background-color: #323232;
-    border-radius: 5px;
-    border-style: none;
-    color: white;
-    padding: 10px 20px;
-}
-
-form p {
-    margin: 20px;
-    margin-bottom: 0;
-    font-size: 0.8rem;
-    font-weight: 200;
-}
-
-form p a {
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
+    font-size: 0.5rem;
+    padding-left: 5%;
 }
 
 .contenedor{
@@ -102,49 +62,73 @@ form p a {
 
 
 .producto{
-    width: 95%;
+    width: 90%;
     background-color: #323232;
     color: white;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.image-name {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .imagen{
-    width: 30%;
-    margin: 10px 20px;
+    width: 40%;
+    margin: 5px 10px;
     border-radius: 20px;
 }
 
 .detalles{
-    width: 60%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row-reverse;
     align-items: center;
-    height: 100%;
-    margin: auto 0; 
+    justify-content: space-evenly;
+    font-size: 0.55rem; 
 }
 
 .nombre-producto{
-    text-align: left;
+    text-align: center;
     width: 50%;
-    align-self: flex-start;
 }
 
 .precio-cantidad{
-    width: 50%;
+    width: 40%;
     text-align: right;
 }
 
+.quantity {
+    width: 20px;
+    font-size: 0.6rem;
+    color: white;
+    background-color: #323232;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.quantity:focus {
+    outline: none;
+}
+
 .verentienda{
-    align-self: flex-end;
     text-align: left;
-    margin-top: 1rem;
+    padding-right: 10px;
 }
 
 .cruz{
     color: white;
+    font-size: 0.8em;
+    cursor: pointer;
 }
 
 .buscarmasproductos{
@@ -152,15 +136,24 @@ form p a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    align-items: center;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
 }
 
 #buscar-carro{
+    color: white;
     width: 90%;
     background-color: transparent;
     border-radius: 20px;
     border: solid 1px white;
+    padding: 5px;
+    transition: border 0.5s;
+}
+
+#buscar-carro:focus {
+    outline: none;
+    border: solid 1px black;
 }
 
 #lupacarro{
@@ -170,25 +163,33 @@ form p a {
 .bottom{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.comprar-total {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .total{
     width: 40%;
     color: white;
-    margin-block-end: 0%;
-    margin-block-start: 0%;
+    font-size: 0.8rem;
+    text-align: center;
     background-color: #323232;
     padding: 0.5rem;
-    border-radius: 20px;
-    justify-self: start;
+    border-radius: 15px;
 }
 
 .textoenvio{
     color: white;
-    width: 20%;
+    width: 40%;
     text-align: left;
     margin-block-end: 0%;
     margin-block-start: 0%;
@@ -196,29 +197,74 @@ form p a {
     justify-self: start;
 }
 
-.comprar-botton{
-    background-color: black;
-    color: white;
-    border-radius: 15px;
-    padding: 0.5rem;
-    border-radius: 20px;
-    margin-left: 10rem;
-}
-
 .comprar{
-            background-color: black;
+        background-color: black;
         color: white;
         border-radius: 15px;
-        padding: 0.5rem;
-        border-radius: 20px;
-        margin-left: 7rem;
+        padding: 10px;
+        margin: 5px;
 }
 
-.comprar-bottom{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+@media (min-width: 500px) {
+
+    .carro {
+        max-width: 60%;
+    }
+
+    #carrito-titulo {
+        font-size: 1.5rem;
+    }
+
+    .detalles {
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        font-size: 0.6rem;
+    }
+
+
+    .precio-cantidad {
+        padding-right: 20px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button {
+        opacity: 1;
+    }
+
+    .cruz {
+        font-size: 1em;
+    }
 }
 
+@media (min-width: 768px) {
+    .carro {
+        min-width: 20%;
+        max-width: 45%;
+    }
+
+    main ::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .detalles {
+        justify-content: space-around;
+        font-size: 0.8rem;
+    }
+
+    .precio-cantidad {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .verentienda {
+        width: 50%;
+        text-align: center;
+    }
+
+    .quantity {
+        width: 40px;
+        font-size: 0.8rem;
+    }
+}
