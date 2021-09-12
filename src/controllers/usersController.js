@@ -39,6 +39,12 @@ const controller = {
                 "image": req.file ? req.file.filename : "user-default.jpg"
             };
 
+            if(req.body.recordarme !== undefined) {
+                let index = users.indexOf(newUser);
+                res.cookie("recordarme", index, {maxAge: 6000000});
+                console.log(req.cookies.recordarme);
+            };
+
             users.push(newUser);
             let newUsers = JSON.stringify(users, null, 4);
             fs.writeFileSync(path.resolve(__dirname, "../data/usuarios.json"), newUsers);

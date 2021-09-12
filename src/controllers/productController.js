@@ -64,6 +64,13 @@ const controller = {
         fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
 
         res.redirect("/products");
+    },
+    cart: (req, res) => {
+        if(req.session) {
+            res.render("carrito", {session: req.session});
+        } else {
+            res.render("carrito", {session: null});
+        };
     }
 };
 
