@@ -31,7 +31,7 @@ const controller = {
             };
             res.render("register", {errorMessages: errores.mapped(), old: req.body});
         } else {
-            let newUser = {
+            var newUser = {
                 "user": req.body.name,
                 "email": req.body.email,
                 "password": bcrypt.hashSync(req.body.password1, 10),
@@ -40,7 +40,7 @@ const controller = {
             };
 
             if(req.body.recordarme !== undefined) {
-                let index = users.indexOf(newUser);
+                let index = users.length + 1;
                 res.cookie("recordarme", index, {maxAge: 6000000});
                 console.log(req.cookies.recordarme);
             };
