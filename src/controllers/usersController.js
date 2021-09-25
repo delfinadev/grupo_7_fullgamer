@@ -19,6 +19,34 @@ const controller = {
     login: (req, res) => {
         res.render("login");
     },
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
+
+        if(!errors.isEmpty()){
+            let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), {encoded: "utf-8"});
+            let users = JSON.parse(readUsers, null, 4);
+            for (let i = 0 < users.length; i++;){
+                if (users[i].email == req.body.email){
+                    if (bycrypt.compareSync, (req.body.password, users[i].password)){
+                        let usuarioALoguearse = users[i];
+                        break;
+                    }
+                }
+            }
+
+        if (usuarioALoguearse == undefined){
+            return res.render('login', {errors:[
+                {msg: 'Contraseña incorrecta. Intente de nuevo.'}
+            ]
+            })
+        }
+        req.session.usuarioLogueado = usuarioALoguearse;
+        res.redirect('/');
+
+        } else {
+            return res.render('login', {errors: errors.errors})
+        }
+    },
     store: (req, res) => {
         let errores = validationResult(req);
 

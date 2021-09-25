@@ -14,6 +14,44 @@
         <div id="formulario">
             <h2 id="Ingresar">Ingresar</h2>
             <form>
+                <% if(locals && locals.errorMessages && locals.errorMessages !== null) { %>
+                <label for="usuario"></label>
+                <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
+                value="<%= old.usuario %>">
+                <span class="feedback">
+                <% if (errorMessages.usuario) { %>
+                    <i class="fas fa-skull-crossbones"></i>
+                    <%= errorMessages.name.msg %>
+                        <% } %>
+                    </span>
+
+                <label for="password"></label>
+                <input type="password" name="password" class="password" placeholder="Contraseña" required>
+                <button type="button" class="toggle-password"></button>
+                value="<%= old.password %>">
+                <span class="feedback">
+                    <% if (errorMessages.password) { %>
+                        <i class="fas fa-skull-crossbones"></i>
+                        <%= errorMessages.password.msg %>
+                            <% } %>
+                </span>
+                <div id="preferencias">
+                    <label for="recordarme" class="container-preferencia">
+                        <input type="radio" name="recordarme" id="recordarme"  <%= old.notificaciones !== undefined ? "checked" : "" %> > Recordarme
+                        <span class="checkmark">...</span>
+                    </label>
+                </div>
+
+                <button type="submit">INGRESAR</button>
+
+                <p>¿Todavía no tienes una cuenta? <a href="/users/register">¡Registrate!</a></p>
+            </form>
+        </div>
+
+        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Log in with Google</button>
+    </main>
+    <% } else { %>
+
                 <label for="usuario"></label>
                 <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
                 <span class="feedback"></span>
@@ -22,6 +60,7 @@
                 <input type="password" name="password" class="password" placeholder="Contraseña" required>
                 <button type="button" class="toggle-password"></button>
                 <span class="feedback"></span>
+
 
                 <div id="preferencias">
                     <label for="recordarme" class="container-preferencia">
