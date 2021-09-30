@@ -91,6 +91,14 @@ form input:focus {
     padding-left: 5%;
 }
 
+.email{
+    background-image: url(/img/email.svg);
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
+}
+
 .usuario {
     background-image: url(/img/user.svg);
     background-repeat: no-repeat;
