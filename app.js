@@ -29,12 +29,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use( (req, res, next) => {
-    rememberMe({req});
-
-    next();
-} );
-
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productRoutes);
