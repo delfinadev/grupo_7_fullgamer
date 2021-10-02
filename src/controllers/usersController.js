@@ -55,6 +55,10 @@ const controller = {
                 "image": req.file ? req.file.filename : "user-default.jpg"
             };
 
+            req.session.name = req.body.name;
+            req.session.email = req.body.email;
+            req.session.avatar = req.file ? req.file.filename : "user-default.jpg";
+
             if(req.body.recordarme !== undefined) {
                 let index = users.length + 1;
                 res.cookie("recordarme", index, {maxAge: 6000000});

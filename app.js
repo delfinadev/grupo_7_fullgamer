@@ -1,8 +1,10 @@
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const app = express();
 const methodOverride = require("method-override");
 const cookieParser = require("cookie-parser");
+const session = require("express-session");
 
 const mainRoutes = require("./src/routes/main");
 const usersRoutes = require("./src/routes/users");
@@ -21,6 +23,11 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use(methodOverride("_method"));
 app.use(cookieParser());
+app.use(session({
+    secret: "Secreto",
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
@@ -30,3 +37,4 @@ app.use("/products", productRoutes);
 app.get("/HowDidYouFoundThis", (req, res) => {
     res.sendFile(path.resolve(__dirname, "src/views/EasterEgg.html"));
 });
+
