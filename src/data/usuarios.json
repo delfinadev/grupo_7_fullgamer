@@ -68,5 +68,12 @@
         "password": "$2a$10$TSs0JaEiHurcFkFt6PetMeNX6nkVjyxKsnKpk1ZxMfWHrhZ0moTLq",
         "notifications": "off",
         "image": "user-default.jpg"
+    },
+    {
+        "user": "Ianfonta87",
+        "email": "ianfonta87@gmail.com",
+        "password": "$2a$10$THeQdYQy9UqnfKdU.MevQeiKi5WqXgR4Jv0QZsPWSYAjTsCo838O.",
+        "notifications": "off",
+        "image": "user-default.jpg"
     }
 ]
