@@ -10,6 +10,7 @@ let users = JSON.parse(readUsers, null, 4);
 // 1. leer el json de usuarios
 // 2. validar la contraseña
 
+
 const loginValidations = [
     check('email')
     .custom(async (email) => {
