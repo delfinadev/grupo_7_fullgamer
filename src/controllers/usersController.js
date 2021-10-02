@@ -19,36 +19,21 @@ const controller = {
     login: (req, res) => {
         res.render("login");
     },
+    // ------logica del login-------
     processLogin: (req, res) => {
         let errors = validationResult(req);
-
-        // if(!errors.isEmpty()){
-        //     let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), {encoded: "utf-8"});
-        //     let users = JSON.parse(readUsers, null, 4);
-        //     for (let i = 0 < users.length; i++;){
-        //         if (users[i].email == req.body.email){
-        //             if (bycrypt.compareSync, (req.body.password, users[i].password)){
-        //                 let usuarioALoguearse = users[i];
-        //                 break;
-        //             }
-        //         }
-        //     }
-
-        // if (usuarioALoguearse == undefined){
-        //     return res.render('login', {errors:[
-        //         {msg: 'Contraseña incorrecta. Intente de nuevo.'}
-        //     ]
-        //     })
-        // }
-
-        // los ifs no van, hay que crear una l+ogica para el usuario logueado
-        
-        req.session.usuarioLogueado = usuarioALoguearse;
-        res.redirect('/');
-
+        if(!errors.isEmpty()){
+            res.render("login", {errorMessages: errores})
         } else {
-            return res.render('login', {errors: errors.errors})
+        for(let i = 0; i < users.length; i++)
+        {let usuarioALoguearse = users[i];
+        req.session.usuarioLogueado = usuarioALoguearse;
         }
+        res.redirect('/');
+        }
+
+        
+    // ------logica del login-------
     },
     store: (req, res) => {
         let errores = validationResult(req);
