@@ -26,6 +26,7 @@ const controller = {
             res.render("login", {errorMessages: errores})
         } else {
         for(let i = 0; i < users.length; i++)
+        if (users[i].email == req.body.email)
         {let usuarioALoguearse = users[i];
         req.session.usuarioLogueado = usuarioALoguearse;
         }
