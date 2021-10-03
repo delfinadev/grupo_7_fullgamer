@@ -22,8 +22,10 @@ const controller = {
     // ------logica del login-------
     processLogin: (req, res) => {
         let errors = validationResult(req);
+
+        console.log(errors.mapped());
         if(!errors.isEmpty()){
-            res.render("login", {errorMessages: errores})
+            res.render("login", {errorMessages: errors.mapped(), old: req.body})
         } else {
         for(let i = 0; i < users.length; i++)
         if (users[i].email == req.body.email)

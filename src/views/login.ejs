@@ -2,87 +2,81 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/login.css">
-    <title>Full Gamer | Login</title>
+        <link rel="stylesheet" href="/css/login.css">
+        <title>Full Gamer | Login</title>
 </head>
 
 <body>
 
     <%- include('./partials/header.ejs') %>
 
-    <main>
-        <div id="formulario">
-            <h2 id="Ingresar">Ingresar</h2>
-            <form>
-<<<<<<< HEAD
-                <% if(locals && locals.errorMessages && locals.errorMessages !== null) { %>
-                <label for="usuario"></label>
-                <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
-                value="<%= old.usuario %>">
-                <span class="feedback">
-                <% if (errorMessages.usuario) { %>
-                    <i class="fas fa-skull-crossbones"></i>
-                    <%= errorMessages.name.msg %>
-                        <% } %>
-                    </span>
+        <main>
+            <div id="formulario">
+                <h2 id="Ingresar">Ingresar</h2>
+                <form method="POST" action="/users/login">
+                    <% if(locals && locals.errorMessages && locals.errorMessages !==null) { %>
+                        <label for="email"></label>
+                        <input type="text" name="email" class="email" placeholder="Email" value="<%= old.email %>"
+                            required>
+                        <span class="feedback">
+                            <% if (errorMessages.email) { %>
+                                <i class="fas fa-skull-crossbones"></i>
+                                <%= errorMessages.email.msg %>
+                                    <% } %>
+                        </span>
 
-                <label for="password"></label>
-                <input type="password" name="password" class="password" placeholder="Contraseña" required>
-                <button type="button" class="toggle-password"></button>
-                value="<%= old.password %>">
-                <span class="feedback">
-                    <% if (errorMessages.password) { %>
-                        <i class="fas fa-skull-crossbones"></i>
-                        <%= errorMessages.password.msg %>
-                            <% } %>
-                </span>
-                <div id="preferencias">
-                    <label for="recordarme" class="container-preferencia">
-                        <input type="radio" name="recordarme" id="recordarme"  <%= old.notificaciones !== undefined ? "checked" : "" %> > Recordarme
-                        <span class="checkmark">...</span>
-                    </label>
-                </div>
+                        <label for="password"></label>
+                        <input type="password" name="password" class="password" placeholder="Contraseña"
+                            value="<%= old.password %>" required>
+                        <button type="button" class="toggle-password"></button>
+                        <span class="feedback">
+                            <% if (errorMessages.password) { %>
+                                <i class="fas fa-skull-crossbones"></i>
+                                <%= errorMessages.password.msg %>
+                                    <% } %>
+                        </span>
+                        <div id="preferencias">
+                            <label for="recordarme" class="container-preferencia">
+                                <input type="radio" name="recordarme" id="recordarme" <%=old.notificaciones !==undefined
+                                    ? "checked" : "" %> > Recordarme
+                                <span class="checkmark">...</span>
+                            </label>
+                        </div>
 
-                <button type="submit">INGRESAR</button>
+                        <button type="submit">INGRESAR</button>
 
-                <p>¿Todavía no tienes una cuenta? <a href="/users/register">¡Registrate!</a></p>
-            </form>
-        </div>
+                        <p>¿Todavía no tienes una cuenta? <a href="/users/register">¡Registrate!</a></p>
+                <% } else { %>
 
-        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Log in with Google</button>
-    </main>
-    <% } else { %>
+                    <label for="email"></label>
+                    <input type="email" name="email" class="email" placeholder="Email" required>
+                    <span class="feedback"></span>
 
-                <label for="usuario"></label>
-                <input type="text" name="usuario" class="usuario" placeholder="Usuario" required>
-=======
-                <label for="email"></label>
-                <input type="email" name="email" class="email" placeholder="Email" required>
->>>>>>> origin
-                <span class="feedback"></span>
-
-                <label for="password"></label>
-                <input type="password" name="password" class="password" placeholder="Contraseña" required>
-                <button type="button" class="toggle-password"></button>
-                <span class="feedback"></span>
+                    <label for="password"></label>
+                    <input type="password" name="password" class="password" placeholder="Contraseña" required>
+                    <button type="button" class="toggle-password"></button>
+                    <span class="feedback"></span>
 
 
-                <div id="preferencias">
-                    <label for="recordarme" class="container-preferencia">
-                        <input type="radio" name="recordarme" id="recordarme"> Recordarme
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
+                    <div id="preferencias">
+                        <label for="recordarme" class="container-preferencia">
+                            <input type="radio" name="recordarme" id="recordarme"> Recordarme
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
 
-                <button type="submit">INGRESAR</button>
+                    <button type="submit">INGRESAR</button>
 
-                <p>¿Todavía no tienes una cuenta? <a href="/users/register">¡Registrate!</a></p>
-            </form>
-        </div>
+                    <p>¿Todavía no tienes una cuenta? <a href="/users/register">¡Registrate!</a></p>
 
-        <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Log in with Google</button>
-    </main>
+                    <% } %>
+                        </form>
+            </div>
 
-    <%- include('./partials/footer.ejs') %>
+            <button type="button" id="google"> <img src="/img/google-logo.png" alt="Logo Google">Log in with
+                Google</button>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
 
 </body>
