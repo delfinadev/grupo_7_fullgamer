@@ -36,3 +36,10 @@
 3. ***Continuar haciendo:*** organizar y dividir las tareas.
 4. ***Hacer menos:*** dejar cosas para último momento.
 5. ***Dejar de hacer:*** no darle el tiempo que necesitan a las acts más importantes.
+
+**SPRINT 6**
+1. ***Comenzar a hacer:*** participar en las decisiones del grupo.
+2. ***Hacer más:*** cumplir con las entregas.
+3. ***Continuar haciendo:*** organizar y dividir las tareas.
+4. ***Hacer menos:*** no comunicar al grupo en qué estamos trabados.
+5. ***Dejar de hacer:*** dejar cosas para último momento.
