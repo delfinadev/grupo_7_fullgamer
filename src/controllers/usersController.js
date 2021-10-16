@@ -30,7 +30,11 @@ const controller = {
         for(let i = 0; i < users.length; i++)
         if (users[i].email == req.body.email)
         {let usuarioALoguearse = users[i];
-        req.session.usuarioLogueado = usuarioALoguearse;
+        req.session.user = users[i].user;
+        req.session.email = users[i].email;
+        req.session.image = users[i].image;
+        req.session.save();
+        console.log(req.session);
         }
         res.redirect('/');
         }
@@ -58,9 +62,12 @@ const controller = {
                 "image": req.file ? req.file.filename : "user-default.jpg"
             };
 
-            req.session.name = req.body.name;
-            req.session.email = req.body.email;
-            req.session.avatar = req.file ? req.file.filename : "user-default.jpg";
+            req.session.user = newUser.user;
+            req.session.email = newUser.email;
+            req.session.image = newUser.image;
+            req.session.save();
+
+            console.log(req.session);
 
             if(req.body.recordarme !== undefined) {
                 let index = users.length + 1;
