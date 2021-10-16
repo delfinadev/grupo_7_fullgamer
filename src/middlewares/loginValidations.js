@@ -10,13 +10,15 @@ let users = JSON.parse(readUsers, null, 4);
 // 1. leer el json de usuarios
 // 2. validar la contraseña
 
+var indexUsuario = undefined;
+
 
 const loginValidations = [
     check('email')
         .custom(async (email) => {
             for (let i = 0; i < users.length; i++)
                 if (users[i].email == email) {
-                    var indexUsuario = i;
+                    indexUsuario = i;
                 }
             if (indexUsuario == undefined) {
                 throw new Error("El email no está registrado")
