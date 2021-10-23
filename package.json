@@ -26,8 +26,10 @@
     "jsdom": "^16.6.0",
     "method-override": "^3.0.0",
     "multer": "^1.4.3",
+    "mysql2": "^2.3.2",
     "path": "^0.12.7",
     "save": "^2.4.0",
+    "sequelize": "^6.7.0",
     "xmlhttprequest": "^1.8.0"
   }
 }
