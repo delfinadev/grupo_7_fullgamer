@@ -8,11 +8,6 @@ const controller = {
         res.render("listadoProductos", { products: products });
     },
     create: (req, res) => {
-        db.Productos.create({
-            name: req.body.name,
-            price: req.body.price, 
-            description: req.body.description
-        });
         res.render("agregarProducto", { product: null });
     },
     detail: (req, res) => {
@@ -24,6 +19,12 @@ const controller = {
         res.render("agregarProducto", { product: products[id] });
     },
     store: (req, res) => {
+        db.Productos.create({
+            name: req.body.name,
+            price: req.body.price, 
+            description: req.body.description
+        });
+
         let newProduct = {
             "id": products.length,
             "name": req.body.name,
@@ -43,6 +44,7 @@ const controller = {
     },
     // Editar un producto en el json
     update: (req, res) => {
+
         let id = req.params.id;
 
         products[id].name = req.body.name;
@@ -61,6 +63,12 @@ const controller = {
     },
     //Eliminar un producto del json
     destroy: (req, res) => {
+    db.Productos.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+
         let id = req.params.id;
 
         products.splice(id, 1);
