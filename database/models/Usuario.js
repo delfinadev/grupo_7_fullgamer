@@ -2,11 +2,11 @@ module.exports = (sequelize, DataTypes) => {
     let alias = "Usuarios";
     let cols = {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        user: {
             type: DataTypes.STRING
         },
         email: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         image: {
-            type: DataTypes.IMAGE
+            type: DataTypes.STRING
         },
         notifications: {
             type: DataTypes.BOOLEAN
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
     };
     let config = {
         tableName: "Users",
-        timeStamps: false
+        timestamps: false
     };
     const Usuario = sequelize.define(alias, cols, config);
     return Usuario;

@@ -2,9 +2,6 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
-let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), {encoded: "utf-8"});
-let users = JSON.parse(readUsers, null, 4);
-
 //Usé el for para encriptar las contraseñas que ya teníamos en el json
 //for (let i = 0; i < users.length; i++) {
     //console.log(bcrypt.hashSync(users[i].password, 10));
@@ -27,15 +24,21 @@ const controller = {
         if(!errors.isEmpty()){
             res.render("login", {errorMessages: errors.mapped(), old: req.body})
         } else {
-        for(let i = 0; i < users.length; i++)
-        if (users[i].email == req.body.email)
-        {let usuarioALoguearse = users[i];
-        req.session.user = users[i].user;
-        req.session.email = users[i].email;
-        req.session.image = users[i].image;
-        req.session.save();
-        console.log(req.session);
+            for(let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    req.session.user = users[i].user;
+                    req.session.email = users[i].email;
+                    req.session.image = users[i].image;
+                    req.session.save();
+                    console.log(req.session);
+                    if(req.body.recordarme !== undefined) {
+                        let index = i;
+                        res.cookie("recordarme", index, {maxAge: 6000000});
+                        req.cookies.recordarme = index;
+                        console.log(req.cookies.recordarme);
+                    };
         }
+    }
         res.redirect('/');
         }
 
@@ -72,6 +75,7 @@ const controller = {
             if(req.body.recordarme !== undefined) {
                 let index = users.length + 1;
                 res.cookie("recordarme", index, {maxAge: 6000000});
+                req.cookies.recordarme = index;
                 console.log(req.cookies.recordarme);
             };
 

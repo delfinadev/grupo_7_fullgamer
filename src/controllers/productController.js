@@ -1,9 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-let leerProductos = fs.readFileSync(path.resolve(__dirname, "../data/products.json"), { encoded: "utf-8" });
-let products = JSON.parse(leerProductos);
-let db = require("database/models");
+let db = require("../../database/models");
 
 const controller = {
     index: (req, res) => {

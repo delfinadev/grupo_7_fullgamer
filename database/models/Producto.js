@@ -1,4 +1,4 @@
-module.exports = (Sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
     let alias = "Productos";
 
     let cols = {
@@ -19,10 +19,12 @@ module.exports = (Sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             foreingKey: true
         } ,
-        created_at: {
+        createdAt: {
+            field: "created_At",
             type: DataTypes.DATE
         } ,
-        updated_at: {
+        updatedAt: {
+            field: "updated_At",
             type: DataTypes.DATE
         },
     };
@@ -31,5 +33,6 @@ module.exports = (Sequelize, DataTypes) => {
         timeStamps: true
     };
     const Producto = sequelize.define(alias, cols, config);
+
     return Producto;
 }
