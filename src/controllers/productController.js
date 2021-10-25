@@ -3,12 +3,18 @@ const path = require("path");
 
 let leerProductos = fs.readFileSync(path.resolve(__dirname, "../data/products.json"), { encoded: "utf-8" });
 let products = JSON.parse(leerProductos);
+let db = require("database/models");
 
 const controller = {
     index: (req, res) => {
         res.render("listadoProductos", { products: products });
     },
     create: (req, res) => {
+        db.Productos.create({
+            name: req.body.name,
+            price: req.body.price, 
+            description: req.body.description
+        });
         res.render("agregarProducto", { product: null });
     },
     detail: (req, res) => {
