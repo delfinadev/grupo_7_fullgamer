@@ -21,7 +21,7 @@ router.get("/", productController.index);
 
 router.get("/create", productController.create);
 
-router.post("delete/:id", productController.delete);
+router.post("delete/:id", productController.destroy);
 
 router.get("/detail/:id", productController.detail);
 
