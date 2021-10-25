@@ -6,10 +6,12 @@ const { check } = require("express-validator");
 
 let db = require("../../database/models");
 
-let users = db.Usuarios.findAll()
-                .then(function(usuarios) {
-                    return usuarios;
-                });
+let users;
+
+db.Usuarios.findAll()
+    .then(function(usuarios) {
+        users = usuarios;
+    });
 
 // 1. leer el json de usuarios
 // 2. validar la contraseña
