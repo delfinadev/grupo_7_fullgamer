@@ -30,7 +30,7 @@ CREATE TABLE `users` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `user` char(30) NOT NULL,
   `email` char(50) NOT NULL,
-  `password` char(12) NOT NULL,
+  `password` char(255) NOT NULL,
   `notifications` char(3) NOT NULL,
   `image` char(200) NOT NULL,
   `role` smallint(6) NOT NULL,
