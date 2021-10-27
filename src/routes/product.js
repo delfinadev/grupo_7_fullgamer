@@ -31,6 +31,8 @@ router.get("/:id/edit", productController.edit);
 
 router.get("/edit/:id", productController.edit)
 
+router.post("/edit/:id", productController.update)
+
 router.put("/:id/edit", productController.update);
 
 router.post("/create", upload.single('image'), productController.store);
