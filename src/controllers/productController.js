@@ -38,6 +38,12 @@ const controller = {
 
         res.redirect("/products");
     },
+    edit: function(req, res) {
+         db.Productos.findByPk(req.params.id)
+         .then(function(product){
+             res.render("editarProducto", {product:product});
+         })
+    },
     update: (req, res) => {
 
         let id = req.params.id;
