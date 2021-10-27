@@ -34,9 +34,10 @@ const controller = {
             description: req.body.description,
             category_id: req.body.category,
             created_at: Date.now()
-        });
-
-        res.redirect("/products");
+        })
+            .then(() => {
+                res.redirect("/products");
+            });
     },
     update: (req, res) => {
 
