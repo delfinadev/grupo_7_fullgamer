@@ -42,7 +42,7 @@ const controller = {
     edit: function(req, res) {
          db.Productos.findByPk(req.params.id)
          .then(function(product){
-             res.render("editarProducts", {product:product});
+             res.render("agregarProducto", {product:product});
          })
     },
     update: (req, res) => {
