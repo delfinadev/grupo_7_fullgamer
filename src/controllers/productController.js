@@ -44,6 +44,20 @@ const controller = {
              res.render("editarProducts", {product:product});
          })
     },
+    update: function(req, res){
+        db.Productos.update({
+            name: req.body.name,
+            price: req.body.price, 
+            description: req.body.description,
+            category_id: req.body.category,
+            created_at: Date.now()
+        },{
+            where: {
+                id: req.params.id
+            }
+        }),
+        res.redirect("products/edit" + req.params.id)
+    },
     update: (req, res) => {
 
         let id = req.params.id;
