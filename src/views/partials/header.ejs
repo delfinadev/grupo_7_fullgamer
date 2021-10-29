@@ -13,8 +13,24 @@
             <span class="products-in-cart"></span>
         </div>
 
+        <% if(locals && locals.session && locals.session !== null && locals.session !== undefined) { %>
+        <div class="user-profile">
+            <div class="user">
+                <img src="/img/users/<%= locals.session.image %>" alt="Imagen usuario" class="user-image">
+                <p><%= locals.session.user %></p>
+                <i class="fas fa-sort-down down-arrow"></i>
+                <span class="options">
+                    <a class="profile">Ver perfil</a>
+                    <p class="destroy-session">Cerrar sesión</p>
+                </span>
+            </div>
+        </div>
+        <% } else { %>
         <div class="d-header-login">
             <a id="login" href="/users/login">Login</a>
         </div>
+        <% } %>
     </div>
+
+    <script src="/js/userDisplay.js"></script>
 </header>

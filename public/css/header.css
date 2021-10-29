@@ -106,6 +106,67 @@ header {
     justify-self: flex-end;
 }
 
+.user-profile {
+    order: 1;
+    width: 35%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.user-image {
+    width: 15%;
+    border-radius: 10px;
+}
+
+.down-arrow {
+    font-size: 0.8rem;
+    color: black;
+    cursor: pointer;
+}
+
+.options {
+    display: none;
+}
+
+.profile {
+    color: black;
+    padding: 2px;
+    border-bottom: solid black 1px;
+}
+
+.destroy-session {
+    color: #e4133b;
+    padding: 2px;
+}
+
+.show {
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 /*Color del login */
 #login{
     color: white;
@@ -141,4 +202,22 @@ header {
         order: 2;
         justify-self: flex-end;
     }
+
+    .user-profile {
+        width: 15%;
+        margin-right: 2rem;
+        order: 2;
+        justify-self: flex-end;
+        position: relative;
+    }
+
+    .show {
+        position: absolute;
+        top: 1.5rem;
+    }
+
+    .destroy-session {
+        cursor: pointer;
+    }
+
 }
