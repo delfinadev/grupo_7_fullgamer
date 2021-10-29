@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-let db = require("../../database/models");
+let db = require("../database/models");
 
 const controller = {
     index: (req, res) => {
