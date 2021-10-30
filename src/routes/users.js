@@ -24,5 +24,9 @@ router.post("/register", upload.single("image"), registerValidations, usersContr
 router.get("/login", usersController.login);
 router.post("/login", loginValidations, usersController.processLogin);
 
+router.post("/add", usersController.create);
+
+router.get("/edit/:id", usersController.edit);
+router.post("/edit/:id", usersController.update);
 
 module.exports = router;

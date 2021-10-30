@@ -1,10 +1,11 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
+let db = require("../database/models");
 
 //Usé el for para encriptar las contraseñas que ya teníamos en el json
 //for (let i = 0; i < users.length; i++) {
-    //console.log(bcrypt.hashSync(users[i].password, 10));
+//console.log(bcrypt.hashSync(users[i].password, 10));
 //}
 
 const { validationResult } = require("express-validator");
@@ -85,6 +86,36 @@ const controller = {
 
             res.redirect("/");
         };
+    },
+    create: function(req, res) {
+        db.Usuarios.create({
+            user: req.body.user,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image,
+            notifications: req.body.notifications
+        });
+        res.render("/users")
+    },
+    edit: function(req, res){
+        db.Usuarios.findByPk(req.params.id)
+            .then(function(usuario) {
+                res.render("editarUsuario", {usuario:usuario});
+            })
+    },
+    update: function(req, res){
+        db.Usuarios.update({
+            user: req.body.user,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image,
+            notifications: req.body.notifications
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/edit/" + req.params.id)
     }
 };
 

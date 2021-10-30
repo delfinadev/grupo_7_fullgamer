@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         },
         image: {
-            type: DataTypes.STRING
+            type: DataTypes.VARBINARY(MAX)
         },
         notifications: {
             type: DataTypes.BOOLEAN
