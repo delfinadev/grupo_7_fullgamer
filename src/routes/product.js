@@ -21,11 +21,17 @@ router.get("/", productController.index);
 
 router.get("/create", productController.create);
 
+router.post("delete/:id", productController.destroy);
+
 router.get("/detail/:id", productController.detail);
 
 router.get("/carrito", productController.cart);
 
 router.get("/:id/edit", productController.edit);
+
+router.get("/edit/:id", productController.edit)
+
+router.post("/edit/:id", productController.update)
 
 router.put("/:id/edit", productController.update);
 

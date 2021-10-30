@@ -1,44 +1,66 @@
 const fs = require("fs");
 const path = require("path");
 
-let leerProductos = fs.readFileSync(path.resolve(__dirname, "../data/products.json"), { encoded: "utf-8" });
-let products = JSON.parse(leerProductos);
+let db = require("../database/models");
 
 const controller = {
     index: (req, res) => {
-        res.render("listadoProductos", { products: products });
+        db.Productos.findAll()
+            .then(function(products) {
+                res.render("listadoProductos", { products: products });
+            });
     },
     create: (req, res) => {
         res.render("agregarProducto", { product: null });
     },
     detail: (req, res) => {
         let id = req.params.id;
-        res.render("producto", { product: products[id] });
+        db.Productos.findByPk(id)
+            .then(function(product) {
+                res.render("producto", { product: product });
+            });
     },
     edit: (req, res) => {
         let id = req.params.id;
-        res.render("agregarProducto", { product: products[id] });
+        db.Productos.findByPk(id)
+            .then(function(product) {
+                res.render("agregarProducto", { product: product });
+            });
     },
     store: (req, res) => {
-        let newProduct = {
-            "id": products.length,
-            "name": req.body.name,
-            "description": req.body.description,
-            "image": req.file.filename,
-            "image2": "mouse-segunda-foto.jpg",
-            "category": req.body.category,
-            "price": req.body.price,
-            "date": req.body.date
-        };
-
-        products.push(newProduct);
-        let newProducts = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
-
-        res.redirect("/products");
+        db.Productos.create({
+            name: req.body.name,
+            price: req.body.price, 
+            description: req.body.description,
+            category_id: req.body.category,
+            created_at: Date.now()
+        })
+            .then(() => {
+                res.redirect("/products");
+            });
     },
-    // Editar un producto en el json
+    edit: function(req, res) {
+         db.Productos.findByPk(req.params.id)
+         .then(function(product){
+             res.render("agregarProducto", {product:product});
+         })
+    },
+    update: function(req, res){
+        db.Productos.update({
+            name: req.body.name,
+            price: req.body.price, 
+            description: req.body.description,
+            category_id: req.body.category,
+            created_at: Date.now()
+        },{
+            where: {
+                id: req.params.id
+            }
+        }),
+        res.redirect("products/edit" + req.params.id)
+    },
     update: (req, res) => {
+
         let id = req.params.id;
 
         products[id].name = req.body.name;
@@ -55,15 +77,15 @@ const controller = {
 
         res.redirect("/products");
     },
-    //Eliminar un producto del json
     destroy: (req, res) => {
-        let id = req.params.id;
-
-        products.splice(id, 1);
-        let newProducts = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
-
-        res.redirect("/products");
+    db.Productos.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(() => {
+            res.redirect("/products");
+        })
     },
     cart: (req, res) => {
         if(req.session) {

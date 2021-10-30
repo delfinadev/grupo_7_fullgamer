@@ -142,9 +142,12 @@ form input:focus {
     padding: 10px 20px;
 }
 
-/* Cuando clickean el botón de visibilidad */
-.toggle-password:active {
+.visibility {
     background-image: url(/img/visibility.svg);
+}
+
+.no-visibility {
+    background-image: url(/img/no-visibility.svg);
 }
 
 .feedback {
@@ -235,9 +238,10 @@ form button {
     color: white;
     padding: 10px 20px;
     transition: background-color 0.5s;
+    cursor: pointer;
 }
 
-form button:hover {
+.submit:hover {
     background-color: rgba(32, 32, 32, 1);
 }
 

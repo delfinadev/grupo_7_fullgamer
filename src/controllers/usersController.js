@@ -1,13 +1,11 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-
-let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), {encoded: "utf-8"});
-let users = JSON.parse(readUsers, null, 4);
+let db = require("../database/models");
 
 //Usé el for para encriptar las contraseñas que ya teníamos en el json
 //for (let i = 0; i < users.length; i++) {
-    //console.log(bcrypt.hashSync(users[i].password, 10));
+//console.log(bcrypt.hashSync(users[i].password, 10));
 //}
 
 const { validationResult } = require("express-validator");
@@ -27,15 +25,21 @@ const controller = {
         if(!errors.isEmpty()){
             res.render("login", {errorMessages: errors.mapped(), old: req.body})
         } else {
-        for(let i = 0; i < users.length; i++)
-        if (users[i].email == req.body.email)
-        {let usuarioALoguearse = users[i];
-        req.session.user = users[i].user;
-        req.session.email = users[i].email;
-        req.session.image = users[i].image;
-        req.session.save();
-        console.log(req.session);
+            for(let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    req.session.user = users[i].user;
+                    req.session.email = users[i].email;
+                    req.session.image = users[i].image;
+                    req.session.save();
+                    console.log(req.session);
+                    if(req.body.recordarme !== undefined) {
+                        let index = i;
+                        res.cookie("recordarme", index, {maxAge: 6000000});
+                        req.cookies.recordarme = index;
+                        console.log(req.cookies.recordarme);
+                    };
         }
+    }
         res.redirect('/');
         }
 
@@ -72,6 +76,7 @@ const controller = {
             if(req.body.recordarme !== undefined) {
                 let index = users.length + 1;
                 res.cookie("recordarme", index, {maxAge: 6000000});
+                req.cookies.recordarme = index;
                 console.log(req.cookies.recordarme);
             };
 
@@ -81,6 +86,36 @@ const controller = {
 
             res.redirect("/");
         };
+    },
+    create: function(req, res) {
+        db.Usuarios.create({
+            user: req.body.user,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image,
+            notifications: req.body.notifications
+        });
+        res.render("/users")
+    },
+    edit: function(req, res){
+        db.Usuarios.findByPk(req.params.id)
+            .then(function(usuario) {
+                res.render("editarUsuario", {usuario:usuario});
+            })
+    },
+    update: function(req, res){
+        db.Usuarios.update({
+            user: req.body.user,
+            email: req.body.email,
+            password: req.body.password,
+            image: req.body.image,
+            notifications: req.body.notifications
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/edit/" + req.params.id)
     }
 };
 

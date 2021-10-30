@@ -4,8 +4,14 @@ const { text } = require("express");
 const bcrypt = require("bcryptjs");
 const { check } = require("express-validator");
 
-let readUsers = fs.readFileSync(path.resolve(__dirname, "../data/usuarios.json"), { encoded: "utf-8" });
-let users = JSON.parse(readUsers, null, 4);
+let db = require("../../database/models");
+
+let users;
+
+db.Usuarios.findAll()
+    .then(function(usuarios) {
+        users = usuarios;
+    });
 
 // 1. leer el json de usuarios
 // 2. validar la contraseña

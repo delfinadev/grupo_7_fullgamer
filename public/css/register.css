@@ -166,7 +166,6 @@ main ::placeholder {
 
 .toggle-password {
     background-color: transparent;
-    background-image: url(/img/no-visibility.svg);
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: center;
@@ -179,6 +178,14 @@ main ::placeholder {
     border-style: none;
     color: white;
     padding: 10px 20px;
+}
+
+.visibility {
+    background-image: url(/img/visibility.svg);
+}
+
+.no-visibility {
+    background-image: url(/img/no-visibility.svg);
 }
 
 /* Div de recordarme y notificaciones */

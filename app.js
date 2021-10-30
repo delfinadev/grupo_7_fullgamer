@@ -10,6 +10,8 @@ const mainRoutes = require("./src/routes/main");
 const usersRoutes = require("./src/routes/users");
 const productRoutes = require("./src/routes/product");
 
+const rememberMe = require("./src/middlewares/rememberMe");
+
 app.set("view engine", "ejs");
 app.set('views', './src/views');
 

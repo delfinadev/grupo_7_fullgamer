@@ -22,10 +22,11 @@ router.get("/register", usersController.register);
 router.post("/register", upload.single("image"), registerValidations, usersController.store);
 
 router.get("/login", usersController.login);
-router.post("/login", loginValidations,
-// [check('email').isEmail().withMessage('Email inválido'),
-// check('password').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres'),],
-usersController.processLogin);
+router.post("/login", loginValidations, usersController.processLogin);
 
+router.post("/add", usersController.create);
+
+router.get("/edit/:id", usersController.edit);
+router.post("/edit/:id", usersController.update);
 
 module.exports = router;
