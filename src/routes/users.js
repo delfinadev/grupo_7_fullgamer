@@ -27,5 +27,9 @@ router.delete("/logout", usersController.logout);
 
 router.get("/:id", usersController.userProfile);
 
+router.post("/add", usersController.create);
+
+router.get("/edit/:id", usersController.edit);
+router.post("/edit/:id", usersController.update);
 
 module.exports = router;

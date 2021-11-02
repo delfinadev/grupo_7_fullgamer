@@ -37,3 +37,8 @@ Los integrantes son:
 **Tablero de tareas**
 
 - [*Trello*](https://trello.com/b/9wRp600Y/kanban-grupo-7)
+
+**Diagrama de Entidad Relacional**
+
+- [*PDF*](https://drive.google.com/file/d/1DwImU3Hw6VAWcCMtoWUFMHI8BXoaXfUp/view?usp=sharing)
+
