@@ -43,3 +43,10 @@
 3. ***Continuar haciendo:*** organizar y dividir las tareas.
 4. ***Hacer menos:*** no comunicar al grupo en qué estamos trabados.
 5. ***Dejar de hacer:*** dejar cosas para último momento.
+
+**SPRINT 7**
+1. ***Comenzar a hacer:*** dedicarle más tiempo al proyecto para ponernos al día.
+2. ***Hacer más:*** involucrarse en las decisiones y organización del grupo.
+3. ***Continuar haciendo:*** organizar y dividir las tareas.
+4. ***Hacer menos:*** no comunicar dudas o inconvenientes.
+5. ***Dejar de hacer:*** atrasarse con las entregas.
