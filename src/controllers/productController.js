@@ -57,25 +57,7 @@ const controller = {
                 id: req.params.id
             }
         }),
-        res.redirect("products/edit" + req.params.id)
-    },
-    update: (req, res) => {
-
-        let id = req.params.id;
-
-        products[id].name = req.body.name;
-        products[id].price = req.body.price;
-        products[id].description = req.body.description;
-        if (req.body.image) {
-            products[id].image = req.body.image;
-        };
-        products[id].category = req.body.category;
-        products[id].date = req.body.date;
-        
-        let newProducts = JSON.stringify(products, null, 4);
-        fs.writeFileSync(path.resolve(__dirname, "../data/products.json"), newProducts);
-
-        res.redirect("/products");
+        res.redirect("/products")
     },
     destroy: (req, res) => {
     db.Productos.destroy({

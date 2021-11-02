@@ -23,6 +23,9 @@ router.post("/register", upload.single("image"), registerValidations, usersContr
 
 router.get("/login", usersController.login);
 router.post("/login", loginValidations, usersController.processLogin);
+router.delete("/logout", usersController.logout);
+
+router.get("/:id", usersController.userProfile);
 
 
 module.exports = router;

@@ -2,12 +2,22 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
 
+let db = require("../../database/models");
+
 //Usé el for para encriptar las contraseñas que ya teníamos en el json
 //for (let i = 0; i < users.length; i++) {
     //console.log(bcrypt.hashSync(users[i].password, 10));
 //}
 
+let users;
+
+db.Usuarios.findAll()
+    .then(function(usuarios) {
+        users = usuarios;
+    });
+
 const { validationResult } = require("express-validator");
+const { localsName } = require("ejs");
 
 const controller = {
     register: (req, res) => {
@@ -15,6 +25,13 @@ const controller = {
     },
     login: (req, res) => {
         res.render("login");
+    },
+    userProfile: (req, res) => {
+        db.Usuarios.findByPk(req.params.id)
+            .then(function(user) {
+                console.log(user);
+                res.render("userProfile", {user: user});
+            });
     },
     // ------logica del login-------
     processLogin: (req, res) => {
@@ -26,9 +43,11 @@ const controller = {
         } else {
             for(let i = 0; i < users.length; i++) {
                 if (users[i].email == req.body.email) {
+                    req.session.userId = i + 1;
                     req.session.user = users[i].user;
                     req.session.email = users[i].email;
                     req.session.image = users[i].image;
+                    req.session.role = users[i].role;
                     req.session.save();
                     console.log(req.session);
                     if(req.body.recordarme !== undefined) {
@@ -44,6 +63,15 @@ const controller = {
 
         
     // ------logica del login-------
+    },
+
+    logout: (req, res) => {
+        if(req.session) {
+            req.session.destroy(console.error());
+            res.locals.session = null;
+        };
+
+        res.redirect("/");
     },
     store: (req, res) => {
         let errores = validationResult(req);
@@ -65,9 +93,11 @@ const controller = {
                 "image": req.file ? req.file.filename : "user-default.jpg"
             };
 
+            req.session.userId = users.length + 1;
             req.session.user = newUser.user;
             req.session.email = newUser.email;
             req.session.image = newUser.image;
+            req.session.role = 1;
             req.session.save();
 
             console.log(req.session);
