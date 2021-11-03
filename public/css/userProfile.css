@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Spartan', sans-serif;
+}
+
+body{
+    background-color: #111010;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    background-image: url(/img/user-profile-background.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    background: rgb(154,0,0);
+    background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
+    flex: 1 1 auto;
+    min-width: 30%;
+    max-width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 20px;
+    padding-top: 30px;
+}
+
+.user-image {
+    border-radius: 50%;
+    flex: 1 1 auto;
+    min-width: 30%;
+    max-width: 45%;
+}
+
+.input-container {
+    width: 100%;
+    background-color: #323232;
+    background: linear-gradient(90deg, rgba(32,32,32,0.6) 20%, rgba(32,32,32,0.6) 20%);
+    color: white;
+    font-size: 0.7rem;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.edit {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(154, 0, 0, 0.616);
+    padding: 5px;
+}
+
+.input {
+    width: 85%;
+    border: none;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 0.5rem;
+    color: white;
+}
+
+.pencil {
+    cursor: pointer;
+}
+
+.change-password {
+    color: white;
+    font-size: 0.8rem;
+    margin: 10px 0 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.save {
+    background-color: #323232;
+    background: linear-gradient(90deg, rgba(32, 32, 32, 0.8) 20%, rgba(32,32,32,0.8) 20%);
+    flex: 1 1 auto;
+    min-width: 30%;
+    max-width: 40%;
+    font-size: 0.8rem;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media (min-width: 500px) {
+    .container {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 35%;
+    }
+
+    .input {
+        font-size: 0.7rem;
+    }
+
+}

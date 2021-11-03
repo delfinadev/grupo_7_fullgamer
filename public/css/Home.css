@@ -124,7 +124,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.07);
+    background-color: white;
     position: relative;
 }
 
