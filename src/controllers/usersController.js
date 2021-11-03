@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-let db = require("../database/models");
 
 let db = require("../../database/models");
 
@@ -10,10 +9,8 @@ let db = require("../../database/models");
 //console.log(bcrypt.hashSync(users[i].password, 10));
 //}
 
-let users;
-
 db.Usuarios.findAll()
-    .then(function(usuarios) {
+    .then(function (usuarios) {
         users = usuarios;
     });
 
@@ -22,16 +19,20 @@ const { localsName } = require("ejs");
 
 const controller = {
     register: (req, res) => {
-        res.render("register", {errorMessages: null, old: null});
+        res.render("register", { errorMessages: null, old: null });
     },
     login: (req, res) => {
         res.render("login");
     },
     userProfile: (req, res) => {
-        db.Usuarios.findByPk(req.params.id)
-            .then(function(user) {
+        db.Usuarios.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function (user) {
                 console.log(user);
-                res.render("userProfile", {user: user});
+                res.render("userProfile", { user: user });
             });
     },
     // ------logica del login-------
@@ -39,101 +40,86 @@ const controller = {
         let errors = validationResult(req);
 
         console.log(errors.mapped());
-        if(!errors.isEmpty()){
-            res.render("login", {errorMessages: errors.mapped(), old: req.body})
+        if (!errors.isEmpty()) {
+            res.render("login", { errorMessages: errors.mapped(), old: req.body })
         } else {
-            for(let i = 0; i < users.length; i++) {
-                if (users[i].email == req.body.email) {
-                    req.session.userId = i + 1;
-                    req.session.user = users[i].user;
-                    req.session.email = users[i].email;
-                    req.session.image = users[i].image;
-                    req.session.role = users[i].role;
-                    req.session.save();
-                    console.log(req.session);
-                    if(req.body.recordarme !== undefined) {
-                        let index = i;
-                        res.cookie("recordarme", index, {maxAge: 6000000});
-                        req.cookies.recordarme = index;
-                        console.log(req.cookies.recordarme);
+            db.Usuarios.findAll()
+                .then(function (users) {
+                    for (let i = 0; i < users.length; i++) {
+                        if (users[i].email == req.body.email) {
+                            req.session.userId = i + 1;
+                            req.session.user = users[i].user;
+                            req.session.email = users[i].email;
+                            req.session.image = users[i].image;
+                            req.session.role = users[i].role;
+                            req.session.save();
+                            console.log(req.session);
+                            if (req.body.recordarme !== undefined) {
+                                let index = i;
+                                res.cookie("recordarme", index, { maxAge: 6000000 });
+                                req.cookies.recordarme = index;
+                                console.log(req.cookies.recordarme);
+                            };
+                        };
                     };
+                });
         }
-    }
         res.redirect('/');
-        }
-
-        
-    // ------logica del login-------
     },
 
     logout: (req, res) => {
         if(req.session) {
             req.session.destroy(console.error());
-            res.locals.session = null;
+res.locals.session = null;
         };
 
-        res.redirect("/");
+res.redirect("/");
     },
-    store: (req, res) => {
-        let errores = validationResult(req);
+store: (req, res) => {
+    let errores = validationResult(req);
 
-        if(!errores.isEmpty()) {
-            console.log(errores.mapped());
-            //Borrar la imagen si es que hay errores:
-            if (req.file) {
-                let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
-                fs.unlinkSync(imagePath);
-            };
-            res.render("register", {errorMessages: errores.mapped(), old: req.body});
-        } else {
-            var newUser = {
-                "user": req.body.name,
-                "email": req.body.email,
-                "password": bcrypt.hashSync(req.body.password1, 10),
-                "notifications": req.body.notificaciones !== undefined ? "on" : "off",
-                "image": req.file ? req.file.filename : "user-default.jpg"
-            };
-
-            req.session.userId = users.length + 1;
-            req.session.user = newUser.user;
-            req.session.email = newUser.email;
-            req.session.image = newUser.image;
-            req.session.role = 1;
-            req.session.save();
-
-            console.log(req.session);
-
-            if(req.body.recordarme !== undefined) {
-                let index = users.length + 1;
-                res.cookie("recordarme", index, {maxAge: 6000000});
-                req.cookies.recordarme = index;
-                console.log(req.cookies.recordarme);
-            };
-
-            users.push(newUser);
-            let newUsers = JSON.stringify(users, null, 4);
-            fs.writeFileSync(path.resolve(__dirname, "../data/usuarios.json"), newUsers);
-
-            res.redirect("/");
+    if (!errores.isEmpty()) {
+        console.log(errores.mapped());
+        //Borrar la imagen si es que hay errores:
+        if (req.file) {
+            let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
+            fs.unlinkSync(imagePath);
         };
-    },
-    create: function(req, res) {
+        res.render("register", { errorMessages: errores.mapped(), old: req.body });
+    } else {
+
         db.Usuarios.create({
             user: req.body.user,
             email: req.body.email,
             password: req.body.password,
             image: req.body.image,
             notifications: req.body.notifications
-        });
-        res.render("/users")
-    },
-    edit: function(req, res){
-        db.Usuarios.findByPk(req.params.id)
-            .then(function(usuario) {
-                res.render("editarUsuario", {usuario:usuario});
-            })
-    },
-    update: function(req, res){
+        })
+            .then(function (user) {
+                req.session.userId = user.id;;
+                req.session.user = user.user;
+                req.session.email = user.email;
+                req.session.image = user.image;
+                req.session.role = 1;
+                req.session.save();
+
+                if (req.body.recordarme !== undefined) {
+                    let index = users.length + 1;
+                    res.cookie("recordarme", index, { maxAge: 6000000 });
+                    req.cookies.recordarme = index;
+                    console.log(req.cookies.recordarme);
+                };
+
+                res.redirect("/");
+            });
+
+
+        console.log(req.session);
+
+
+    };
+},
+    update: function (req, res) {
         db.Usuarios.update({
             user: req.body.user,
             email: req.body.email,
@@ -145,7 +131,7 @@ const controller = {
                 id: req.params.id
             }
         })
-        res.redirect("/users/edit/" + req.params.id)
+        res.redirect("/");
     }
 };
 
