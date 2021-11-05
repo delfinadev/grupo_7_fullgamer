@@ -162,6 +162,11 @@ main ::placeholder {
     text-align: justify;
     margin-bottom: 10px;
     line-height: 1.5em;
+    height: 1.5rem;
+}
+
+.crossbones {
+    display: none;
 }
 
 .toggle-password {
@@ -362,7 +367,7 @@ a {
 @media (min-width: 768px) {
     #caja-formulario {
         border-radius: 30px;
-        max-width: 35%;
+        max-width: 30%;
     }
 
     #registrarse {
