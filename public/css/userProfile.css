@@ -35,11 +35,41 @@ main {
     padding-top: 30px;
 }
 
-.user-image {
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.image {
     border-radius: 50%;
     flex: 1 1 auto;
     min-width: 30%;
     max-width: 45%;
+}
+
+.image-label {
+    color: rgba(252, 199, 199, 1);
+    position: absolute;
+    bottom: 0rem;
+    right: 5.2rem;
+    cursor: pointer;
+}
+
+.image-input {
+    display: none;
 }
 
 .input-container {
@@ -52,13 +82,14 @@ main {
     border-radius: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
 }
 
 .edit {
     width: 70%;
+    margin-right: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -74,6 +105,14 @@ main {
     padding: 4px;
     font-size: 0.5rem;
     color: white;
+    background-color: rgb(83, 83, 83);
+    transition: background-color 0.5s;
+    transition: border 0.5s;
+}
+
+.input:focus {
+    outline: none;
+    border: solid 1px black;
 }
 
 .pencil {
@@ -88,7 +127,15 @@ main {
     cursor: pointer;
 }
 
-.save {
+.button-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
     background-color: #323232;
     background: linear-gradient(90deg, rgba(32, 32, 32, 0.8) 20%, rgba(32,32,32,0.8) 20%);
     flex: 1 1 auto;
@@ -99,6 +146,7 @@ main {
     border: none;
     padding: 5px;
     border-radius: 8px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -115,6 +163,10 @@ main {
 
     .input {
         font-size: 0.7rem;
+    }
+
+    .image-label {
+        right: 8rem;
     }
 
 }
