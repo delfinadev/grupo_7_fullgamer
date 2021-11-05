@@ -15,6 +15,9 @@
             <% for (let i = 0; i < products.length; i++) { %>
             <article class="producto">
                 <img src="/img/<%= products[i].image %>" alt="<%= products[i].name %>">
+                <% if(locals && locals.session.role == 8) { %>
+                    <a href="/products/<%= i + 1 %>/edit" class="edit"><i class="fas fa-pen"></i></a>
+                    <% } %>
                 <div class="descripcion-producto">
                     <p class="nombre-producto"><%= products[i].name %></p>
                     <a href="/products/detail/<%= i %>">Ver más</a>
@@ -27,6 +30,10 @@
             <button class="next"><a href="" class="a-carousel">&#10095;</a></button>
 
         </section>
+
+        <% if(locals.session.role === 8) { %>
+            <a href="/products/create"><i class="fas fa-plus add"></i></a>
+        <% } %>
 
     
     </main>
