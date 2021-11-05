@@ -27,6 +27,7 @@ router.delete("/logout", usersController.logout);
 
 router.get("/:id", usersController.userProfile);
 
-router.post("/edit/:id", usersController.update);
+router.put("/edit/:id", upload.single("image"), usersController.update);
+router.delete("/destroy/:id", usersController.destroy);
 
 module.exports = router;

@@ -132,7 +132,7 @@ header {
 
 .user-image {
     width: 15%;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .down-arrow {
@@ -219,7 +219,7 @@ header {
     }
 
     .show {
-        top: 1.5rem;
+        top: 1.6rem;
     }
 
     .destroy-session {

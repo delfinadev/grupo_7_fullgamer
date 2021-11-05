@@ -62,76 +62,99 @@ const controller = {
                             };
                         };
                     };
+                    res.redirect('/');
                 });
         }
-        res.redirect('/');
     },
 
     logout: (req, res) => {
-        if(req.session) {
+        if (req.session) {
             req.session.destroy(console.error());
-res.locals.session = null;
+            res.locals.session = null;
         };
 
-res.redirect("/");
+        res.redirect("/");
     },
-store: (req, res) => {
-    let errores = validationResult(req);
+    store: (req, res) => {
+        let errores = validationResult(req);
 
-    if (!errores.isEmpty()) {
-        console.log(errores.mapped());
-        //Borrar la imagen si es que hay errores:
-        if (req.file) {
-            let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
-            fs.unlinkSync(imagePath);
+        if (!errores.isEmpty()) {
+            console.log(errores.mapped());
+            //Borrar la imagen si es que hay errores:
+            if (req.file) {
+                let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
+                fs.unlinkSync(imagePath);
+            };
+            res.render("register", { errorMessages: errores.mapped(), old: req.body });
+        } else {
+
+            db.Usuarios.create({
+                user: req.body.name,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password1, 10),
+                image: req.file ? req.file.filename : "user-default.jpg",
+                notifications: req.body.notificaciones !== undefined ? "on" : "off"
+            })
+                .then(function (user) {
+                    req.session.userId = user.id;;
+                    req.session.user = user.user;
+                    req.session.email = user.email;
+                    req.session.image = user.image;
+                    req.session.role = 1;
+                    req.session.save();
+
+                    if (req.body.recordarme !== undefined) {
+                        let index = users.length + 1;
+                        res.cookie("recordarme", index, { maxAge: 6000000 });
+                        req.cookies.recordarme = index;
+                        console.log(req.cookies.recordarme);
+                    };
+
+                    res.redirect("/");
+                });
+
+
+            console.log(req.session);
+
+
         };
-        res.render("register", { errorMessages: errores.mapped(), old: req.body });
-    } else {
-
-        db.Usuarios.create({
-            user: req.body.user,
-            email: req.body.email,
-            password: req.body.password,
-            image: req.body.image,
-            notifications: req.body.notifications
-        })
-            .then(function (user) {
-                req.session.userId = user.id;;
-                req.session.user = user.user;
-                req.session.email = user.email;
-                req.session.image = user.image;
-                req.session.role = 1;
-                req.session.save();
-
-                if (req.body.recordarme !== undefined) {
-                    let index = users.length + 1;
-                    res.cookie("recordarme", index, { maxAge: 6000000 });
-                    req.cookies.recordarme = index;
-                    console.log(req.cookies.recordarme);
-                };
-
-                res.redirect("/");
-            });
-
-
-        console.log(req.session);
-
-
-    };
-},
+    },
     update: function (req, res) {
         db.Usuarios.update({
-            user: req.body.user,
+            user: req.body.name,
             email: req.body.email,
-            password: req.body.password,
-            image: req.body.image,
-            notifications: req.body.notifications
+            image: req.file ? req.file.filename : "user-default.jpg",
         }, {
             where: {
                 id: req.params.id
             }
         })
-        res.redirect("/");
+            .then(function () {
+                res.redirect("/");
+            });
+    },
+    destroy: (req, res) => {
+        db.Usuarios.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function(user) {
+                if (user.image !== "user-default.jpg") {
+                    let imagePath = path.resolve(__dirname, "../../public/img/users/") + user.image;
+                    fs.unlinkSync(imagePath);
+                }
+            });
+
+        db.Usuarios.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(function (user) {
+                req.session.destroy();
+                res.redirect("/");
+            });
     }
 };
 
