@@ -1,5 +1,3 @@
-const Categoria = require("./Categoria");
-
 module.exports = (sequelize, DataTypes) => {
     let alias = "Productos";
 
@@ -37,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = function(models) {
-        Producto.belongsTo(Categoria, {
+        Producto.belongsTo(models.Categorias, {
             foreingKey: "category_id",
             as: "categoria"
         });
