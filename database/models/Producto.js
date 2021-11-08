@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
         description: {
             type: DataTypes.STRING
         } ,
-        category_id: {
+        categoriaId: {
+            field: "category_id",
             type: DataTypes.INTEGER,
             foreingKey: true
         } ,
