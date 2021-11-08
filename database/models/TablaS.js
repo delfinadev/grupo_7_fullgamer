@@ -1,21 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
     let alias = "Tablas";
-
     let cols = {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true
         } ,
-        color: {
-            type: DataTypes.STRING
-        } ,
-        marca: {
-            type: DataTypes.STRING
-        } ,
         category: {
             type: DataTypesSTRING
         }
-
     };
     let config = {
         tableName: "Tables",
@@ -25,4 +17,3 @@ module.exports = (sequelize, DataTypes) => {
 
     return Tabla;
 }
-//ok

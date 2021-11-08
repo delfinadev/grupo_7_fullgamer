@@ -13,15 +13,17 @@
             <span class="products-in-cart"></span>
         </div>
 
-        <% if(locals && locals.session && locals.session !== null && locals.session !== undefined) { %>
+        <% if(locals && locals.session && locals.session !== null) { %>
         <div class="user-profile">
             <div class="user">
                 <img src="/img/users/<%= locals.session.image %>" alt="Imagen usuario" class="user-image">
                 <p><%= locals.session.user %></p>
                 <i class="fas fa-sort-down down-arrow"></i>
                 <span class="options">
-                    <a class="profile">Ver perfil</a>
-                    <p class="destroy-session">Cerrar sesión</p>
+                    <a href="/users/<%= locals.session.userId %>" class="profile">Ver perfil</a>
+                    <form action="/users/logout?_method=DELETE" method="POST">
+                        <button type="submit" class="destroy-session">Cerrar sesión</button>
+                    </form>
                 </span>
             </div>
         </div>

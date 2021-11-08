@@ -114,6 +114,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .user {
@@ -131,7 +132,7 @@ header {
 
 .user-image {
     width: 15%;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .down-arrow {
@@ -153,6 +154,11 @@ header {
 .destroy-session {
     color: #e4133b;
     padding: 2px;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
 }
 
 .show {
@@ -165,6 +171,8 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: absolute;
+    top: 1.2rem;
 }
 
 /*Color del login */
@@ -208,12 +216,10 @@ header {
         margin-right: 2rem;
         order: 2;
         justify-self: flex-end;
-        position: relative;
     }
 
     .show {
-        position: absolute;
-        top: 1.5rem;
+        top: 1.6rem;
     }
 
     .destroy-session {

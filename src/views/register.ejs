@@ -21,7 +21,7 @@
                             value="<%= old.name %>">
                         <span class="feedback">
                             <% if (errorMessages.name) { %>
-                                <i class="fas fa-skull-crossbones"></i>
+                                <i class="fas fa-skull-crossbones crossbones"></i>
                                 <%= errorMessages.name.msg %>
                                     <% } %>
                         </span>
@@ -31,38 +31,41 @@
                             value="<%= old.email %>">
                         <span class="feedback">
                             <% if (errorMessages.email) { %>
-                                <i class="fas fa-skull-crossbones"></i>
+                                <i class="fas fa-skull-crossbones crossbones"></i>
                                 <%= errorMessages.email.msg %>
                                     <% } %>
                         </span>
 
                         <div class="caja-contraseña">
                             <label for="password"></label>
-                            <input type="password" name="password1" class="password input-text" placeholder="Contraseña"
+                            <input type="password" name="password1" id="password1" class="password input-text" placeholder="Contraseña"
                                 value="<%= old.password1 %>">
                             <button type="button" class="toggle-password"></button>
                         </div>
                         <span class="feedback">
                             <% if (errorMessages.password1) { %>
-                                <i class="fas fa-skull-crossbones"></i>
+                                <i class="fas fa-skull-crossbones crossbones"></i>
                                 <%= errorMessages.password1.msg %>
                                     <% } %>
                         </span>
 
                         <div class="caja-contraseña">
-                            <input type="password" name="password2" class="password input-text"
+                            <input type="password" name="password2" id="password2" class="password input-text"
                                 placeholder="Confirmar contraseña" value="<%= old.password2 %>">
                             <button type="button" class="toggle-password"></button>
                         </div>
                         <span class="feedback">
                             <% if (errorMessages.password2) { %>
-                                <i class="fas fa-skull-crossbones"></i>
+                                <i class="fas fa-skull-crossbones crossbones"></i>
                                 <%= errorMessages.password2.msg %>
                                     <% } %>
                         </span>
 
                         <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
-                        <input type="file" name="image" id="image" placeholder="Imagen de perfil" accept="jpg, png, svg">
+                        <input type="file" name="image" id="image" placeholder="Imagen de perfil">
+                        <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                        </span>
 
                         <div id="caja-preferencias">
                             <div class="div-preferencia">
@@ -89,30 +92,41 @@
                         <form action="/users/register" method="POST" id="formulario" enctype="multipart/form-data">
                             <label for="usuario"></label>
                             <input type="text" name="name" id="usuario" class="input-text" placeholder="Usuario">
-                            <span class="feedback"></span>
+                            <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                            </span>
 
                             <label for="email"></label>
                             <input type="text" name="email" id="email" class="input-text"
                                 placeholder="Correo electrónico">
-                            <span class="feedback"></span>
+                            <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                            </span>
 
                             <div class="caja-contraseña">
                                 <label for="password"></label>
-                                <input type="password" name="password1" class="password input-text"
+                                <input type="password" name="password1" id="password1" class="password input-text"
                                     placeholder="Contraseña">
                                 <button type="button" class="toggle-password no-visibility"></button>
-                                <span class="feedback"></span>
+                                <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                                </span>
                             </div>
 
                             <div class="caja-contraseña">
-                                <input type="password" name="password2" class="password input-text"
+                                <input type="password" name="password2" id="password2" class="password input-text"
                                     placeholder="Confirmar contraseña">
                                 <button type="button" class="toggle-password no-visibility"></button>
-                                <span class="feedback"></span>
+                                <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                                </span>
                             </div>
 
                             <label for="image" class="input-text" id="image-label">Imagen de perfil</label>
-                            <input type="file" name="image" id="image" placeholder="Imagen de perfil">
+                            <input type="file" name="image" id="image" accept="image/*" placeholder="Imagen de perfil">
+                            <span class="feedback">
+                                <i class="fas fa-skull-crossbones crossbones"></i>
+                            </span>
 
                             <div id="caja-preferencias">
                                 <div class="div-preferencia">
@@ -149,5 +163,6 @@
 </body>
 
     <script src="/js/functions.js"></script>
+    <script src="/js/register.js"></script>
 
 </html>

@@ -31,6 +31,16 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.use(function(req, res, next) {
+    if(req.session.user !== undefined | req.session.user !== null){
+        res.locals.session = req.session;
+        console.log(res.locals.session);
+    } else {
+        res.locals.session = null;
+    };
+    next();
+});
+
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productRoutes);

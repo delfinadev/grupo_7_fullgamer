@@ -23,10 +23,11 @@ router.post("/register", upload.single("image"), registerValidations, usersContr
 
 router.get("/login", usersController.login);
 router.post("/login", loginValidations, usersController.processLogin);
+router.delete("/logout", usersController.logout);
 
-router.post("/add", usersController.create);
+router.get("/:id", usersController.userProfile);
 
-router.get("/edit/:id", usersController.edit);
-router.post("/edit/:id", usersController.update);
+router.put("/edit/:id", upload.single("image"), usersController.update);
+router.delete("/destroy/:id", usersController.destroy);
 
 module.exports = router;

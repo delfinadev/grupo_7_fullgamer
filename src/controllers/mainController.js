@@ -7,7 +7,6 @@ const controller = {
     index: (req, res) => {
         db.Productos.findAll()
             .then(function(products) {
-                console.log(products);
                 res.render("home", {products: products, session: req.session});
             });
     }
