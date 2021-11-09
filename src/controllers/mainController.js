@@ -5,7 +5,9 @@ let db = require("../../database/models");
 
 const controller = {
     index: (req, res) => {
-        db.Productos.findAll()
+        db.Productos.findAll({
+            include: [{ association: "imagenes" }]
+        })
             .then(function(products) {
                 res.render("home", {products: products, session: req.session});
             });

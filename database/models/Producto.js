@@ -40,6 +40,11 @@ module.exports = (sequelize, DataTypes) => {
             foreingKey: "category_id",
             as: "categoria"
         });
+
+        Producto.hasMany(models.Imagenes, {
+            foreingKey: "product_id",
+            as: "imagenes"
+        });
     };
 
     return Producto;

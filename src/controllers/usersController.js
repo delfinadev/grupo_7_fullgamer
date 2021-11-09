@@ -19,10 +19,10 @@ const { localsName } = require("ejs");
 
 const controller = {
     register: (req, res) => {
-        res.render("register", { errorMessages: null, old: null });
+        res.render("register", { errorMessages: null, old: null, session: req.session });
     },
     login: (req, res) => {
-        res.render("login");
+        res.render("login", { session: req.session });
     },
     userProfile: (req, res) => {
         db.Usuarios.findOne({
@@ -32,7 +32,7 @@ const controller = {
         })
             .then(function (user) {
                 console.log(user);
-                res.render("userProfile", { user: user });
+                res.render("userProfile", { user: user, session: req.session });
             });
     },
     // ------logica del login-------
@@ -41,7 +41,7 @@ const controller = {
 
         console.log(errors.mapped());
         if (!errors.isEmpty()) {
-            res.render("login", { errorMessages: errors.mapped(), old: req.body })
+            res.render("login", { errorMessages: errors.mapped(), old: req.body, session: req.session })
         } else {
             db.Usuarios.findAll()
                 .then(function (users) {
@@ -85,7 +85,7 @@ const controller = {
                 let imagePath = path.resolve(__dirname, "../../public/img/users") + "/" + req.file.filename;
                 fs.unlinkSync(imagePath);
             };
-            res.render("register", { errorMessages: errores.mapped(), old: req.body });
+            res.render("register", { errorMessages: errores.mapped(), old: req.body, session: req.session });
         } else {
 
             db.Usuarios.create({

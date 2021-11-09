@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING
         } ,
         role: {
-            type: DataTypes.STRING
+            type: DataTypes.INTEGER
         },
         image: {
             type: DataTypes.STRING
         },
         notifications: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.STRING
         },
     };
     let config = {

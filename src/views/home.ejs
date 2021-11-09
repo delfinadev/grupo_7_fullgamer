@@ -20,18 +20,18 @@
 
         <section id="carousel">
             <div class="products">
-                <% for (let i = 0; i < products.length; i++) { %>
+                <% products.forEach(product => { %>
                 <article class="producto">
-                    <img src="/img/<%= products[i].image %>" alt="<%= products[i].name %>">
-                        <% if(locals && locals.session.role == 8) { %>
-                    <a href="/products/<%= i + 1 %>/edit" class="edit"><i class="fas fa-pen"></i></a>
+                    <img src="/img/<%= product.imagenes[0].name %>" alt="<%= product.name %>">
+                        <% if(session && session.role == 8) { %>
+                    <a href="/products/<%= product.id %>/edit" class="edit"><i class="fas fa-pen"></i></a>
                     <% } %>
                     <div class="descripcion-producto">
-                        <p class="nombre-producto"><%= products[i].name %></p>
-                        <a href="/products/detail/<%= i + 1 %>">Ver más</a>
+                        <p class="nombre-producto"><%= product.name %></p>
+                        <a href="/products/detail/<%= product.id %>">Ver más</a>
                     </div>
                 </article>
-                <% } %>
+                <% }) %>
                 
             </div>
 

@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING,
         },
+        ProductoId: {
+            field: "product_id",
+            type: DataTypes.INTEGER
+        },
         createdAt: {
             field: "created_At",
             type: DataTypes.DATE,
@@ -22,7 +26,15 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "Images",
         timeStamps: true
     };
-}
-    const Producto = sequelize.define(alias, cols, config);
 
-    return Producto;
+    const Imagen = sequelize.define(alias, cols, config);
+
+    Imagen.associate = function(models) {
+        Imagen.belongsTo(models.Productos, {
+            foreignKey: "product_id",
+            as: "producto"
+        });
+    };
+
+    return Imagen;
+}

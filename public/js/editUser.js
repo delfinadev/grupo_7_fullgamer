@@ -1,4 +1,5 @@
 window.addEventListener("load", function() {
+    let form = document.querySelector("#form");
     let inputs = document.querySelectorAll(".input");
     let pencils = document.querySelectorAll(".pencil");
 
@@ -17,4 +18,15 @@ window.addEventListener("load", function() {
             
         });
     }
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        inputs.forEach(input => {
+            input.disabled = false;
+            input.readOnly = true;
+        });
+
+        form.submit();
+    })
 })

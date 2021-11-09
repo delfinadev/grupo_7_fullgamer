@@ -5,26 +5,32 @@ let db = require("../../database/models");
 
 const controller = {
     index: (req, res) => {
-        db.Productos.findAll()
+        db.Productos.findAll({
+            include: [{ association: "imagenes" }]
+        })
             .then(function (products) {
-                res.render("listadoProductos", { products: products });
+                res.render("listadoProductos", { products: products, session: req.session });
             });
     },
     create: (req, res) => {
-        res.render("agregarProducto", { product: null });
+        res.render("agregarProducto", { product: null, session: req.session });
     },
     detail: (req, res) => {
         let id = req.params.id;
-        db.Productos.findByPk(id)
+        db.Productos.findByPk(id, {
+            include: [{ association: "imagenes" }]
+        })
             .then(function (product) {
-                res.render("producto", { product: product });
+                res.render("producto", { product: product, session: req.session });
             });
     },
     edit: (req, res) => {
         let id = req.params.id;
-        db.Productos.findByPk(id)
+        db.Productos.findByPk(id, {
+            include: [{ association: "imagenes" }]
+        })
             .then(function (product) {
-                res.render("agregarProducto", { product: product });
+                res.render("agregarProducto", { product: product, session: req.session });
             });
     },
     store: (req, res) => {
@@ -42,7 +48,7 @@ const controller = {
     edit: function (req, res) {
         db.Productos.findByPk(req.params.id)
             .then(function (product) {
-                res.render("agregarProducto", { product: product });
+                res.render("agregarProducto", { product: product, session: req.session });
             })
     },
     update: function (req, res) {

@@ -5,6 +5,8 @@ window.addEventListener("load", function() {
     let password1 = document.querySelector("#password1");
     let password2 = document.querySelector("#password2");
     let image = document.querySelector("#image");
+    let imageLabel = document.querySelector("#image-label");
+    let radios = document.querySelectorAll(".radio");
     let feedback = document.querySelectorAll(".feedback");
     let crossbones = document.querySelectorAll(".crossbones");
 
@@ -70,6 +72,8 @@ window.addEventListener("load", function() {
         let fileType = file['type'];
         let validImageTypes = ['image/gif', 'image/jpeg', 'image/png', 'image/svg'];
 
+        imageLabel.innerHTML = file.name;
+
         if (!validImageTypes.includes(fileType)) {
             crossbones[4].style.display = "block";
             feedback[4].innerHTML = "La imagen debe ser un archivo jpg, png, gif o svg";
@@ -78,5 +82,13 @@ window.addEventListener("load", function() {
             feedback[4].innerHTML = "";
         };
     });
+
+    for(const radio of radios) {
+        radio.addEventListener("click", function(e) {
+            if(e.ctrlKey) {
+                this.checked = false;
+            };
+        });
+    };
     
 })

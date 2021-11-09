@@ -13,7 +13,7 @@
 
         <main>
             <div class="container">
-                <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST">
+                <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" id="form">
                     <div class="image-container">
                         <img src="/img/users/<%= user.image %>" alt="Imagen usuario" class="image">
                         <label for="image" class="image-label"><i class="fas fa-camera"></i></label>
@@ -22,14 +22,14 @@
                     <div class="input-container">
                         <label for="user">Usuario</label>
                         <div class="edit">
-                            <input type="text" name="name" value="<%= user.user %>" class="input" disabled>
+                            <input type="text" name="name" id="name" value="<%= user.user %>" class="input" disabled>
                             <i class="fas fa-pen pencil"></i>
                         </div>
                     </div>
                     <div class="input-container">
                         <label for="email">Email</label>
                         <div class="edit">
-                            <input type="email" name="email" value="<%= user.email %>" class="input" disabled>
+                            <input type="email" name="email" id="email" value="<%= user.email %>" class="input" disabled>
                             <i class="fas fa-pen pencil"></i>
                         </div>
                     </div>
