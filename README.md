@@ -42,3 +42,8 @@ Los integrantes son:
 
 - [*PDF*](https://drive.google.com/file/d/1DwImU3Hw6VAWcCMtoWUFMHI8BXoaXfUp/view?usp=sharing)
 
+**Admin**
+
+- Rol para admin: 8
+- Rol para usuario común: 1
+
