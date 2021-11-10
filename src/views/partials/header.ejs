@@ -13,7 +13,7 @@
             <span class="products-in-cart"></span>
         </div>
 
-        <% if(session !== null || session !== undefined) { %>
+        <% if(session.user !== undefined) { %>
         <div class="user-profile">
             <div class="user">
                 <img src="/img/users/<%= session.image %>" alt="Imagen usuario" class="user-image">
