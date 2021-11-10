@@ -17,7 +17,10 @@ const controller = {
     },
     detail: (req, res) => {
         let id = req.params.id;
-        db.Productos.findByPk(id, {
+        db.Productos.findOne({
+            where: {
+                id: id
+            },
             include: [{ association: "imagenes" }]
         })
             .then(function (product) {
@@ -44,12 +47,6 @@ const controller = {
             .then(() => {
                 res.redirect("/products");
             });
-    },
-    edit: function (req, res) {
-        db.Productos.findByPk(req.params.id)
-            .then(function (product) {
-                res.render("agregarProducto", { product: product, session: req.session });
-            })
     },
     update: function (req, res) {
         db.Productos.update({
