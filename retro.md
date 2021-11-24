@@ -50,3 +50,10 @@
 3. ***Continuar haciendo:*** organizar y dividir las tareas.
 4. ***Hacer menos:*** no comunicar dudas o inconvenientes.
 5. ***Dejar de hacer:*** atrasarse con las entregas.
+
+**SPRINT 8**
+1. ***Comenzar a hacer:*** mejorar el sitio para la entrega final.
+2. ***Hacer más:*** comunicarnos y estar al tanto de cómo venimos con las entregas.
+3. ***Continuar haciendo:*** organizar y dividir las tareas.
+4. ***Hacer menos:*** no pedir ayuda o consultar a tiempo.
+5. ***Dejar de hacer:*** atrasarse con las entregas.
