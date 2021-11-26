@@ -13,9 +13,9 @@
 
         <main>
             <div class="container">
-                <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" id="form">
+                <form action="/users/edit/<%= user.id %>?_method=PUT" method="POST" id="form" enctype="multipart/form-data">
                     <div class="image-container">
-                        <img src="/img/users/<%= user.image %>" alt="Imagen usuario" class="image">
+                        <img src="/img/users/<%= user.image %>" alt="Imagen usuario" class="image" id="user-image">
                         <label for="image" class="image-label"><i class="fas fa-camera"></i></label>
                         <input type="file" accept="jpg, png, gif, svg" name="image" id="image" class="image-input">
                     </div>
