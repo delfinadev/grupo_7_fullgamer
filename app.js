@@ -9,6 +9,7 @@ const session = require("express-session");
 const mainRoutes = require("./src/routes/main");
 const usersRoutes = require("./src/routes/users");
 const productRoutes = require("./src/routes/product");
+const apiUsersRoutes = require("./src/routes/api/users");
 
 const rememberMe = require("./src/middlewares/rememberMe");
 
@@ -31,9 +32,12 @@ app.use(session({
     saveUninitialized: true
 }));
 
+global.searchResults = null;
+
 app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productRoutes);
+app.use("/api/users", apiUsersRoutes);
 
 
 app.get("/HowDidYouFoundThis", (req, res) => {
