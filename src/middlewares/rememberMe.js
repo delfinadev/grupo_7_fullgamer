@@ -10,6 +10,7 @@ function logUserIfCookieExists (req, res, next) {
         let index = req.cookies.recordarme;
         for (let i = 0; i < users.length; i++) {
             if (index === i) {
+                req.session.userId = index;
                 req.session.user = users[i].user;
                 req.session.email = users[i].email;
                 req.session.image = users[i].image;
