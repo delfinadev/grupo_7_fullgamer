@@ -93,7 +93,8 @@ const controller = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password1, 10),
                 image: req.file ? req.file.filename : "user-default.jpg",
-                notifications: req.body.notificaciones !== undefined ? "on" : "off"
+                notifications: req.body.notificaciones !== undefined ? "on" : "off",
+                role: 1
             })
                 .then(function (user) {
                     req.session.userId = user.id;;
@@ -130,6 +131,9 @@ const controller = {
             }
         })
             .then(function () {
+                req.session.user = req.body.name;
+                req.session.email = req.body.email;
+                req.session.image = req.file ? req.file.filename : "user-default.jpg";
                 res.redirect("/");
             });
     },
