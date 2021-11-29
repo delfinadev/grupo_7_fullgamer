@@ -19,6 +19,8 @@ const upload = multer({ storage: storage });
 
 router.get("/", productController.index);
 
+router.post("/search", productController.search);
+
 router.get("/create", productController.create);
 
 router.post("delete/:id", productController.destroy);
