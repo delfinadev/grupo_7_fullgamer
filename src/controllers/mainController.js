@@ -10,7 +10,8 @@ const controller = {
         })
             .then(function(products) {
                 res.render("home", {products: products, session: req.session});
-            });
+            })
+                .catch(error => console.error(error));
     }
 };
 

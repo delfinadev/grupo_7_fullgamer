@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         ProductoId: {
             field: "product_id",
-            type: DataTypes.INTEGER
+            type: DataTypes.INTEGER,
+            foreignKey: true
         },
         createdAt: {
             field: "created_At",
