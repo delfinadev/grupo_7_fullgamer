@@ -1,7 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-
 let db = require("../../database/models");
+const Op = db.Sequelize.Op;
+const { validationResult } = require("express-validator");
 
 const controller = {
     index: (req, res) => {
@@ -37,30 +36,60 @@ const controller = {
             });
     },
     store: (req, res) => {
-        db.Productos.create({
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            category_id: req.body.category,
-            created_at: Date.now()
-        })
-            .then(() => {
-                res.redirect("/products");
-            });
+        let errors = validationResult(req);
+        console.log(errors.mapped());
+
+        if (!errors.isEmpty()) {
+            res.render("agregarProducto", {errorMessages: errors.mapped()});
+        } else {
+            db.Productos.create({
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description,
+                category_id: req.body.category,
+                created_at: Date.now()
+            })
+                .then((product) => {
+                    console.log(product)
+            })
+    
+            db.Productos.findByPk(db.Productos.length)
+                .then(product => {
+                    if(req.file) {
+                    db.Imagenes.create({
+                        name: req.file.filename,
+                        product_id: product.id
+                    })
+                        .then(() => {
+                            res.redirect("/products");
+                        })
+                    }
+                })
+        }
     },
     update: function (req, res) {
-        db.Productos.update({
-            name: req.body.name,
-            price: req.body.price,
-            description: req.body.description,
-            category_id: req.body.category,
-            created_at: Date.now()
-        }, {
-            where: {
-                id: req.params.id
-            }
-        }),
-            res.redirect("/products")
+        let errors = validationResult(req);
+        console.log(errors.mapped());
+
+        if (!errors.isEmpty()) {
+            res.render("agregarProducto", {errorMessages: errors.mapped()});
+        } else {
+            db.Productos.update({
+                name: req.body.name,
+                price: req.body.price,
+                description: req.body.description,
+                category_id: req.body.category,
+                created_at: Date.now()
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(() => {
+                res.redirect("/products");
+            })
+        }
+        
     },
     destroy: (req, res) => {
         db.Productos.destroy({
@@ -78,6 +107,22 @@ const controller = {
         } else {
             res.render("carrito", { session: null });
         };
+    },
+    search: (req, res) => {
+        let search = req.body.buscar;
+        db.Productos.findAll({
+            where: {
+                name: { [Op.like]: "%" + search + "%" }
+            },
+            limit: 5
+        })
+            .then(searchProducts => {
+                req.session.searchResults = searchProducts;
+                console.log(req.session.searchResults);
+            })
+                .then (() => {
+                    res.status(204).send();
+                })
     }
 };
 
