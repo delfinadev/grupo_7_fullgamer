@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true
         } ,
-        category: {
+        name: {
             type: DataTypes.STRING
         }
     };
     let config = {
         tableName: "Categories",
-        timeStamps: false
+        timestamps: false
     };
     const Categoria = sequelize.define(alias, cols, config);
 

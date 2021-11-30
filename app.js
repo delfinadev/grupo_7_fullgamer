@@ -10,6 +10,7 @@ const mainRoutes = require("./src/routes/main");
 const usersRoutes = require("./src/routes/users");
 const productRoutes = require("./src/routes/product");
 const apiUsersRoutes = require("./src/routes/api/users");
+const apiProductRoutes = require("./src/routes/api/product");
 
 const rememberMe = require("./src/middlewares/rememberMe");
 
@@ -38,6 +39,7 @@ app.use("/", mainRoutes);
 app.use("/users", usersRoutes);
 app.use("/products", productRoutes);
 app.use("/api/users", apiUsersRoutes);
+app.use("/api/products", apiProductRoutes);
 
 
 app.get("/HowDidYouFoundThis", (req, res) => {
