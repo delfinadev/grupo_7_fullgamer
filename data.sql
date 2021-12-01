@@ -1,4 +1,4 @@
-﻿﻿INSERT INTO fullgamer.cart (user_id,items,total) VALUES 
+﻿INSERT INTO fullgamer.cart (user_id,items,total) VALUES 
 (4,1,6251)
 ,(9,10,53385)
 ,(4,3,13651)
