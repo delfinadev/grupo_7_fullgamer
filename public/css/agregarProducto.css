@@ -12,6 +12,12 @@ body{
     flex-direction: column;
 }
 
+main{
+    background-image: url("/img/gamer-1.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 h1{
     background: rgb(154,0,0);
     background: linear-gradient(90deg, rgba(154,0,0,0.6) 20%, rgba(154,0,0,0.6) 20%);
@@ -80,50 +86,91 @@ h1{
 }
 
 #nombre{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 #descripcion{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 #imagen{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 #categoria{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 #precio{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 #fechaDeSubida{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
 }
 
 .form-button{
-    background-color: black;
-    color: white;
+    background-color: #FAFAFA;
+    color: black;
+    background-repeat: no-repeat;
+    background-position: 5px left;
+    background-size: 5%;
+    background-position-y: center;
+}
+
+form input {
     border-radius: 5px;
-    text-align: center;
+    border-style: hidden;
+    background-color: #323232;
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10%;
+    width: 90%;
+    margin: 10px;
+    margin-bottom: 10px;
+    border: solid 1.5px transparent;
+    transition: border 0.5s;
+}
+
+form input:focus {
+    outline: none;
+    border: solid 1px black;
+}
+
+::placeholder {
+    color: black;
+    font-size: 15px;
 }
