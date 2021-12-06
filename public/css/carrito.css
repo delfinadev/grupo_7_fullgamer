@@ -38,6 +38,7 @@ main {
 }
 
 #carrito-titulo {
+    justify-self: flex-start;
     color: white;
     font-size: 1.2rem;
     font-weight: 100;
@@ -49,6 +50,14 @@ main ::placeholder {
     opacity: 1;
     font-size: 0.5rem;
     padding-left: 5%;
+}
+
+.products-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .contenedor{
@@ -129,6 +138,15 @@ main ::placeholder {
     color: white;
     font-size: 0.8em;
     cursor: pointer;
+}
+
+.empty {
+    padding: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    font-size: 0.7rem;
+    color: #fafafa;
 }
 
 .buscarmasproductos{
