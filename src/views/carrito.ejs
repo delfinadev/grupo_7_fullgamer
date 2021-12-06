@@ -13,33 +13,8 @@
         <main>
             <div class="carro">
                 <h2 id="carrito-titulo">Carrito</h2>
-                <div class="contenedor">
-                    <div class="producto">
-                        <div class="image-name">
-                            <img class="imagen" src="/img/MSI-Clutch-GM08.jpg" alt="Mouse MSI Clutch GM08 Black">
-                            <h5 class="nombre-producto">Mouse MSI Clutch GM08 black</h5>
-                        </div>
-                        <div class="detalles">
-                            <div class="precio-cantidad"><input type="number" min="1" max="10" name="quantity" class="quantity" value="1"> x $1504</div>
-                            <a class="verentienda" href="./product">Ver en Tienda</a>
-                        </div>
-                    </div>
-                    <i class="fas fa-times cruz"></i>
-                </div>
+                <div class="products-container">
 
-                <div class="contenedor">
-                    <div class="producto">
-                        <div class="image-name">
-                            <img class="imagen" src="/img/Redragon-DITI-Outemu.jpg" alt="
-                    Teclado Redragon Diti Outemu">
-                            <h5 class="nombre-producto">Teclado Redragon Diti Outemu</h5>
-                        </div>
-                        <div class="detalles">
-                            <div class="precio-cantidad"><input type="number" min="1" max="10" name="quantity" class="quantity" value="1"> x $9615.23</div>
-                            <a class="verentienda" href="./product">Ver en Tienda</a>
-                        </div>
-                    </div>
-                    <i class="fas fa-times cruz"></i>
                 </div>
 
                 <div class="buscarmasproductos">
@@ -48,16 +23,18 @@
                 </div>
 
                 <div class="bottom">
-                        <div class="comprar-total">
-                            <b class="textoenvio">Calcule su envío en el próximo paso</b>
-                            <p class="total">Total: $11119.23</p>
-                        </div>
-                        <a class="comprar" href="./login" type="submit">Comprar</a>
+                    <div class="comprar-total">
+                        <b class="textoenvio">Calcule su envío en el próximo paso</b>
+                        <p class="total">Total: $11119.23</p>
+                    </div>
+                    <a class="comprar" href="./login" type="submit">Comprar</a>
                 </div>
             </div>
         </main>
 
         <%- include('./partials/footer.ejs') %>
+
+        <script src="/js/cart.js"></script>
 
 </body>
 
