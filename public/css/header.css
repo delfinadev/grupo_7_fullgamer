@@ -125,7 +125,7 @@ header {
 
 /* Div del shopping cart */
 .d-header-shoppingcart{
-    width: 30px;
+    width: 1px;
     order: 1;
     justify-self: flex-end;
     position: relative;
@@ -267,13 +267,9 @@ header {
         width: 40%;
     }
 
-    .d-header-shoppingcart {
-        order: 2;
-        justify-self: flex-end;
-    }
 
     .d-header-login {
-        margin-right: 2rem;
+        margin-right: 0.5rem;
         order: 2;
         justify-self: flex-end;
     }
