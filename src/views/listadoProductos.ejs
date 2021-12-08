@@ -17,7 +17,9 @@
                 <img src="/img/<%= product.imagenes[0].name %>" alt="<%= product.name %>">
                 <% if(session && session.role == 8) { %>
                     <a href="/products/<%= product.id %>/edit" class="edit"><i class="fas fa-pen"></i></a>
-                    <% } %>
+                    <% } else { %>
+                        <i class="fas fa-shopping-cart edit"></i>
+                        <% } %>
                 <div class="descripcion-producto">
                     <p class="nombre-producto"><%= product.name %></p>
                     <a href="/products/detail/<%= product.id %>">Ver más</a>

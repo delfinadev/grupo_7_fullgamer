@@ -4,9 +4,23 @@
             <a href="/"><img class="d-header-logo" src="/img/FULL GAMER.png" alt="FULL GAMER"></a>
         </div>
 
-        <div class="d-header-searchbar">
-            <input id="buscar" placeholder="Buscar productos..." type="text"><button class="botonlupa"><i id="lupa" class="fas fa-search"></i></button></li>
-        </div>
+        <form action="/products/search" method="POST" id="search-form">
+            <div class="d-header-searchbar">
+                <input id="buscar" name="buscar" placeholder="Buscar productos..." type="text"><button
+                    class="botonlupa"><i id="lupa" class="fas fa-search"></i></button></li>
+                <!---<div class="search-results">
+                    <% if(session && session.searchResults && session.searchResults !== null) { %>
+                        <% session.searchResults.forEach(function(product) { %>
+                            <span class="result redirect">
+                                <%= product.name %>
+                            </span>
+                            <% }) %>
+                                <% } else { %>
+                                    <span class="result">No se encontraron resultados.</span>
+                                    <% } %>
+                </div> --->
+            </div>
+        </form>
 
         <div class="d-header-shoppingcart">
             <a href="/products/carrito"><i id="carrito" class="fas fa-shopping-cart"></i></a>
@@ -14,25 +28,26 @@
         </div>
 
         <% if(session.user !== undefined) { %>
-        <div class="user-profile">
-            <div class="user">
-                <img src="/img/users/<%= session.image %>" alt="Imagen usuario" class="user-image">
-                <p><%= session.user %></p>
-                <i class="fas fa-sort-down down-arrow"></i>
-                <span class="options">
-                    <a href="/users/<%= session.userId %>" class="profile">Ver perfil</a>
-                    <form action="/users/logout?_method=DELETE" method="POST">
-                        <button type="submit" class="destroy-session">Cerrar sesión</button>
-                    </form>
-                </span>
+            <div class="user-profile">
+                <div class="user">
+                    <img src="/img/users/<%= session.image %>" alt="Imagen usuario" class="user-image">
+                    <p><%= session.user %></p>
+                    <i class="fas fa-sort-down down-arrow"></i>
+                    <span class="options">
+                        <a href="/users/<%= session.userId %>" class="profile">Ver perfil</a>
+                        <form action="/users/logout?_method=DELETE" method="POST">
+                            <button type="submit" class="destroy-session">Cerrar sesión</button>
+                        </form>
+                    </span>
+                </div>
             </div>
-        </div>
-        <% } else { %>
-        <div class="d-header-login">
-            <a id="login" href="/users/login">Login</a>
-        </div>
-        <% } %>
+            <% } else { %>
+                <div class="d-header-login">
+                    <a id="login" href="/users/login">Login</a>
+                </div>
+                <% } %>
     </div>
 
     <script src="/js/userDisplay.js"></script>
+    <script src="/js/searchProducts.js"></script>
 </header>

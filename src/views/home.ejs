@@ -3,51 +3,59 @@
 
 <head>
     <%- include('./partials/head.ejs') %>
-    <link rel="stylesheet" href="/css/home.css">
-    <title>Full Gamer</title>
+        <link rel="stylesheet" href="/css/home.css">
+        <title>Full Gamer</title>
 </head>
 
 <body>
     <%- include('./partials/header.ejs') %>
-<main>
-        <section id="banner">
-            <div class="home-banner">
-                <p class="text-1">Todo lo que necesitás para tu setup</p>
-                <p class="text-2">Encontralo en <span class="title-banner">FULL GAMER</span></p>
-            </div>
-            <div class="opacity"></div>
-        </section>
+        <main>
+            <section id="banner">
+                <div class="home-banner">
+                    <p class="text-1">Todo lo que necesitás para tu setup</p>
+                    <p class="text-2">Encontralo en <span class="title-banner">FULL GAMER</span></p>
+                </div>
+                <div class="opacity"></div>
+            </section>
 
-        <section id="carousel">
-            <div class="products">
-                <% products.forEach(product => { %>
-                <article class="producto">
-                    <img src="/img/<%= product.imagenes[0].name %>" alt="<%= product.name %>">
-                        <% if(session && session.role == 8) { %>
-                    <a href="/products/<%= product.id %>/edit" class="edit"><i class="fas fa-pen"></i></a>
-                    <% } %>
-                    <div class="descripcion-producto">
-                        <p class="nombre-producto"><%= product.name %></p>
-                        <a href="/products/detail/<%= product.id %>">Ver más</a>
-                    </div>
-                </article>
-                <% }) %>
-                
-            </div>
+            <section id="carousel">
+                <div class="products">
+                    <% products.forEach(product=> { %>
+                        <article class="producto">
+                            <img src="/img/<%= product.imagenes[0].name %>" alt="<%= product.name %>" class="product-img">
+                            <% if(session && session.role==8) { %>
+                                <a href="/products/<%= product.id %>/edit" class="edit"><i class="fas fa-pen"></i></a>
+                                <% } else { %>
+                                    <i class="fas fa-shopping-cart cart"></i>
+                                    <% } %>
+                                        <div class="descripcion-producto">
+                                            <p class="nombre-producto">
+                                                <%= product.name %>
+                                            </p>
+                                            <span class="price"><%= product.price %></span>
+                                            <a href="/products/detail/<%= product.id %>">Ver más</a>
+                                        </div>
+                        </article>
+                        <% }) %>
 
-            <button class="prev"><a href="" class="a-carousel">&#10094;</a></button>
-            <button class="next"><a href="" class="a-carousel">&#10095;</a></button>
+                </div>
 
-        </section>
+                <button class="prev"><a href="" class="a-carousel">&#10094;</a></button>
+                <button class="next"><a href="" class="a-carousel">&#10095;</a></button>
 
-        <% if(session.role === 8) { %>
-            <a href="/products/create"><i class="fas fa-plus add"></i></a>
-        <% } %>
+            </section>
 
-    
-    </main>
+            <% if(session.role===8) { %>
+                <a href="/products/create"><i class="fas fa-plus add"></i></a>
+                <% } %>
 
-    <%- include('./partials/footer.ejs') %>
+
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
+
+        <script src="/js/addToCart.js"></script>
 
 </body>
+
 </html>
