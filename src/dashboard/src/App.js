@@ -1,6 +1,7 @@
 import './App.css';
 import LastProduct from "./components/LastProduct";
-import totalCategories from './components/totalCategories';
+import PanelTotales from './components/PanelTotales';
+import TotalCategories from './components/TotalCategories';
 
 function App() {
   return (
@@ -10,10 +11,18 @@ function App() {
   )
 }
 
-function categorias() {
+function TotalC() {
   return (
     <div className="App">
-      <totalCategories/>
+      <TotalCategories/>
+    </div>
+  )
+}
+
+function PanelT() {
+  return (
+    <div className="App">
+      <PanelTotales/>
     </div>
   )
 }
