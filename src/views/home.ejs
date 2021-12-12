@@ -17,7 +17,6 @@
                 </div>
                 <div class="opacity"></div>
             </section>
-
             <section id="carousel">
                 <div class="products">
                     <% products.forEach(product=> { %>
@@ -37,19 +36,13 @@
                                         </div>
                         </article>
                         <% }) %>
-
                 </div>
-
                 <button class="prev"><a href="" class="a-carousel">&#10094;</a></button>
                 <button class="next"><a href="" class="a-carousel">&#10095;</a></button>
-
             </section>
-
             <% if(session.role===8) { %>
                 <a href="/products/create"><i class="fas fa-plus add"></i></a>
                 <% } %>
-
-
         </main>
 
         <%- include('./partials/footer.ejs') %>
@@ -57,5 +50,4 @@
         <script src="/js/addToCart.js"></script>
 
 </body>
-
 </html>
