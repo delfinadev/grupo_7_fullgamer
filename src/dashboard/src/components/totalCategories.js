@@ -27,32 +27,57 @@ const ExpandMore = styled((props) => {
     }),
 }));
 
-function TotalCategories() {
-  const [DataBaseInfo, setDataBaseInfo] = useState({countByCategory: [ ] })
-  useEffect(() => {
-    fetch('http://localhost:3030/api/products')
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setDataBaseInfo(data)
-      })
+export default function TotalCategories() {
+    const [expanded, setExpanded] = React.useState(false);
 
-  }, [])
-  let array = DataBaseInfo.countByCategory.values()
-  console.log(DataBaseInfo)
-  return (
-    <div className="conteiner_general">
-      <div className="form_content">
-        <ul className="form_ul">
-          <li className="titulo_form">Cantidad de categorias: {DataBaseInfo.countByCategory}</li>
-          <li>
-            <li className="titulo_form">FullGamer</li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  )
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
+
+    const [DataBaseInfo, setDataBaseInfo] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/api/products', {
+            mode: 'no-cors'
+        })
+            .then(response => {
+                return response.json()
+            })
+                .then(data => {
+                    let CategoriesInDb = data.products.splice(-1).pop();
+
+                    setDataBaseInfo(CategoriesInDb);
+                })
+                .catch(error => console.log(error));
+    }, []);
+
+    return (
+        <Card sx={{ maxWidth: 345 }}>
+            <CardHeader
+                action={
+                    <IconButton aria-label="settings">
+                        <MoreVertIcon />
+                    </IconButton>
+                }
+            />
+            <CardActions disableSpacing>
+                <ExpandMore
+                    expand={expanded}
+                    onClick={handleExpandClick}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                    <Typography paragraph>Categoría:</Typography>
+                    <Typography paragraph>
+                        {TotalCategories.category}
+                    </Typography>
+                </CardContent>
+            </Collapse>
+        </Card>
+    );
 }
-
-export default TotalCategories;
