@@ -32,26 +32,7 @@ const ExpandMore = styled((props) => {
 
 function PanelTotales(props){
     return(
-        <TableContainer>
-            <Table className='Tabla'>
-            <TableHead>
-            <TableRow>
-            <TableCell>Imagen</TableCell> 
-               <TableCell>Titulo</TableCell> 
-               <TableCell>Fecha de Publicación</TableCell> 
-            </TableRow>
-            </TableHead>
-            <TableBody>
-                {props.data.map(producto=>(
-                    <TableRow key={producto.id}>
-                        <TableCell align='center'> <a href={'http://localhost:3000/products/' + producto.id}><img  src={producto.imagen} alt='imagen del producto'/></a></TableCell>
-                        <TableCell align="center">{producto.fecha}</TableCell>
-                        <TableCell align="center">{producto.visualizaciones}</TableCell>
-                    </TableRow>
-                ))}
-            </TableBody>
-            </Table>
-        </TableContainer>
+        "test"
     )
 }
 
