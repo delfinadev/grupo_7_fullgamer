@@ -7,7 +7,9 @@ function App() {
   return (
     <div className="App">
       <LastProduct/>
+      Cantidad de Categorias
       <TotalCategories/>
+      Panel listado de Productos
       <PanelTotales/>
     </div>
   )
