@@ -27,25 +27,25 @@ export default function PanelTotales() {
     <TableContainer component={Paper}>
     <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          <TableRow>
+            <TableRow>
             <TableCell>Producto&nbsp;</TableCell>
             <TableCell align="right">Cantidad&nbsp;</TableCell>
-          </TableRow>
+            </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+            {rows.map((row) => (
             <TableRow
                 key={row.nombre}
                 sx={{ '&:last-child td, &:last-child th': { border: 3 } }}
             >
-              <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row">
                 {row.nombre}
-              </TableCell>
-              <TableCell align="right">{row.cantidad}</TableCell>
+                </TableCell>
+                <TableCell align="right">{row.cantidad}</TableCell>
             </TableRow>
-          ))}
+            ))}
         </TableBody>
-      </Table>
+        </Table>
     </TableContainer>
-  );
+    );
 }
