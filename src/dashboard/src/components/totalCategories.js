@@ -44,7 +44,7 @@ export default function TotalCategories() {
                 return response.json()
             })
                 .then(data => {
-                    let CategoriesInDb = data.products.splice(-1).pop();
+                    let CategoriesInDb = data.countByCategory.splice(-1).pop();
 
                     setDataBaseInfo(CategoriesInDb);
                 })
