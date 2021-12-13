@@ -7,21 +7,7 @@ function App() {
   return (
     <div className="App">
       <LastProduct/>
-    </div>
-  )
-}
-
-function TotalC() {
-  return (
-    <div className="App">
       <TotalCategories/>
-    </div>
-  )
-}
-
-function PanelT() {
-  return (
-    <div className="App">
       <PanelTotales/>
     </div>
   )
