@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/delfinadev/grupo_7_fullgamer#readme",
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.2.4",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
