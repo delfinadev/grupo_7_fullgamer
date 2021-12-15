@@ -4,7 +4,7 @@
 ,(4,3,13651)
 ,(7,1,5444)
 ,(10,2,14907)
-;﻿INSERT INTO fullgamer.cart_detail (product_id,quantity,cart_id) VALUES 
+;INSERT INTO fullgamer.cart_detail (product_id,quantity,cart_id) VALUES 
 (2,1,1)
 ,(3,5,2)
 ,(8,5,2)
@@ -13,7 +13,7 @@
 ,(1,1,3)
 ,(5,1,4)
 ,(7,2,5)
-;﻿INSERT INTO fullgamer.categories (name) VALUES 
+;INSERT INTO fullgamer.categories (name) VALUES 
 ('Micrófono')
 ,('Mouse')
 ,('Capturadora de pantalla')
@@ -21,7 +21,7 @@
 ,('Teclado')
 ,('Gabinete')
 ,('Auriculares')
-;﻿INSERT INTO fullgamer.images (name,product_id,created_at,updated_at) VALUES 
+;INSERT INTO fullgamer.images (name,product_id,created_at,updated_at) VALUES 
 ('Redragon-DITI-Outemu.jpg',8,'2021-10-25 10:34:01.000',NULL)
 ,('Kotion-each-G2000-3.5mm.jpg',7,'2021-10-25 10:34:01.000',NULL)
 ,('Screecher-RTX-3090-24GB.png',6,'2021-10-25 10:34:01.000',NULL)
@@ -31,7 +31,7 @@
 ,('MSI-Clutch-GM08.jpg',2,'2021-10-25 10:34:01.000',NULL)
 ,('Microphone-spirit-gamer-EKO.jpg',1,'2021-10-25 10:34:01.000',NULL)
 ,('mouse-segunda-foto.jpg',2,'2021-10-25 10:34:01.000',NULL)
-;﻿INSERT INTO fullgamer.products (name,price,description,category_id,created_at,updated_at) VALUES 
+;INSERT INTO fullgamer.products (name,price,description,category_id,created_at,updated_at) VALUES 
 ('Micrófono Spirit of Gamer EKO',6949,'congue elementum in hac habitasse platea dictumst morbi vestibulum velit id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus',1,'2021-10-25 10:29:14.000',NULL)
 ,('Mouse MSI Clutch GM08 Black',6251,'erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc purus phasellus in felis donec semper sapien a libero nam dui proin leo odio porttitor id consequat in consequat ut nulla sed accumsan felis ut at dolor quis odio consequat varius integer ac leo pellentesque ultrices',2,'2021-10-25 10:29:14.000',NULL)
 ,('Capture card Live Gamer 4K AVerMedia',1062,'tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa',3,'2021-10-25 10:29:14.000',NULL)
@@ -40,7 +40,7 @@
 ,('Gabinete Gaming RGB',3927,'platea dictumst maecenas ut massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut',6,'2021-10-25 10:29:14.000',NULL)
 ,('Gamer headset Kotion Each G2000 azul',7453,'dapibus augue vel accumsan tellus nisi eu orci mauris lacinia sapien quis libero nullam sit amet turpis elementum ligula vehicula consequat morbi a ipsum integer a nibh in quis justo maecenas',7,'2021-10-25 10:29:14.000',NULL)
 ,('Teclado Redragon Diti Outemu',9615,'praesent lectus vestibulum quam sapien varius ut blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui nec nisi volutpat',5,'2021-10-25 10:29:14.000',NULL)
-;﻿INSERT INTO fullgamer.users (`user`,email,password,notifications,image,`role`) VALUES 
+;INSERT INTO fullgamer.users (`user`,email,password,notifications,image,`role`) VALUES 
 ('JenniferYuimil23','jyuill0@bandcamp.com','$2a$10$8j9j2lY5awHRcpzcKWd2euiGzOwj6RCEC20OADWyd3XIiDhZ9YfgS','on','user-default.jpg',1)
 ,('CaitlinImmin1','cimmins1@zdnet.com','$2a$10$Jtu6SdOKy5SV4jup85xBLOfG0PtZoGVmue4wvkfyBemrYPuDpVn5u','on','user-default.jpg',1)
 ,('GayleWoodberry74','gwoodberry2@bbc.co.uk','$2a$10$sqMErZSJyqXnnh5HYfjroO5XbvBvSr3kzPHTNERzv8nb5vvsvBvUG','off','user-default.jpg',1)
