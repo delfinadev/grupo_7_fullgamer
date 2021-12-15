@@ -2,6 +2,8 @@ import './App.css';
 import LastProduct from "./components/LastProduct";
 import PanelTotales from './components/PanelTotales';
 import TotalCategories from './components/TotalCategories';
+import ProductList from './components/ProductList';
+
 
 function App() {
   return (
